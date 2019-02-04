@@ -1,5 +1,6 @@
 # thyme-ide
 A simple yet functional Thyme Editor and validator
+You can [try this online](https://leandrosq.github.io/thyme-ide/).
 
 ## What is Thyme?
 Thyme is a scripting language made for [Algodoo](algodoo.com)'s engine.
