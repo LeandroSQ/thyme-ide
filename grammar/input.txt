@@ -1,0 +1,53 @@
+_P = 0; _I = 0; _D = 0; _lastAngle = 0; _leftThrusterForce = 0; _rightThrusterForce = 0;
+
+postStep = (e)=>{
+	/* Declare variables */
+	targetAngle := 0;
+	kP := 9.5;
+	kI := 6.75;
+	kD := 80.5;
+	outputMax := 20.25;
+	integralMax := 20.25;
+	
+	/* Read values */
+	angleDeg := e.this.angle * (180  Math.PI);
+	angularVelocity := (e.this.angVel * (180 / Math.PI)) / Sim.frequency;
+	
+	/* Startup the controller */
+	error := targetAngle - (angleDeg - angularVelocity);
+	/* Proportional */
+	_P = error * kP;
+	/* Integral */
+	_I = _I + (error * kI) / Sim.frequency;	
+	/* Anti-WindUp */
+	(_I > integralMax) ? { _I = integralMax; } : { (_I < -integralMax) ? { _I = -integralMax; } : {}; };
+	/* Derivative */
+	_D = kD * (_lastAngle - angleDeg);
+	/* Calculate the sum */
+	PID := _P + _I + _D;
+	/* Anti-WindUp */
+	(PID > outputMax) ? { PID = outputMax; } : { (PID < -outputMax) ? { PID = -outputMax; } : {}; };
+	
+	/* Updates the variables */
+	_lastAngle = angleDeg;
+	friction = Sim.time;
+	
+	text = "    Current angle: " + Scene.my.round (angleDeg, 2) + "deg";
+	
+	/* Distribute the force between the Thrusters */
+	_leftThrusterForce = PID > 0 ? 0 : -PID;
+	_rightThrusterForce = PID < 0 ? 0 : PID;
+	/*_leftThrusterForce = -PID;
+	_rightThrusterForce = PID;*/
+};
+
+// Left thruster
+postStep = (e)=>{
+	mainFrame := Scene.my.entityByGeomId ((readable (owner)).geom);
+	e.this.force = mainFrame._leftThrusterForce;
+};
+// Right thruster
+postStep = (e)=>{
+	mainFrame := Scene.my.entityByGeomId ((readable (owner)).geom);
+	e.this.force = mainFrame._rightThrusterForce;
+};

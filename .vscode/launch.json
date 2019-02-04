@@ -1,0 +1,19 @@
+{
+	// Use IntelliSense to learn about possible attributes.
+	// Hover to view descriptions of existing attributes.
+	// For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+	"version": "0.2.0",
+	"configurations": [
+		{
+            "name": "Debug ANTLR4 grammar",
+            "type": "antlr-debug",
+            "request": "launch",
+            "input": "src/grammar/input.txt",
+            "grammar": "src/grammar/Thyme.g4",
+            //"actionFile": "grammars/exampleActions.js",
+            "startRule": "script",
+            "printParseTree": true,
+            "visualParseTree": true
+        }
+	]
+}
