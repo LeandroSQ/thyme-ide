@@ -11,4 +11,4 @@ This project includes
 - A editor featuring [Ace Editor](https://ace.c9.io/)
 - A Thyme mode for [Ace Editor](https://ace.c9.io/)
 
-Working in progress, but already usable.
+Work in progress, but already usable.
