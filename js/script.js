@@ -3,6 +3,13 @@
 
 var autoCompletion = [];
 
+// Simple function to change the favicon of the page
+function changeFavicon (hasError=false) {
+	var href = hasError ? "img/favicon_error.png" : "img/favicon.png";
+	document.querySelector ("link[rel='shortcut icon']").href = href;
+	document.querySelector ("link[rel*='icon']").href = href;
+}
+
 // ACE editor setup
 var editor = ace.edit ("input_box");
 editor.setTheme ("ace/theme/monokai");
@@ -30,17 +37,19 @@ languageTools.addCompleter ({
 	}
 });
 
-// Load file
-var request = new XMLHttpRequest ();
-request.open ("GET", "/grammar/debug.txt", true);
-request.onload = () => {
-	if (request.readyState == 4 && request.status == 200) {
-		editor.getSession ().setValue (request.responseText);
-	} else {
-		console.error ("Some error ocurred !");
-	}
-};
-request.send ();
+// Load file if in debug mode
+if (window.location.host === "localhost:7070") {
+	var request = new XMLHttpRequest ();
+	request.open ("GET", "/grammar/debug.txt", true);
+	request.onload = () => {
+		if (request.readyState == 4 && request.status == 200) {
+			editor.getSession ().setValue (request.responseText);
+		} else {
+			console.error ("Some error ocurred !");
+		}
+	};
+	request.send ();
+}
 
 var lastUpdateTime = 0;
 var timeoutHandle = -1;
@@ -49,24 +58,29 @@ const UPDATE_TIME_THRESHOLD = 750;
 function analyzeSourceCode () {
 	// Get the text from Editor
 	var textInput = editor.getSession ().getValue ();
-	// Creates the Thyme engine and parses the source code
-	var thymeEngine = new ThymeEngine ();
-	thymeEngine.analyze (textInput);
-	// Clears the annotations, and append the new ones
-	editor.getSession ().clearAnnotations ();
-	editor.getSession ().setAnnotations (thymeEngine.annotationList);
-	// Changes the favicon of the page
-	if (thymeEngine.annotationList.length <= 0) {
-		document.querySelector ("link[rel='shortcut icon']").href = "img/favicon.png";
-		document.querySelector ("link[rel*='icon']").href = "img/favicon.png";
-	} else {
-		document.querySelector ("link[rel='shortcut icon']").href = "img/favicon_error.png";
-		document.querySelector ("link[rel*='icon']").href = "img/favicon_error.png";
-	}
 
-	autoCompletion = thymeEngine.engineContext.variables;
-	// Notify as done
-	timeoutHandle = -1;
+	// Creates the web worker
+	var thymeWorker = new Worker ("ThymeEngineWebWorker.js");
+	// Sends the input text to the web worker
+	thymeWorker.postMessage (textInput);
+	// Defines the callback
+	thymeWorker.onmessage = (e) => {
+		// Set the favicon
+		changeFavicon (e.data.hasErrors);
+		// Clears tha annotations
+		editor.getSession ().clearAnnotations ();
+		// If we got errors, show them
+		if (e.data.hasErrors) {
+			editor.getSession ().setAnnotations (e.data.annotationList);
+		}
+
+		//autoCompletion = thymeEngine.engineContext.variables;
+		// Disposes the worker
+		thymeWorker.terminate ();
+
+		// Notify as done
+		timeoutHandle = -1;
+	};
 }
 
 editor.on ("change", (e) => {
@@ -88,3 +102,4 @@ editor.on ("change", (e) => {
 
 	lastUpdateTime = Date.now ();
 });
+
