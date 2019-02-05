@@ -1,5 +1,5 @@
-importScripts ("js/lib/require.js");
-importScripts ("js/ThymeEngine.js");
+importScripts ("lib/require.js");
+importScripts ("ThymeEngine.js");
 
 onmessage = (e) => {
 	// Analyzes the source code

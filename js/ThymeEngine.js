@@ -1,8 +1,8 @@
 // ANTLR setup
-var antlr4 = require ("antlr4/index");
-var ThymeLexer = require ("grammar/generated/ThymeLexer").ThymeLexer;
-var ThymeParser = require ("grammar/generated/ThymeParser").ThymeParser;
-var ThymeListener = require ("grammar/generated/ThymeListener").ThymeListener;
+var antlr4 = require ("lib/antlr4/index");
+var ThymeLexer = require ("lib/ThymeLexer").ThymeLexer;
+var ThymeParser = require ("lib/ThymeParser").ThymeParser;
+var ThymeListener = require ("lib/ThymeListener").ThymeListener;
 
 const AnnotationType = {
 	ERROR: "error",

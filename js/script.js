@@ -33,14 +33,14 @@ languageTools.addCompleter ({
 				meta: "global"
 			};
 		}));
-		console.log (prefix);
+		//console.log (prefix);
 	}
 });
 
 // Load file if in debug mode
 if (window.location.host === "localhost:7070") {
 	var request = new XMLHttpRequest ();
-	request.open ("GET", "/grammar/debug.txt", true);
+	request.open ("GET", "js/lib/grammar/debug.txt", true);
 	request.onload = () => {
 		if (request.readyState == 4 && request.status == 200) {
 			editor.getSession ().setValue (request.responseText);
@@ -60,7 +60,7 @@ function analyzeSourceCode () {
 	var textInput = editor.getSession ().getValue ();
 
 	// Creates the web worker
-	var thymeWorker = new Worker ("ThymeEngineWebWorker.js");
+	var thymeWorker = new Worker ("js/ThymeEngineWebWorker.js");
 	// Sends the input text to the web worker
 	thymeWorker.postMessage (textInput);
 	// Defines the callback

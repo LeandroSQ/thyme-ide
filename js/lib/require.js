@@ -167,7 +167,6 @@ function require(identifier, callback, compiler) {
 	}
 
 	var request = new XMLHttpRequest();
-
 	// NOTE IE8 doesn't support the onload event, therefore we use
 	//      onreadystatechange as a fallback here. However, onreadystatechange
 	//      shouldn't be used for all browsers, since at least mobile Safari
