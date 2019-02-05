@@ -41,7 +41,8 @@ term
 	| STRING_LITERAL									#StringLiteral
 	| BOOL_TRUE											#BooleanLiteralTrue
 	| BOOL_FALSE										#BooleanLiteralFalse
-	| BOOL_FALSE										#NullLiteral
+	| NULL_LITERAL										#NullLiteral
+	| INFINITY_LITERAL									#InfinityLiteral
 	| functionLiteral									#FunctionLiteralTerm
 	| listLiteral										#ListLiteralTerm	
 	| term '(' expressionList ')'						#FunctionCallTerm;
@@ -62,7 +63,10 @@ memberAccessor
 // Functions
 functionCallStatement : term '(' expressionList ')';
 functionLiteral: ('(' expressionList ')' ARROW)? '{' statementList '}';
-
+// Infinity
+INFINITY_LITERAL : '+inf' | '-inf';
+// Null
+NULL_LITERAL : 'null';
 // Boolean
 BOOL_TRUE : 'true';
 BOOL_FALSE : 'false';

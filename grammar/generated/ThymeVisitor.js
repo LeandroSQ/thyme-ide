@@ -156,6 +156,12 @@ ThymeVisitor.prototype.visitMemberAccessorTerm = function(ctx) {
 };
 
 
+// Visit a parse tree produced by ThymeParser#InfinityLiteral.
+ThymeVisitor.prototype.visitInfinityLiteral = function(ctx) {
+  return this.visitChildren(ctx);
+};
+
+
 // Visit a parse tree produced by ThymeParser#FunctionCallTerm.
 ThymeVisitor.prototype.visitFunctionCallTerm = function(ctx) {
   return this.visitChildren(ctx);

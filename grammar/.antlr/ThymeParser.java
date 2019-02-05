@@ -19,9 +19,9 @@ public class ThymeParser extends Parser {
 		T__0=1, T__1=2, T__2=3, T__3=4, T__4=5, T__5=6, T__6=7, T__7=8, T__8=9, 
 		T__9=10, T__10=11, T__11=12, T__12=13, T__13=14, T__14=15, T__15=16, T__16=17, 
 		T__17=18, T__18=19, T__19=20, T__20=21, T__21=22, T__22=23, T__23=24, 
-		T__24=25, T__25=26, BOOL_TRUE=27, BOOL_FALSE=28, NUMBER_LITERAL=29, STRING_LITERAL=30, 
-		IDENTIFIER=31, ARROW=32, ASSIGN=33, BLOCK_COMMENT=34, LINE_COMMENT=35, 
-		WS=36;
+		T__24=25, T__25=26, INFINITY_LITERAL=27, NULL_LITERAL=28, BOOL_TRUE=29, 
+		BOOL_FALSE=30, NUMBER_LITERAL=31, STRING_LITERAL=32, IDENTIFIER=33, ARROW=34, 
+		ASSIGN=35, BLOCK_COMMENT=36, LINE_COMMENT=37, WS=38;
 	public static final int
 		RULE_script = 0, RULE_statement = 1, RULE_statementList = 2, RULE_ifStatement = 3, 
 		RULE_assignStatement = 4, RULE_expressionList = 5, RULE_expression = 6, 
@@ -36,14 +36,15 @@ public class ThymeParser extends Parser {
 	private static final String[] _LITERAL_NAMES = {
 		null, "';'", "'('", "')'", "'?'", "'{'", "'}'", "':'", "','", "'-'", "'!'", 
 		"'*'", "'/'", "'%'", "'^'", "'+'", "'>'", "'>='", "'<'", "'<='", "'=='", 
-		"'!='", "'&&'", "'||'", "'.'", "'['", "']'", "'true'", "'false'", null, 
-		null, null, "'=>'"
+		"'!='", "'&&'", "'||'", "'.'", "'['", "']'", null, "'null'", "'true'", 
+		"'false'", null, null, null, "'=>'"
 	};
 	private static final String[] _SYMBOLIC_NAMES = {
 		null, null, null, null, null, null, null, null, null, null, null, null, 
 		null, null, null, null, null, null, null, null, null, null, null, null, 
-		null, null, null, "BOOL_TRUE", "BOOL_FALSE", "NUMBER_LITERAL", "STRING_LITERAL", 
-		"IDENTIFIER", "ARROW", "ASSIGN", "BLOCK_COMMENT", "LINE_COMMENT", "WS"
+		null, null, null, "INFINITY_LITERAL", "NULL_LITERAL", "BOOL_TRUE", "BOOL_FALSE", 
+		"NUMBER_LITERAL", "STRING_LITERAL", "IDENTIFIER", "ARROW", "ASSIGN", "BLOCK_COMMENT", 
+		"LINE_COMMENT", "WS"
 	};
 	public static final Vocabulary VOCABULARY = new VocabularyImpl(_LITERAL_NAMES, _SYMBOLIC_NAMES);
 
@@ -130,7 +131,7 @@ public class ThymeParser extends Parser {
 				setState(33); 
 				_errHandler.sync(this);
 				_la = _input.LA(1);
-			} while ( (((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__1) | (1L << T__4) | (1L << T__8) | (1L << T__9) | (1L << T__24) | (1L << BOOL_TRUE) | (1L << BOOL_FALSE) | (1L << NUMBER_LITERAL) | (1L << STRING_LITERAL) | (1L << IDENTIFIER))) != 0) );
+			} while ( (((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__1) | (1L << T__4) | (1L << T__8) | (1L << T__9) | (1L << T__24) | (1L << INFINITY_LITERAL) | (1L << NULL_LITERAL) | (1L << BOOL_TRUE) | (1L << BOOL_FALSE) | (1L << NUMBER_LITERAL) | (1L << STRING_LITERAL) | (1L << IDENTIFIER))) != 0) );
 			setState(35);
 			match(EOF);
 			}
@@ -244,7 +245,7 @@ public class ThymeParser extends Parser {
 			setState(54);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__1) | (1L << T__4) | (1L << T__8) | (1L << T__9) | (1L << T__24) | (1L << BOOL_TRUE) | (1L << BOOL_FALSE) | (1L << NUMBER_LITERAL) | (1L << STRING_LITERAL) | (1L << IDENTIFIER))) != 0)) {
+			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__1) | (1L << T__4) | (1L << T__8) | (1L << T__9) | (1L << T__24) | (1L << INFINITY_LITERAL) | (1L << NULL_LITERAL) | (1L << BOOL_TRUE) | (1L << BOOL_FALSE) | (1L << NUMBER_LITERAL) | (1L << STRING_LITERAL) | (1L << IDENTIFIER))) != 0)) {
 				{
 				{
 				setState(51);
@@ -390,6 +391,8 @@ public class ThymeParser extends Parser {
 			case T__8:
 			case T__9:
 			case T__24:
+			case INFINITY_LITERAL:
+			case NULL_LITERAL:
 			case BOOL_TRUE:
 			case BOOL_FALSE:
 			case NUMBER_LITERAL:
@@ -580,6 +583,8 @@ public class ThymeParser extends Parser {
 			case T__1:
 			case T__4:
 			case T__24:
+			case INFINITY_LITERAL:
+			case NULL_LITERAL:
 			case BOOL_TRUE:
 			case BOOL_FALSE:
 			case NUMBER_LITERAL:
@@ -806,6 +811,10 @@ public class ThymeParser extends Parser {
 		}
 		public MemberAccessorTermContext(TermContext ctx) { copyFrom(ctx); }
 	}
+	public static class InfinityLiteralContext extends TermContext {
+		public TerminalNode INFINITY_LITERAL() { return getToken(ThymeParser.INFINITY_LITERAL, 0); }
+		public InfinityLiteralContext(TermContext ctx) { copyFrom(ctx); }
+	}
 	public static class FunctionCallTermContext extends TermContext {
 		public TermContext term() {
 			return getRuleContext(TermContext.class,0);
@@ -816,7 +825,7 @@ public class ThymeParser extends Parser {
 		public FunctionCallTermContext(TermContext ctx) { copyFrom(ctx); }
 	}
 	public static class NullLiteralContext extends TermContext {
-		public TerminalNode BOOL_FALSE() { return getToken(ThymeParser.BOOL_FALSE, 0); }
+		public TerminalNode NULL_LITERAL() { return getToken(ThymeParser.NULL_LITERAL, 0); }
 		public NullLiteralContext(TermContext ctx) { copyFrom(ctx); }
 	}
 	public static class NumberLiteralContext extends TermContext {
@@ -839,7 +848,7 @@ public class ThymeParser extends Parser {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(131);
+			setState(132);
 			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,8,_ctx) ) {
 			case 1:
@@ -903,30 +912,39 @@ public class ThymeParser extends Parser {
 				_ctx = _localctx;
 				_prevctx = _localctx;
 				setState(128);
-				match(BOOL_FALSE);
+				match(NULL_LITERAL);
 				}
 				break;
 			case 8:
 				{
-				_localctx = new FunctionLiteralTermContext(_localctx);
+				_localctx = new InfinityLiteralContext(_localctx);
 				_ctx = _localctx;
 				_prevctx = _localctx;
 				setState(129);
-				functionLiteral();
+				match(INFINITY_LITERAL);
 				}
 				break;
 			case 9:
 				{
-				_localctx = new ListLiteralTermContext(_localctx);
+				_localctx = new FunctionLiteralTermContext(_localctx);
 				_ctx = _localctx;
 				_prevctx = _localctx;
 				setState(130);
+				functionLiteral();
+				}
+				break;
+			case 10:
+				{
+				_localctx = new ListLiteralTermContext(_localctx);
+				_ctx = _localctx;
+				_prevctx = _localctx;
+				setState(131);
 				listLiteral();
 				}
 				break;
 			}
 			_ctx.stop = _input.LT(-1);
-			setState(143);
+			setState(144);
 			_errHandler.sync(this);
 			_alt = getInterpreter().adaptivePredict(_input,10,_ctx);
 			while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
@@ -934,39 +952,39 @@ public class ThymeParser extends Parser {
 					if ( _parseListeners!=null ) triggerExitRuleEvent();
 					_prevctx = _localctx;
 					{
-					setState(141);
+					setState(142);
 					_errHandler.sync(this);
 					switch ( getInterpreter().adaptivePredict(_input,9,_ctx) ) {
 					case 1:
 						{
 						_localctx = new MemberAccessorTermContext(new TermContext(_parentctx, _parentState));
 						pushNewRecursionContext(_localctx, _startState, RULE_term);
-						setState(133);
-						if (!(precpred(_ctx, 10))) throw new FailedPredicateException(this, "precpred(_ctx, 10)");
 						setState(134);
-						match(T__23);
+						if (!(precpred(_ctx, 11))) throw new FailedPredicateException(this, "precpred(_ctx, 11)");
 						setState(135);
-						term(11);
+						match(T__23);
+						setState(136);
+						term(12);
 						}
 						break;
 					case 2:
 						{
 						_localctx = new FunctionCallTermContext(new TermContext(_parentctx, _parentState));
 						pushNewRecursionContext(_localctx, _startState, RULE_term);
-						setState(136);
-						if (!(precpred(_ctx, 1))) throw new FailedPredicateException(this, "precpred(_ctx, 1)");
 						setState(137);
-						match(T__1);
+						if (!(precpred(_ctx, 1))) throw new FailedPredicateException(this, "precpred(_ctx, 1)");
 						setState(138);
-						expressionList();
+						match(T__1);
 						setState(139);
+						expressionList();
+						setState(140);
 						match(T__2);
 						}
 						break;
 					}
 					} 
 				}
-				setState(145);
+				setState(146);
 				_errHandler.sync(this);
 				_alt = getInterpreter().adaptivePredict(_input,10,_ctx);
 			}
@@ -999,11 +1017,11 @@ public class ThymeParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(146);
-			match(T__24);
 			setState(147);
-			expressionList();
+			match(T__24);
 			setState(148);
+			expressionList();
+			setState(149);
 			match(T__25);
 			}
 		}
@@ -1034,11 +1052,11 @@ public class ThymeParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(150);
-			match(T__1);
 			setState(151);
-			expression(0);
+			match(T__1);
 			setState(152);
+			expression(0);
+			setState(153);
 			match(T__2);
 			}
 		}
@@ -1073,27 +1091,27 @@ public class ThymeParser extends Parser {
 		SingleExpressionContext _localctx = new SingleExpressionContext(_ctx, getState());
 		enterRule(_localctx, 20, RULE_singleExpression);
 		try {
-			setState(157);
+			setState(158);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case IDENTIFIER:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(154);
+				setState(155);
 				memberAccessor();
 				}
 				break;
 			case T__1:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(155);
+				setState(156);
 				parenthesysExpression();
 				}
 				break;
 			case T__24:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(156);
+				setState(157);
 				listLiteral();
 				}
 				break;
@@ -1131,22 +1149,22 @@ public class ThymeParser extends Parser {
 		enterRule(_localctx, 22, RULE_memberAccessor);
 		try {
 			int _alt;
-			setState(167);
+			setState(168);
 			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,13,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(159);
+				setState(160);
 				match(IDENTIFIER);
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(160);
+				setState(161);
 				match(IDENTIFIER);
-				setState(163); 
+				setState(164); 
 				_errHandler.sync(this);
 				_alt = 1;
 				do {
@@ -1154,9 +1172,9 @@ public class ThymeParser extends Parser {
 					case 1:
 						{
 						{
-						setState(161);
-						match(T__23);
 						setState(162);
+						match(T__23);
+						setState(163);
 						memberAccessor();
 						}
 						}
@@ -1164,7 +1182,7 @@ public class ThymeParser extends Parser {
 					default:
 						throw new NoViableAltException(this);
 					}
-					setState(165); 
+					setState(166); 
 					_errHandler.sync(this);
 					_alt = getInterpreter().adaptivePredict(_input,12,_ctx);
 				} while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER );
@@ -1202,13 +1220,13 @@ public class ThymeParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(169);
-			term(0);
 			setState(170);
-			match(T__1);
+			term(0);
 			setState(171);
-			expressionList();
+			match(T__1);
 			setState(172);
+			expressionList();
+			setState(173);
 			match(T__2);
 			}
 		}
@@ -1244,27 +1262,27 @@ public class ThymeParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(179);
+			setState(180);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==T__1) {
 				{
-				setState(174);
-				match(T__1);
 				setState(175);
-				expressionList();
+				match(T__1);
 				setState(176);
-				match(T__2);
+				expressionList();
 				setState(177);
+				match(T__2);
+				setState(178);
 				match(ARROW);
 				}
 			}
 
-			setState(181);
-			match(T__4);
 			setState(182);
-			statementList();
+			match(T__4);
 			setState(183);
+			statementList();
+			setState(184);
 			match(T__5);
 			}
 		}
@@ -1310,7 +1328,7 @@ public class ThymeParser extends Parser {
 	private boolean term_sempred(TermContext _localctx, int predIndex) {
 		switch (predIndex) {
 		case 7:
-			return precpred(_ctx, 10);
+			return precpred(_ctx, 11);
 		case 8:
 			return precpred(_ctx, 1);
 		}
@@ -1318,7 +1336,7 @@ public class ThymeParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3&\u00bc\4\2\t\2\4"+
+		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3(\u00bd\4\2\t\2\4"+
 		"\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\4\n\t\n\4\13\t"+
 		"\13\4\f\t\f\4\r\t\r\4\16\t\16\4\17\t\17\3\2\3\2\3\2\6\2\"\n\2\r\2\16\2"+
 		"#\3\2\3\2\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\5\3\64\n\3\3"+
@@ -1326,16 +1344,16 @@ public class ThymeParser extends Parser {
 		"\5\3\5\3\6\3\6\3\6\3\6\3\7\3\7\3\7\7\7O\n\7\f\7\16\7R\13\7\3\7\5\7U\n"+
 		"\7\3\b\3\b\3\b\3\b\3\b\3\b\5\b]\n\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3"+
 		"\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\7\bw\n"+
-		"\b\f\b\16\bz\13\b\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\5\t\u0086\n"+
-		"\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\7\t\u0090\n\t\f\t\16\t\u0093\13\t\3"+
-		"\n\3\n\3\n\3\n\3\13\3\13\3\13\3\13\3\f\3\f\3\f\5\f\u00a0\n\f\3\r\3\r\3"+
-		"\r\3\r\6\r\u00a6\n\r\r\r\16\r\u00a7\5\r\u00aa\n\r\3\16\3\16\3\16\3\16"+
-		"\3\16\3\17\3\17\3\17\3\17\3\17\5\17\u00b6\n\17\3\17\3\17\3\17\3\17\3\17"+
+		"\b\f\b\16\bz\13\b\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\5\t\u0087"+
+		"\n\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\7\t\u0091\n\t\f\t\16\t\u0094\13\t"+
+		"\3\n\3\n\3\n\3\n\3\13\3\13\3\13\3\13\3\f\3\f\3\f\5\f\u00a1\n\f\3\r\3\r"+
+		"\3\r\3\r\6\r\u00a7\n\r\r\r\16\r\u00a8\5\r\u00ab\n\r\3\16\3\16\3\16\3\16"+
+		"\3\16\3\17\3\17\3\17\3\17\3\17\5\17\u00b7\n\17\3\17\3\17\3\17\3\17\3\17"+
 		"\2\4\16\20\20\2\4\6\b\n\f\16\20\22\24\26\30\32\34\2\6\3\2\r\20\4\2\13"+
-		"\13\21\21\3\2\22\25\3\2\26\27\2\u00cc\2!\3\2\2\2\4\63\3\2\2\2\68\3\2\2"+
-		"\2\b;\3\2\2\2\nG\3\2\2\2\fT\3\2\2\2\16\\\3\2\2\2\20\u0085\3\2\2\2\22\u0094"+
-		"\3\2\2\2\24\u0098\3\2\2\2\26\u009f\3\2\2\2\30\u00a9\3\2\2\2\32\u00ab\3"+
-		"\2\2\2\34\u00b5\3\2\2\2\36\37\5\n\6\2\37 \7\3\2\2 \"\3\2\2\2!\36\3\2\2"+
+		"\13\21\21\3\2\22\25\3\2\26\27\2\u00ce\2!\3\2\2\2\4\63\3\2\2\2\68\3\2\2"+
+		"\2\b;\3\2\2\2\nG\3\2\2\2\fT\3\2\2\2\16\\\3\2\2\2\20\u0086\3\2\2\2\22\u0095"+
+		"\3\2\2\2\24\u0099\3\2\2\2\26\u00a0\3\2\2\2\30\u00aa\3\2\2\2\32\u00ac\3"+
+		"\2\2\2\34\u00b6\3\2\2\2\36\37\5\n\6\2\37 \7\3\2\2 \"\3\2\2\2!\36\3\2\2"+
 		"\2\"#\3\2\2\2#!\3\2\2\2#$\3\2\2\2$%\3\2\2\2%&\7\2\2\3&\3\3\2\2\2\'(\5"+
 		"\n\6\2()\7\3\2\2)\64\3\2\2\2*+\5\b\5\2+,\7\3\2\2,\64\3\2\2\2-.\5\32\16"+
 		"\2./\7\3\2\2/\64\3\2\2\2\60\61\5\16\b\2\61\62\7\3\2\2\62\64\3\2\2\2\63"+
@@ -1343,7 +1361,7 @@ public class ThymeParser extends Parser {
 		"\4\3\2\66\65\3\2\2\2\67:\3\2\2\28\66\3\2\2\289\3\2\2\29\7\3\2\2\2:8\3"+
 		"\2\2\2;<\7\4\2\2<=\5\16\b\2=>\7\5\2\2>?\7\6\2\2?@\7\7\2\2@A\5\6\4\2AB"+
 		"\7\b\2\2BC\7\t\2\2CD\7\7\2\2DE\5\6\4\2EF\7\b\2\2F\t\3\2\2\2GH\5\16\b\2"+
-		"HI\7#\2\2IJ\5\16\b\2J\13\3\2\2\2KP\5\16\b\2LM\7\n\2\2MO\5\16\b\2NL\3\2"+
+		"HI\7%\2\2IJ\5\16\b\2J\13\3\2\2\2KP\5\16\b\2LM\7\n\2\2MO\5\16\b\2NL\3\2"+
 		"\2\2OR\3\2\2\2PN\3\2\2\2PQ\3\2\2\2QU\3\2\2\2RP\3\2\2\2SU\3\2\2\2TK\3\2"+
 		"\2\2TS\3\2\2\2U\r\3\2\2\2VW\b\b\1\2WX\7\13\2\2X]\5\16\b\fYZ\7\f\2\2Z]"+
 		"\5\16\b\13[]\5\20\t\2\\V\3\2\2\2\\Y\3\2\2\2\\[\3\2\2\2]x\3\2\2\2^_\f\n"+
@@ -1352,29 +1370,30 @@ public class ThymeParser extends Parser {
 		"\2lw\5\16\b\7mn\f\5\2\2no\7\31\2\2ow\5\16\b\6pq\f\4\2\2qr\7\6\2\2rs\5"+
 		"\16\b\2st\7\t\2\2tu\5\16\b\5uw\3\2\2\2v^\3\2\2\2va\3\2\2\2vd\3\2\2\2v"+
 		"g\3\2\2\2vj\3\2\2\2vm\3\2\2\2vp\3\2\2\2wz\3\2\2\2xv\3\2\2\2xy\3\2\2\2"+
-		"y\17\3\2\2\2zx\3\2\2\2{|\b\t\1\2|\u0086\5\24\13\2}\u0086\7!\2\2~\u0086"+
-		"\7\37\2\2\177\u0086\7 \2\2\u0080\u0086\7\35\2\2\u0081\u0086\7\36\2\2\u0082"+
-		"\u0086\7\36\2\2\u0083\u0086\5\34\17\2\u0084\u0086\5\22\n\2\u0085{\3\2"+
-		"\2\2\u0085}\3\2\2\2\u0085~\3\2\2\2\u0085\177\3\2\2\2\u0085\u0080\3\2\2"+
-		"\2\u0085\u0081\3\2\2\2\u0085\u0082\3\2\2\2\u0085\u0083\3\2\2\2\u0085\u0084"+
-		"\3\2\2\2\u0086\u0091\3\2\2\2\u0087\u0088\f\f\2\2\u0088\u0089\7\32\2\2"+
-		"\u0089\u0090\5\20\t\r\u008a\u008b\f\3\2\2\u008b\u008c\7\4\2\2\u008c\u008d"+
-		"\5\f\7\2\u008d\u008e\7\5\2\2\u008e\u0090\3\2\2\2\u008f\u0087\3\2\2\2\u008f"+
-		"\u008a\3\2\2\2\u0090\u0093\3\2\2\2\u0091\u008f\3\2\2\2\u0091\u0092\3\2"+
-		"\2\2\u0092\21\3\2\2\2\u0093\u0091\3\2\2\2\u0094\u0095\7\33\2\2\u0095\u0096"+
-		"\5\f\7\2\u0096\u0097\7\34\2\2\u0097\23\3\2\2\2\u0098\u0099\7\4\2\2\u0099"+
-		"\u009a\5\16\b\2\u009a\u009b\7\5\2\2\u009b\25\3\2\2\2\u009c\u00a0\5\30"+
-		"\r\2\u009d\u00a0\5\24\13\2\u009e\u00a0\5\22\n\2\u009f\u009c\3\2\2\2\u009f"+
-		"\u009d\3\2\2\2\u009f\u009e\3\2\2\2\u00a0\27\3\2\2\2\u00a1\u00aa\7!\2\2"+
-		"\u00a2\u00a5\7!\2\2\u00a3\u00a4\7\32\2\2\u00a4\u00a6\5\30\r\2\u00a5\u00a3"+
-		"\3\2\2\2\u00a6\u00a7\3\2\2\2\u00a7\u00a5\3\2\2\2\u00a7\u00a8\3\2\2\2\u00a8"+
-		"\u00aa\3\2\2\2\u00a9\u00a1\3\2\2\2\u00a9\u00a2\3\2\2\2\u00aa\31\3\2\2"+
-		"\2\u00ab\u00ac\5\20\t\2\u00ac\u00ad\7\4\2\2\u00ad\u00ae\5\f\7\2\u00ae"+
-		"\u00af\7\5\2\2\u00af\33\3\2\2\2\u00b0\u00b1\7\4\2\2\u00b1\u00b2\5\f\7"+
-		"\2\u00b2\u00b3\7\5\2\2\u00b3\u00b4\7\"\2\2\u00b4\u00b6\3\2\2\2\u00b5\u00b0"+
-		"\3\2\2\2\u00b5\u00b6\3\2\2\2\u00b6\u00b7\3\2\2\2\u00b7\u00b8\7\7\2\2\u00b8"+
-		"\u00b9\5\6\4\2\u00b9\u00ba\7\b\2\2\u00ba\35\3\2\2\2\21#\638PT\\vx\u0085"+
-		"\u008f\u0091\u009f\u00a7\u00a9\u00b5";
+		"y\17\3\2\2\2zx\3\2\2\2{|\b\t\1\2|\u0087\5\24\13\2}\u0087\7#\2\2~\u0087"+
+		"\7!\2\2\177\u0087\7\"\2\2\u0080\u0087\7\37\2\2\u0081\u0087\7 \2\2\u0082"+
+		"\u0087\7\36\2\2\u0083\u0087\7\35\2\2\u0084\u0087\5\34\17\2\u0085\u0087"+
+		"\5\22\n\2\u0086{\3\2\2\2\u0086}\3\2\2\2\u0086~\3\2\2\2\u0086\177\3\2\2"+
+		"\2\u0086\u0080\3\2\2\2\u0086\u0081\3\2\2\2\u0086\u0082\3\2\2\2\u0086\u0083"+
+		"\3\2\2\2\u0086\u0084\3\2\2\2\u0086\u0085\3\2\2\2\u0087\u0092\3\2\2\2\u0088"+
+		"\u0089\f\r\2\2\u0089\u008a\7\32\2\2\u008a\u0091\5\20\t\16\u008b\u008c"+
+		"\f\3\2\2\u008c\u008d\7\4\2\2\u008d\u008e\5\f\7\2\u008e\u008f\7\5\2\2\u008f"+
+		"\u0091\3\2\2\2\u0090\u0088\3\2\2\2\u0090\u008b\3\2\2\2\u0091\u0094\3\2"+
+		"\2\2\u0092\u0090\3\2\2\2\u0092\u0093\3\2\2\2\u0093\21\3\2\2\2\u0094\u0092"+
+		"\3\2\2\2\u0095\u0096\7\33\2\2\u0096\u0097\5\f\7\2\u0097\u0098\7\34\2\2"+
+		"\u0098\23\3\2\2\2\u0099\u009a\7\4\2\2\u009a\u009b\5\16\b\2\u009b\u009c"+
+		"\7\5\2\2\u009c\25\3\2\2\2\u009d\u00a1\5\30\r\2\u009e\u00a1\5\24\13\2\u009f"+
+		"\u00a1\5\22\n\2\u00a0\u009d\3\2\2\2\u00a0\u009e\3\2\2\2\u00a0\u009f\3"+
+		"\2\2\2\u00a1\27\3\2\2\2\u00a2\u00ab\7#\2\2\u00a3\u00a6\7#\2\2\u00a4\u00a5"+
+		"\7\32\2\2\u00a5\u00a7\5\30\r\2\u00a6\u00a4\3\2\2\2\u00a7\u00a8\3\2\2\2"+
+		"\u00a8\u00a6\3\2\2\2\u00a8\u00a9\3\2\2\2\u00a9\u00ab\3\2\2\2\u00aa\u00a2"+
+		"\3\2\2\2\u00aa\u00a3\3\2\2\2\u00ab\31\3\2\2\2\u00ac\u00ad\5\20\t\2\u00ad"+
+		"\u00ae\7\4\2\2\u00ae\u00af\5\f\7\2\u00af\u00b0\7\5\2\2\u00b0\33\3\2\2"+
+		"\2\u00b1\u00b2\7\4\2\2\u00b2\u00b3\5\f\7\2\u00b3\u00b4\7\5\2\2\u00b4\u00b5"+
+		"\7$\2\2\u00b5\u00b7\3\2\2\2\u00b6\u00b1\3\2\2\2\u00b6\u00b7\3\2\2\2\u00b7"+
+		"\u00b8\3\2\2\2\u00b8\u00b9\7\7\2\2\u00b9\u00ba\5\6\4\2\u00ba\u00bb\7\b"+
+		"\2\2\u00bb\35\3\2\2\2\21#\638PT\\vx\u0086\u0090\u0092\u00a0\u00a8\u00aa"+
+		"\u00b6";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {

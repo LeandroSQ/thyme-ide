@@ -55,6 +55,14 @@ function analyzeSourceCode () {
 	// Clears the annotations, and append the new ones
 	editor.getSession ().clearAnnotations ();
 	editor.getSession ().setAnnotations (thymeEngine.annotationList);
+	// Changes the favicon of the page
+	if (thymeEngine.annotationList.length <= 0) {
+		document.querySelector ("link[rel='shortcut icon']").href = "img/favicon.png";
+		document.querySelector ("link[rel*='icon']").href = "img/favicon.png";
+	} else {
+		document.querySelector ("link[rel='shortcut icon']").href = "img/favicon_error.png";
+		document.querySelector ("link[rel*='icon']").href = "img/favicon_error.png";
+	}
 
 	autoCompletion = thymeEngine.engineContext.variables;
 	// Notify as done

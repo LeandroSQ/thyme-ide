@@ -227,6 +227,15 @@ ThymeListener.prototype.exitMemberAccessorTerm = function(ctx) {
 };
 
 
+// Enter a parse tree produced by ThymeParser#InfinityLiteral.
+ThymeListener.prototype.enterInfinityLiteral = function(ctx) {
+};
+
+// Exit a parse tree produced by ThymeParser#InfinityLiteral.
+ThymeListener.prototype.exitInfinityLiteral = function(ctx) {
+};
+
+
 // Enter a parse tree produced by ThymeParser#FunctionCallTerm.
 ThymeListener.prototype.enterFunctionCallTerm = function(ctx) {
 };
