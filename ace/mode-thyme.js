@@ -722,10 +722,10 @@ ace.define("ace/mode/thyme", ["require", "exports", "module", "ace/lib/oop", "ac
 
 	exports.Mode = Mode;
 });
-(function() {
+/*(function() {
 	window.require(["ace/mode/thyme"], function(m) {
 		if (typeof module == "object" && typeof exports == "object" && module) {
 			module.exports = m;
 		}
 	});
-})();
+})();*/

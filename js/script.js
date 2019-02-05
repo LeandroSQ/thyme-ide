@@ -9,7 +9,7 @@ editor.setTheme ("ace/theme/monokai");
 editor.session.setMode ("ace/mode/thyme");
 editor.setOptions ({ 
 	enableBasicAutocompletion: false,
-	enableSnippets: true,
+	enableSnippets: false,
 	enableLiveAutocompletion: true,
 	tabSize: 4,
 	useSoftTabs: true
