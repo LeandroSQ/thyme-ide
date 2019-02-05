@@ -1,20 +1,21 @@
 // Grammar name
 grammar Thyme;
 // Script
-script 
-	: (assignStatement ';')+ EOF;
+script : (assignStatement ';')+ EOF;
 // Statements
 statement 
 	: assignStatement ';'
 	| ifStatement ';'
-	| functionCall ';';
+	| functionCallStatement ';'
+	| expression ';';
+	
 statementList 
-	: statement* ;
+	: statement*;
 
 // The ternary operator rule
 ifStatement : '(' expression ')' '?' '{' statementList '}' ':' '{' statementList '}';
 // The variable assignment and declaration statement
-assignStatement : memberAccessor ASSIGN expression;
+assignStatement : expression ASSIGN expression;
 // Simple expression list, separated with comma
 expressionList
 	 : expression (',' expression)*
@@ -30,28 +31,37 @@ expression
 	| expression '&&' expression						#AndExpression
 	| expression '||' expression						#OrExpression
 	| expression '?' expression ':' expression			#TernaryExpression
-	| expression '.' expression							#MemberAccessorExpression
 	| term												#AtomExpression;
 // Simple term of an expression
 term 
-	: '(' expression ')'								#ParenthesysExpression
-	| memberAccessor									#MemberAcessorTerm
+	: parenthesysExpression								#ParenthesysExpressionTerm
+	| term '.' term										#MemberAccessorTerm
+	| IDENTIFIER										#MemberAcessorTerm
 	| NUMBER_LITERAL									#NumberLiteral
 	| STRING_LITERAL									#StringLiteral
 	| BOOL_TRUE											#BooleanLiteralTrue
 	| BOOL_FALSE										#BooleanLiteralFalse
 	| BOOL_FALSE										#NullLiteral
 	| functionLiteral									#FunctionLiteralTerm
-	| '[' expressionList ']'							#ListLiteral		
-	| functionCall										#FunctionCallTerm;
+	| listLiteral										#ListLiteralTerm	
+	| term '(' expressionList ')'						#FunctionCallTerm;
+
+listLiteral : '[' expressionList ']';
+parenthesysExpression : '(' expression ')';
+
+singleExpression
+	: memberAccessor
+	| parenthesysExpression
+	| listLiteral;
+
 // Member accessor
 memberAccessor
 	: IDENTIFIER 
-	| IDENTIFIER ('.' IDENTIFIER)+;
+	| IDENTIFIER ('.' memberAccessor)+;
 
 // Functions
-functionCall : IDENTIFIER '(' expressionList ')';
-functionLiteral: '(' expressionList ')' ARROW '{' statementList '}';
+functionCallStatement : term '(' expressionList ')';
+functionLiteral: ('(' expressionList ')' ARROW)? '{' statementList '}';
 
 // Boolean
 BOOL_TRUE : 'true';

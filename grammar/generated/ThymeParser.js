@@ -8,100 +8,120 @@ var grammarFileName = "Thyme.g4";
 
 
 var serializedATN = ["\u0003\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964",
-    "\u0003&\u009f\u0004\u0002\t\u0002\u0004\u0003\t\u0003\u0004\u0004\t",
+    "\u0003&\u00bc\u0004\u0002\t\u0002\u0004\u0003\t\u0003\u0004\u0004\t",
     "\u0004\u0004\u0005\t\u0005\u0004\u0006\t\u0006\u0004\u0007\t\u0007\u0004",
-    "\b\t\b\u0004\t\t\t\u0004\n\t\n\u0004\u000b\t\u000b\u0004\f\t\f\u0003",
-    "\u0002\u0003\u0002\u0003\u0002\u0006\u0002\u001c\n\u0002\r\u0002\u000e",
-    "\u0002\u001d\u0003\u0002\u0003\u0002\u0003\u0003\u0003\u0003\u0003\u0003",
+    "\b\t\b\u0004\t\t\t\u0004\n\t\n\u0004\u000b\t\u000b\u0004\f\t\f\u0004",
+    "\r\t\r\u0004\u000e\t\u000e\u0004\u000f\t\u000f\u0003\u0002\u0003\u0002",
+    "\u0003\u0002\u0006\u0002\"\n\u0002\r\u0002\u000e\u0002#\u0003\u0002",
+    "\u0003\u0002\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003",
     "\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003",
-    "\u0005\u0003+\n\u0003\u0003\u0004\u0007\u0004.\n\u0004\f\u0004\u000e",
-    "\u00041\u000b\u0004\u0003\u0005\u0003\u0005\u0003\u0005\u0003\u0005",
+    "\u0003\u0003\u0005\u00034\n\u0003\u0003\u0004\u0007\u00047\n\u0004\f",
+    "\u0004\u000e\u0004:\u000b\u0004\u0003\u0005\u0003\u0005\u0003\u0005",
     "\u0003\u0005\u0003\u0005\u0003\u0005\u0003\u0005\u0003\u0005\u0003\u0005",
-    "\u0003\u0005\u0003\u0005\u0003\u0006\u0003\u0006\u0003\u0006\u0003\u0006",
-    "\u0003\u0007\u0003\u0007\u0003\u0007\u0007\u0007F\n\u0007\f\u0007\u000e",
-    "\u0007I\u000b\u0007\u0003\u0007\u0005\u0007L\n\u0007\u0003\b\u0003\b",
-    "\u0003\b\u0003\b\u0003\b\u0003\b\u0005\bT\n\b\u0003\b\u0003\b\u0003",
+    "\u0003\u0005\u0003\u0005\u0003\u0005\u0003\u0006\u0003\u0006\u0003\u0006",
+    "\u0003\u0006\u0003\u0007\u0003\u0007\u0003\u0007\u0007\u0007O\n\u0007",
+    "\f\u0007\u000e\u0007R\u000b\u0007\u0003\u0007\u0005\u0007U\n\u0007\u0003",
+    "\b\u0003\b\u0003\b\u0003\b\u0003\b\u0003\b\u0005\b]\n\b\u0003\b\u0003",
     "\b\u0003\b\u0003\b\u0003\b\u0003\b\u0003\b\u0003\b\u0003\b\u0003\b\u0003",
     "\b\u0003\b\u0003\b\u0003\b\u0003\b\u0003\b\u0003\b\u0003\b\u0003\b\u0003",
-    "\b\u0003\b\u0003\b\u0003\b\u0003\b\u0003\b\u0003\b\u0007\bq\n\b\f\b",
-    "\u000e\bt\u000b\b\u0003\t\u0003\t\u0003\t\u0003\t\u0003\t\u0003\t\u0003",
-    "\t\u0003\t\u0003\t\u0003\t\u0003\t\u0003\t\u0003\t\u0003\t\u0003\t\u0003",
-    "\t\u0005\t\u0086\n\t\u0003\n\u0003\n\u0003\n\u0003\n\u0006\n\u008c\n",
-    "\n\r\n\u000e\n\u008d\u0005\n\u0090\n\n\u0003\u000b\u0003\u000b\u0003",
-    "\u000b\u0003\u000b\u0003\u000b\u0003\f\u0003\f\u0003\f\u0003\f\u0003",
-    "\f\u0003\f\u0003\f\u0003\f\u0003\f\u0002\u0003\u000e\r\u0002\u0004\u0006",
-    "\b\n\f\u000e\u0010\u0012\u0014\u0016\u0002\u0006\u0003\u0002\r\u0010",
-    "\u0004\u0002\u000b\u000b\u0011\u0011\u0003\u0002\u0012\u0015\u0003\u0002",
-    "\u0016\u0017\u0002\u00ae\u0002\u001b\u0003\u0002\u0002\u0002\u0004*",
-    "\u0003\u0002\u0002\u0002\u0006/\u0003\u0002\u0002\u0002\b2\u0003\u0002",
-    "\u0002\u0002\n>\u0003\u0002\u0002\u0002\fK\u0003\u0002\u0002\u0002\u000e",
-    "S\u0003\u0002\u0002\u0002\u0010\u0085\u0003\u0002\u0002\u0002\u0012",
-    "\u008f\u0003\u0002\u0002\u0002\u0014\u0091\u0003\u0002\u0002\u0002\u0016",
-    "\u0096\u0003\u0002\u0002\u0002\u0018\u0019\u0005\n\u0006\u0002\u0019",
-    "\u001a\u0007\u0003\u0002\u0002\u001a\u001c\u0003\u0002\u0002\u0002\u001b",
-    "\u0018\u0003\u0002\u0002\u0002\u001c\u001d\u0003\u0002\u0002\u0002\u001d",
-    "\u001b\u0003\u0002\u0002\u0002\u001d\u001e\u0003\u0002\u0002\u0002\u001e",
-    "\u001f\u0003\u0002\u0002\u0002\u001f \u0007\u0002\u0002\u0003 \u0003",
-    "\u0003\u0002\u0002\u0002!\"\u0005\n\u0006\u0002\"#\u0007\u0003\u0002",
-    "\u0002#+\u0003\u0002\u0002\u0002$%\u0005\b\u0005\u0002%&\u0007\u0003",
-    "\u0002\u0002&+\u0003\u0002\u0002\u0002\'(\u0005\u0014\u000b\u0002()",
-    "\u0007\u0003\u0002\u0002)+\u0003\u0002\u0002\u0002*!\u0003\u0002\u0002",
-    "\u0002*$\u0003\u0002\u0002\u0002*\'\u0003\u0002\u0002\u0002+\u0005\u0003",
-    "\u0002\u0002\u0002,.\u0005\u0004\u0003\u0002-,\u0003\u0002\u0002\u0002",
-    ".1\u0003\u0002\u0002\u0002/-\u0003\u0002\u0002\u0002/0\u0003\u0002\u0002",
-    "\u00020\u0007\u0003\u0002\u0002\u00021/\u0003\u0002\u0002\u000223\u0007",
-    "\u0004\u0002\u000234\u0005\u000e\b\u000245\u0007\u0005\u0002\u00025",
-    "6\u0007\u0006\u0002\u000267\u0007\u0007\u0002\u000278\u0005\u0006\u0004",
-    "\u000289\u0007\b\u0002\u00029:\u0007\t\u0002\u0002:;\u0007\u0007\u0002",
-    "\u0002;<\u0005\u0006\u0004\u0002<=\u0007\b\u0002\u0002=\t\u0003\u0002",
-    "\u0002\u0002>?\u0005\u0012\n\u0002?@\u0007#\u0002\u0002@A\u0005\u000e",
-    "\b\u0002A\u000b\u0003\u0002\u0002\u0002BG\u0005\u000e\b\u0002CD\u0007",
-    "\n\u0002\u0002DF\u0005\u000e\b\u0002EC\u0003\u0002\u0002\u0002FI\u0003",
-    "\u0002\u0002\u0002GE\u0003\u0002\u0002\u0002GH\u0003\u0002\u0002\u0002",
-    "HL\u0003\u0002\u0002\u0002IG\u0003\u0002\u0002\u0002JL\u0003\u0002\u0002",
-    "\u0002KB\u0003\u0002\u0002\u0002KJ\u0003\u0002\u0002\u0002L\r\u0003",
-    "\u0002\u0002\u0002MN\b\b\u0001\u0002NO\u0007\u000b\u0002\u0002OT\u0005",
-    "\u000e\b\rPQ\u0007\f\u0002\u0002QT\u0005\u000e\b\fRT\u0005\u0010\t\u0002",
-    "SM\u0003\u0002\u0002\u0002SP\u0003\u0002\u0002\u0002SR\u0003\u0002\u0002",
-    "\u0002Tr\u0003\u0002\u0002\u0002UV\f\u000b\u0002\u0002VW\t\u0002\u0002",
-    "\u0002Wq\u0005\u000e\b\fXY\f\n\u0002\u0002YZ\t\u0003\u0002\u0002Zq\u0005",
-    "\u000e\b\u000b[\\\f\t\u0002\u0002\\]\t\u0004\u0002\u0002]q\u0005\u000e",
-    "\b\n^_\f\b\u0002\u0002_`\t\u0005\u0002\u0002`q\u0005\u000e\b\tab\f\u0007",
-    "\u0002\u0002bc\u0007\u0018\u0002\u0002cq\u0005\u000e\b\bde\f\u0006\u0002",
-    "\u0002ef\u0007\u0019\u0002\u0002fq\u0005\u000e\b\u0007gh\f\u0005\u0002",
-    "\u0002hi\u0007\u0006\u0002\u0002ij\u0005\u000e\b\u0002jk\u0007\t\u0002",
-    "\u0002kl\u0005\u000e\b\u0006lq\u0003\u0002\u0002\u0002mn\f\u0004\u0002",
-    "\u0002no\u0007\u001a\u0002\u0002oq\u0005\u000e\b\u0005pU\u0003\u0002",
-    "\u0002\u0002pX\u0003\u0002\u0002\u0002p[\u0003\u0002\u0002\u0002p^\u0003",
-    "\u0002\u0002\u0002pa\u0003\u0002\u0002\u0002pd\u0003\u0002\u0002\u0002",
-    "pg\u0003\u0002\u0002\u0002pm\u0003\u0002\u0002\u0002qt\u0003\u0002\u0002",
-    "\u0002rp\u0003\u0002\u0002\u0002rs\u0003\u0002\u0002\u0002s\u000f\u0003",
-    "\u0002\u0002\u0002tr\u0003\u0002\u0002\u0002uv\u0007\u0004\u0002\u0002",
-    "vw\u0005\u000e\b\u0002wx\u0007\u0005\u0002\u0002x\u0086\u0003\u0002",
-    "\u0002\u0002y\u0086\u0005\u0012\n\u0002z\u0086\u0007\u001f\u0002\u0002",
-    "{\u0086\u0007 \u0002\u0002|\u0086\u0007\u001d\u0002\u0002}\u0086\u0007",
-    "\u001e\u0002\u0002~\u0086\u0007\u001e\u0002\u0002\u007f\u0086\u0005",
-    "\u0016\f\u0002\u0080\u0081\u0007\u001b\u0002\u0002\u0081\u0082\u0005",
-    "\f\u0007\u0002\u0082\u0083\u0007\u001c\u0002\u0002\u0083\u0086\u0003",
-    "\u0002\u0002\u0002\u0084\u0086\u0005\u0014\u000b\u0002\u0085u\u0003",
-    "\u0002\u0002\u0002\u0085y\u0003\u0002\u0002\u0002\u0085z\u0003\u0002",
-    "\u0002\u0002\u0085{\u0003\u0002\u0002\u0002\u0085|\u0003\u0002\u0002",
-    "\u0002\u0085}\u0003\u0002\u0002\u0002\u0085~\u0003\u0002\u0002\u0002",
-    "\u0085\u007f\u0003\u0002\u0002\u0002\u0085\u0080\u0003\u0002\u0002\u0002",
-    "\u0085\u0084\u0003\u0002\u0002\u0002\u0086\u0011\u0003\u0002\u0002\u0002",
-    "\u0087\u0090\u0007!\u0002\u0002\u0088\u008b\u0007!\u0002\u0002\u0089",
-    "\u008a\u0007\u001a\u0002\u0002\u008a\u008c\u0007!\u0002\u0002\u008b",
-    "\u0089\u0003\u0002\u0002\u0002\u008c\u008d\u0003\u0002\u0002\u0002\u008d",
-    "\u008b\u0003\u0002\u0002\u0002\u008d\u008e\u0003\u0002\u0002\u0002\u008e",
-    "\u0090\u0003\u0002\u0002\u0002\u008f\u0087\u0003\u0002\u0002\u0002\u008f",
-    "\u0088\u0003\u0002\u0002\u0002\u0090\u0013\u0003\u0002\u0002\u0002\u0091",
-    "\u0092\u0007!\u0002\u0002\u0092\u0093\u0007\u0004\u0002\u0002\u0093",
-    "\u0094\u0005\f\u0007\u0002\u0094\u0095\u0007\u0005\u0002\u0002\u0095",
-    "\u0015\u0003\u0002\u0002\u0002\u0096\u0097\u0007\u0004\u0002\u0002\u0097",
-    "\u0098\u0005\f\u0007\u0002\u0098\u0099\u0007\u0005\u0002\u0002\u0099",
-    "\u009a\u0007\"\u0002\u0002\u009a\u009b\u0007\u0007\u0002\u0002\u009b",
-    "\u009c\u0005\u0006\u0004\u0002\u009c\u009d\u0007\b\u0002\u0002\u009d",
-    "\u0017\u0003\u0002\u0002\u0002\r\u001d*/GKSpr\u0085\u008d\u008f"].join("");
+    "\b\u0003\b\u0003\b\u0003\b\u0003\b\u0007\bw\n\b\f\b\u000e\bz\u000b\b",
+    "\u0003\t\u0003\t\u0003\t\u0003\t\u0003\t\u0003\t\u0003\t\u0003\t\u0003",
+    "\t\u0003\t\u0005\t\u0086\n\t\u0003\t\u0003\t\u0003\t\u0003\t\u0003\t",
+    "\u0003\t\u0003\t\u0003\t\u0007\t\u0090\n\t\f\t\u000e\t\u0093\u000b\t",
+    "\u0003\n\u0003\n\u0003\n\u0003\n\u0003\u000b\u0003\u000b\u0003\u000b",
+    "\u0003\u000b\u0003\f\u0003\f\u0003\f\u0005\f\u00a0\n\f\u0003\r\u0003",
+    "\r\u0003\r\u0003\r\u0006\r\u00a6\n\r\r\r\u000e\r\u00a7\u0005\r\u00aa",
+    "\n\r\u0003\u000e\u0003\u000e\u0003\u000e\u0003\u000e\u0003\u000e\u0003",
+    "\u000f\u0003\u000f\u0003\u000f\u0003\u000f\u0003\u000f\u0005\u000f\u00b6",
+    "\n\u000f\u0003\u000f\u0003\u000f\u0003\u000f\u0003\u000f\u0003\u000f",
+    "\u0002\u0004\u000e\u0010\u0010\u0002\u0004\u0006\b\n\f\u000e\u0010\u0012",
+    "\u0014\u0016\u0018\u001a\u001c\u0002\u0006\u0003\u0002\r\u0010\u0004",
+    "\u0002\u000b\u000b\u0011\u0011\u0003\u0002\u0012\u0015\u0003\u0002\u0016",
+    "\u0017\u0002\u00cc\u0002!\u0003\u0002\u0002\u0002\u00043\u0003\u0002",
+    "\u0002\u0002\u00068\u0003\u0002\u0002\u0002\b;\u0003\u0002\u0002\u0002",
+    "\nG\u0003\u0002\u0002\u0002\fT\u0003\u0002\u0002\u0002\u000e\\\u0003",
+    "\u0002\u0002\u0002\u0010\u0085\u0003\u0002\u0002\u0002\u0012\u0094\u0003",
+    "\u0002\u0002\u0002\u0014\u0098\u0003\u0002\u0002\u0002\u0016\u009f\u0003",
+    "\u0002\u0002\u0002\u0018\u00a9\u0003\u0002\u0002\u0002\u001a\u00ab\u0003",
+    "\u0002\u0002\u0002\u001c\u00b5\u0003\u0002\u0002\u0002\u001e\u001f\u0005",
+    "\n\u0006\u0002\u001f \u0007\u0003\u0002\u0002 \"\u0003\u0002\u0002\u0002",
+    "!\u001e\u0003\u0002\u0002\u0002\"#\u0003\u0002\u0002\u0002#!\u0003\u0002",
+    "\u0002\u0002#$\u0003\u0002\u0002\u0002$%\u0003\u0002\u0002\u0002%&\u0007",
+    "\u0002\u0002\u0003&\u0003\u0003\u0002\u0002\u0002\'(\u0005\n\u0006\u0002",
+    "()\u0007\u0003\u0002\u0002)4\u0003\u0002\u0002\u0002*+\u0005\b\u0005",
+    "\u0002+,\u0007\u0003\u0002\u0002,4\u0003\u0002\u0002\u0002-.\u0005\u001a",
+    "\u000e\u0002./\u0007\u0003\u0002\u0002/4\u0003\u0002\u0002\u000201\u0005",
+    "\u000e\b\u000212\u0007\u0003\u0002\u000224\u0003\u0002\u0002\u00023",
+    "\'\u0003\u0002\u0002\u00023*\u0003\u0002\u0002\u00023-\u0003\u0002\u0002",
+    "\u000230\u0003\u0002\u0002\u00024\u0005\u0003\u0002\u0002\u000257\u0005",
+    "\u0004\u0003\u000265\u0003\u0002\u0002\u00027:\u0003\u0002\u0002\u0002",
+    "86\u0003\u0002\u0002\u000289\u0003\u0002\u0002\u00029\u0007\u0003\u0002",
+    "\u0002\u0002:8\u0003\u0002\u0002\u0002;<\u0007\u0004\u0002\u0002<=\u0005",
+    "\u000e\b\u0002=>\u0007\u0005\u0002\u0002>?\u0007\u0006\u0002\u0002?",
+    "@\u0007\u0007\u0002\u0002@A\u0005\u0006\u0004\u0002AB\u0007\b\u0002",
+    "\u0002BC\u0007\t\u0002\u0002CD\u0007\u0007\u0002\u0002DE\u0005\u0006",
+    "\u0004\u0002EF\u0007\b\u0002\u0002F\t\u0003\u0002\u0002\u0002GH\u0005",
+    "\u000e\b\u0002HI\u0007#\u0002\u0002IJ\u0005\u000e\b\u0002J\u000b\u0003",
+    "\u0002\u0002\u0002KP\u0005\u000e\b\u0002LM\u0007\n\u0002\u0002MO\u0005",
+    "\u000e\b\u0002NL\u0003\u0002\u0002\u0002OR\u0003\u0002\u0002\u0002P",
+    "N\u0003\u0002\u0002\u0002PQ\u0003\u0002\u0002\u0002QU\u0003\u0002\u0002",
+    "\u0002RP\u0003\u0002\u0002\u0002SU\u0003\u0002\u0002\u0002TK\u0003\u0002",
+    "\u0002\u0002TS\u0003\u0002\u0002\u0002U\r\u0003\u0002\u0002\u0002VW",
+    "\b\b\u0001\u0002WX\u0007\u000b\u0002\u0002X]\u0005\u000e\b\fYZ\u0007",
+    "\f\u0002\u0002Z]\u0005\u000e\b\u000b[]\u0005\u0010\t\u0002\\V\u0003",
+    "\u0002\u0002\u0002\\Y\u0003\u0002\u0002\u0002\\[\u0003\u0002\u0002\u0002",
+    "]x\u0003\u0002\u0002\u0002^_\f\n\u0002\u0002_`\t\u0002\u0002\u0002`",
+    "w\u0005\u000e\b\u000bab\f\t\u0002\u0002bc\t\u0003\u0002\u0002cw\u0005",
+    "\u000e\b\nde\f\b\u0002\u0002ef\t\u0004\u0002\u0002fw\u0005\u000e\b\t",
+    "gh\f\u0007\u0002\u0002hi\t\u0005\u0002\u0002iw\u0005\u000e\b\bjk\f\u0006",
+    "\u0002\u0002kl\u0007\u0018\u0002\u0002lw\u0005\u000e\b\u0007mn\f\u0005",
+    "\u0002\u0002no\u0007\u0019\u0002\u0002ow\u0005\u000e\b\u0006pq\f\u0004",
+    "\u0002\u0002qr\u0007\u0006\u0002\u0002rs\u0005\u000e\b\u0002st\u0007",
+    "\t\u0002\u0002tu\u0005\u000e\b\u0005uw\u0003\u0002\u0002\u0002v^\u0003",
+    "\u0002\u0002\u0002va\u0003\u0002\u0002\u0002vd\u0003\u0002\u0002\u0002",
+    "vg\u0003\u0002\u0002\u0002vj\u0003\u0002\u0002\u0002vm\u0003\u0002\u0002",
+    "\u0002vp\u0003\u0002\u0002\u0002wz\u0003\u0002\u0002\u0002xv\u0003\u0002",
+    "\u0002\u0002xy\u0003\u0002\u0002\u0002y\u000f\u0003\u0002\u0002\u0002",
+    "zx\u0003\u0002\u0002\u0002{|\b\t\u0001\u0002|\u0086\u0005\u0014\u000b",
+    "\u0002}\u0086\u0007!\u0002\u0002~\u0086\u0007\u001f\u0002\u0002\u007f",
+    "\u0086\u0007 \u0002\u0002\u0080\u0086\u0007\u001d\u0002\u0002\u0081",
+    "\u0086\u0007\u001e\u0002\u0002\u0082\u0086\u0007\u001e\u0002\u0002\u0083",
+    "\u0086\u0005\u001c\u000f\u0002\u0084\u0086\u0005\u0012\n\u0002\u0085",
+    "{\u0003\u0002\u0002\u0002\u0085}\u0003\u0002\u0002\u0002\u0085~\u0003",
+    "\u0002\u0002\u0002\u0085\u007f\u0003\u0002\u0002\u0002\u0085\u0080\u0003",
+    "\u0002\u0002\u0002\u0085\u0081\u0003\u0002\u0002\u0002\u0085\u0082\u0003",
+    "\u0002\u0002\u0002\u0085\u0083\u0003\u0002\u0002\u0002\u0085\u0084\u0003",
+    "\u0002\u0002\u0002\u0086\u0091\u0003\u0002\u0002\u0002\u0087\u0088\f",
+    "\f\u0002\u0002\u0088\u0089\u0007\u001a\u0002\u0002\u0089\u0090\u0005",
+    "\u0010\t\r\u008a\u008b\f\u0003\u0002\u0002\u008b\u008c\u0007\u0004\u0002",
+    "\u0002\u008c\u008d\u0005\f\u0007\u0002\u008d\u008e\u0007\u0005\u0002",
+    "\u0002\u008e\u0090\u0003\u0002\u0002\u0002\u008f\u0087\u0003\u0002\u0002",
+    "\u0002\u008f\u008a\u0003\u0002\u0002\u0002\u0090\u0093\u0003\u0002\u0002",
+    "\u0002\u0091\u008f\u0003\u0002\u0002\u0002\u0091\u0092\u0003\u0002\u0002",
+    "\u0002\u0092\u0011\u0003\u0002\u0002\u0002\u0093\u0091\u0003\u0002\u0002",
+    "\u0002\u0094\u0095\u0007\u001b\u0002\u0002\u0095\u0096\u0005\f\u0007",
+    "\u0002\u0096\u0097\u0007\u001c\u0002\u0002\u0097\u0013\u0003\u0002\u0002",
+    "\u0002\u0098\u0099\u0007\u0004\u0002\u0002\u0099\u009a\u0005\u000e\b",
+    "\u0002\u009a\u009b\u0007\u0005\u0002\u0002\u009b\u0015\u0003\u0002\u0002",
+    "\u0002\u009c\u00a0\u0005\u0018\r\u0002\u009d\u00a0\u0005\u0014\u000b",
+    "\u0002\u009e\u00a0\u0005\u0012\n\u0002\u009f\u009c\u0003\u0002\u0002",
+    "\u0002\u009f\u009d\u0003\u0002\u0002\u0002\u009f\u009e\u0003\u0002\u0002",
+    "\u0002\u00a0\u0017\u0003\u0002\u0002\u0002\u00a1\u00aa\u0007!\u0002",
+    "\u0002\u00a2\u00a5\u0007!\u0002\u0002\u00a3\u00a4\u0007\u001a\u0002",
+    "\u0002\u00a4\u00a6\u0005\u0018\r\u0002\u00a5\u00a3\u0003\u0002\u0002",
+    "\u0002\u00a6\u00a7\u0003\u0002\u0002\u0002\u00a7\u00a5\u0003\u0002\u0002",
+    "\u0002\u00a7\u00a8\u0003\u0002\u0002\u0002\u00a8\u00aa\u0003\u0002\u0002",
+    "\u0002\u00a9\u00a1\u0003\u0002\u0002\u0002\u00a9\u00a2\u0003\u0002\u0002",
+    "\u0002\u00aa\u0019\u0003\u0002\u0002\u0002\u00ab\u00ac\u0005\u0010\t",
+    "\u0002\u00ac\u00ad\u0007\u0004\u0002\u0002\u00ad\u00ae\u0005\f\u0007",
+    "\u0002\u00ae\u00af\u0007\u0005\u0002\u0002\u00af\u001b\u0003\u0002\u0002",
+    "\u0002\u00b0\u00b1\u0007\u0004\u0002\u0002\u00b1\u00b2\u0005\f\u0007",
+    "\u0002\u00b2\u00b3\u0007\u0005\u0002\u0002\u00b3\u00b4\u0007\"\u0002",
+    "\u0002\u00b4\u00b6\u0003\u0002\u0002\u0002\u00b5\u00b0\u0003\u0002\u0002",
+    "\u0002\u00b5\u00b6\u0003\u0002\u0002\u0002\u00b6\u00b7\u0003\u0002\u0002",
+    "\u0002\u00b7\u00b8\u0007\u0007\u0002\u0002\u00b8\u00b9\u0005\u0006\u0004",
+    "\u0002\u00b9\u00ba\u0007\b\u0002\u0002\u00ba\u001d\u0003\u0002\u0002",
+    "\u0002\u0011#38PT\\vx\u0085\u008f\u0091\u009f\u00a7\u00a9\u00b5"].join("");
 
 
 var atn = new antlr4.atn.ATNDeserializer().deserialize(serializedATN);
@@ -125,7 +145,8 @@ var symbolicNames = [ null, null, null, null, null, null, null, null, null,
 
 var ruleNames =  [ "script", "statement", "statementList", "ifStatement", 
                    "assignStatement", "expressionList", "expression", "term", 
-                   "memberAccessor", "functionCall", "functionLiteral" ];
+                   "listLiteral", "parenthesysExpression", "singleExpression", 
+                   "memberAccessor", "functionCallStatement", "functionLiteral" ];
 
 function ThymeParser (input) {
 	antlr4.Parser.call(this, input);
@@ -191,9 +212,12 @@ ThymeParser.RULE_assignStatement = 4;
 ThymeParser.RULE_expressionList = 5;
 ThymeParser.RULE_expression = 6;
 ThymeParser.RULE_term = 7;
-ThymeParser.RULE_memberAccessor = 8;
-ThymeParser.RULE_functionCall = 9;
-ThymeParser.RULE_functionLiteral = 10;
+ThymeParser.RULE_listLiteral = 8;
+ThymeParser.RULE_parenthesysExpression = 9;
+ThymeParser.RULE_singleExpression = 10;
+ThymeParser.RULE_memberAccessor = 11;
+ThymeParser.RULE_functionCallStatement = 12;
+ThymeParser.RULE_functionLiteral = 13;
 
 
 function ScriptContext(parser, parent, invokingState) {
@@ -259,19 +283,19 @@ ThymeParser.prototype.script = function() {
     var _la = 0; // Token type
     try {
         this.enterOuterAlt(localctx, 1);
-        this.state = 25; 
+        this.state = 31; 
         this._errHandler.sync(this);
         _la = this._input.LA(1);
         do {
-            this.state = 22;
+            this.state = 28;
             this.assignStatement();
-            this.state = 23;
+            this.state = 29;
             this.match(ThymeParser.T__0);
-            this.state = 27; 
+            this.state = 33; 
             this._errHandler.sync(this);
             _la = this._input.LA(1);
-        } while(_la===ThymeParser.IDENTIFIER);
-        this.state = 29;
+        } while((((_la) & ~0x1f) == 0 && ((1 << _la) & ((1 << ThymeParser.T__1) | (1 << ThymeParser.T__4) | (1 << ThymeParser.T__8) | (1 << ThymeParser.T__9) | (1 << ThymeParser.T__24) | (1 << ThymeParser.BOOL_TRUE) | (1 << ThymeParser.BOOL_FALSE) | (1 << ThymeParser.NUMBER_LITERAL) | (1 << ThymeParser.STRING_LITERAL) | (1 << ThymeParser.IDENTIFIER))) !== 0));
+        this.state = 35;
         this.match(ThymeParser.EOF);
     } catch (re) {
     	if(re instanceof antlr4.error.RecognitionException) {
@@ -312,8 +336,12 @@ StatementContext.prototype.ifStatement = function() {
     return this.getTypedRuleContext(IfStatementContext,0);
 };
 
-StatementContext.prototype.functionCall = function() {
-    return this.getTypedRuleContext(FunctionCallContext,0);
+StatementContext.prototype.functionCallStatement = function() {
+    return this.getTypedRuleContext(FunctionCallStatementContext,0);
+};
+
+StatementContext.prototype.expression = function() {
+    return this.getTypedRuleContext(ExpressionContext,0);
 };
 
 StatementContext.prototype.enterRule = function(listener) {
@@ -346,31 +374,39 @@ ThymeParser.prototype.statement = function() {
     var localctx = new StatementContext(this, this._ctx, this.state);
     this.enterRule(localctx, 2, ThymeParser.RULE_statement);
     try {
-        this.state = 40;
+        this.state = 49;
         this._errHandler.sync(this);
         var la_ = this._interp.adaptivePredict(this._input,1,this._ctx);
         switch(la_) {
         case 1:
             this.enterOuterAlt(localctx, 1);
-            this.state = 31;
+            this.state = 37;
             this.assignStatement();
-            this.state = 32;
+            this.state = 38;
             this.match(ThymeParser.T__0);
             break;
 
         case 2:
             this.enterOuterAlt(localctx, 2);
-            this.state = 34;
+            this.state = 40;
             this.ifStatement();
-            this.state = 35;
+            this.state = 41;
             this.match(ThymeParser.T__0);
             break;
 
         case 3:
             this.enterOuterAlt(localctx, 3);
-            this.state = 37;
-            this.functionCall();
-            this.state = 38;
+            this.state = 43;
+            this.functionCallStatement();
+            this.state = 44;
+            this.match(ThymeParser.T__0);
+            break;
+
+        case 4:
+            this.enterOuterAlt(localctx, 4);
+            this.state = 46;
+            this.expression(0);
+            this.state = 47;
             this.match(ThymeParser.T__0);
             break;
 
@@ -449,13 +485,13 @@ ThymeParser.prototype.statementList = function() {
     var _la = 0; // Token type
     try {
         this.enterOuterAlt(localctx, 1);
-        this.state = 45;
+        this.state = 54;
         this._errHandler.sync(this);
         _la = this._input.LA(1);
-        while(_la===ThymeParser.T__1 || _la===ThymeParser.IDENTIFIER) {
-            this.state = 42;
+        while((((_la) & ~0x1f) == 0 && ((1 << _la) & ((1 << ThymeParser.T__1) | (1 << ThymeParser.T__4) | (1 << ThymeParser.T__8) | (1 << ThymeParser.T__9) | (1 << ThymeParser.T__24) | (1 << ThymeParser.BOOL_TRUE) | (1 << ThymeParser.BOOL_FALSE) | (1 << ThymeParser.NUMBER_LITERAL) | (1 << ThymeParser.STRING_LITERAL) | (1 << ThymeParser.IDENTIFIER))) !== 0)) {
+            this.state = 51;
             this.statement();
-            this.state = 47;
+            this.state = 56;
             this._errHandler.sync(this);
             _la = this._input.LA(1);
         }
@@ -536,27 +572,27 @@ ThymeParser.prototype.ifStatement = function() {
     this.enterRule(localctx, 6, ThymeParser.RULE_ifStatement);
     try {
         this.enterOuterAlt(localctx, 1);
-        this.state = 48;
-        this.match(ThymeParser.T__1);
-        this.state = 49;
-        this.expression(0);
-        this.state = 50;
-        this.match(ThymeParser.T__2);
-        this.state = 51;
-        this.match(ThymeParser.T__3);
-        this.state = 52;
-        this.match(ThymeParser.T__4);
-        this.state = 53;
-        this.statementList();
-        this.state = 54;
-        this.match(ThymeParser.T__5);
-        this.state = 55;
-        this.match(ThymeParser.T__6);
-        this.state = 56;
-        this.match(ThymeParser.T__4);
         this.state = 57;
-        this.statementList();
+        this.match(ThymeParser.T__1);
         this.state = 58;
+        this.expression(0);
+        this.state = 59;
+        this.match(ThymeParser.T__2);
+        this.state = 60;
+        this.match(ThymeParser.T__3);
+        this.state = 61;
+        this.match(ThymeParser.T__4);
+        this.state = 62;
+        this.statementList();
+        this.state = 63;
+        this.match(ThymeParser.T__5);
+        this.state = 64;
+        this.match(ThymeParser.T__6);
+        this.state = 65;
+        this.match(ThymeParser.T__4);
+        this.state = 66;
+        this.statementList();
+        this.state = 67;
         this.match(ThymeParser.T__5);
     } catch (re) {
     	if(re instanceof antlr4.error.RecognitionException) {
@@ -589,16 +625,19 @@ function AssignStatementContext(parser, parent, invokingState) {
 AssignStatementContext.prototype = Object.create(antlr4.ParserRuleContext.prototype);
 AssignStatementContext.prototype.constructor = AssignStatementContext;
 
-AssignStatementContext.prototype.memberAccessor = function() {
-    return this.getTypedRuleContext(MemberAccessorContext,0);
+AssignStatementContext.prototype.expression = function(i) {
+    if(i===undefined) {
+        i = null;
+    }
+    if(i===null) {
+        return this.getTypedRuleContexts(ExpressionContext);
+    } else {
+        return this.getTypedRuleContext(ExpressionContext,i);
+    }
 };
 
 AssignStatementContext.prototype.ASSIGN = function() {
     return this.getToken(ThymeParser.ASSIGN, 0);
-};
-
-AssignStatementContext.prototype.expression = function() {
-    return this.getTypedRuleContext(ExpressionContext,0);
 };
 
 AssignStatementContext.prototype.enterRule = function(listener) {
@@ -632,11 +671,11 @@ ThymeParser.prototype.assignStatement = function() {
     this.enterRule(localctx, 8, ThymeParser.RULE_assignStatement);
     try {
         this.enterOuterAlt(localctx, 1);
-        this.state = 60;
-        this.memberAccessor();
-        this.state = 61;
+        this.state = 69;
+        this.expression(0);
+        this.state = 70;
         this.match(ThymeParser.ASSIGN);
-        this.state = 62;
+        this.state = 71;
         this.expression(0);
     } catch (re) {
     	if(re instanceof antlr4.error.RecognitionException) {
@@ -711,10 +750,11 @@ ThymeParser.prototype.expressionList = function() {
     this.enterRule(localctx, 10, ThymeParser.RULE_expressionList);
     var _la = 0; // Token type
     try {
-        this.state = 73;
+        this.state = 82;
         this._errHandler.sync(this);
         switch(this._input.LA(1)) {
         case ThymeParser.T__1:
+        case ThymeParser.T__4:
         case ThymeParser.T__8:
         case ThymeParser.T__9:
         case ThymeParser.T__24:
@@ -724,17 +764,17 @@ ThymeParser.prototype.expressionList = function() {
         case ThymeParser.STRING_LITERAL:
         case ThymeParser.IDENTIFIER:
             this.enterOuterAlt(localctx, 1);
-            this.state = 64;
+            this.state = 73;
             this.expression(0);
-            this.state = 69;
+            this.state = 78;
             this._errHandler.sync(this);
             _la = this._input.LA(1);
             while(_la===ThymeParser.T__7) {
-                this.state = 65;
+                this.state = 74;
                 this.match(ThymeParser.T__7);
-                this.state = 66;
+                this.state = 75;
                 this.expression(0);
-                this.state = 71;
+                this.state = 80;
                 this._errHandler.sync(this);
                 _la = this._input.LA(1);
             }
@@ -989,48 +1029,6 @@ AndExpressionContext.prototype.accept = function(visitor) {
 };
 
 
-function MemberAccessorExpressionContext(parser, ctx) {
-	ExpressionContext.call(this, parser);
-    ExpressionContext.prototype.copyFrom.call(this, ctx);
-    return this;
-}
-
-MemberAccessorExpressionContext.prototype = Object.create(ExpressionContext.prototype);
-MemberAccessorExpressionContext.prototype.constructor = MemberAccessorExpressionContext;
-
-ThymeParser.MemberAccessorExpressionContext = MemberAccessorExpressionContext;
-
-MemberAccessorExpressionContext.prototype.expression = function(i) {
-    if(i===undefined) {
-        i = null;
-    }
-    if(i===null) {
-        return this.getTypedRuleContexts(ExpressionContext);
-    } else {
-        return this.getTypedRuleContext(ExpressionContext,i);
-    }
-};
-MemberAccessorExpressionContext.prototype.enterRule = function(listener) {
-    if(listener instanceof ThymeListener ) {
-        listener.enterMemberAccessorExpression(this);
-	}
-};
-
-MemberAccessorExpressionContext.prototype.exitRule = function(listener) {
-    if(listener instanceof ThymeListener ) {
-        listener.exitMemberAccessorExpression(this);
-	}
-};
-
-MemberAccessorExpressionContext.prototype.accept = function(visitor) {
-    if ( visitor instanceof ThymeVisitor ) {
-        return visitor.visitMemberAccessorExpression(this);
-    } else {
-        return visitor.visitChildren(this);
-    }
-};
-
-
 function NotExpressionContext(parser, ctx) {
 	ExpressionContext.call(this, parser);
     ExpressionContext.prototype.copyFrom.call(this, ctx);
@@ -1243,7 +1241,7 @@ ThymeParser.prototype.expression = function(_p) {
     var _la = 0; // Token type
     try {
         this.enterOuterAlt(localctx, 1);
-        this.state = 81;
+        this.state = 90;
         this._errHandler.sync(this);
         switch(this._input.LA(1)) {
         case ThymeParser.T__8:
@@ -1251,21 +1249,22 @@ ThymeParser.prototype.expression = function(_p) {
             this._ctx = localctx;
             _prevctx = localctx;
 
-            this.state = 76;
+            this.state = 85;
             this.match(ThymeParser.T__8);
-            this.state = 77;
-            this.expression(11);
+            this.state = 86;
+            this.expression(10);
             break;
         case ThymeParser.T__9:
             localctx = new NotExpressionContext(this, localctx);
             this._ctx = localctx;
             _prevctx = localctx;
-            this.state = 78;
+            this.state = 87;
             this.match(ThymeParser.T__9);
-            this.state = 79;
-            this.expression(10);
+            this.state = 88;
+            this.expression(9);
             break;
         case ThymeParser.T__1:
+        case ThymeParser.T__4:
         case ThymeParser.T__24:
         case ThymeParser.BOOL_TRUE:
         case ThymeParser.BOOL_FALSE:
@@ -1275,14 +1274,14 @@ ThymeParser.prototype.expression = function(_p) {
             localctx = new AtomExpressionContext(this, localctx);
             this._ctx = localctx;
             _prevctx = localctx;
-            this.state = 80;
-            this.term();
+            this.state = 89;
+            this.term(0);
             break;
         default:
             throw new antlr4.error.NoViableAltException(this);
         }
         this._ctx.stop = this._input.LT(-1);
-        this.state = 112;
+        this.state = 118;
         this._errHandler.sync(this);
         var _alt = this._interp.adaptivePredict(this._input,7,this._ctx)
         while(_alt!=2 && _alt!=antlr4.atn.ATN.INVALID_ALT_NUMBER) {
@@ -1291,18 +1290,18 @@ ThymeParser.prototype.expression = function(_p) {
                     this.triggerExitRuleEvent();
                 }
                 _prevctx = localctx;
-                this.state = 110;
+                this.state = 116;
                 this._errHandler.sync(this);
                 var la_ = this._interp.adaptivePredict(this._input,6,this._ctx);
                 switch(la_) {
                 case 1:
                     localctx = new MulDivModPowExpressionContext(this, new ExpressionContext(this, _parentctx, _parentState));
                     this.pushNewRecursionContext(localctx, _startState, ThymeParser.RULE_expression);
-                    this.state = 83;
-                    if (!( this.precpred(this._ctx, 9))) {
-                        throw new antlr4.error.FailedPredicateException(this, "this.precpred(this._ctx, 9)");
+                    this.state = 92;
+                    if (!( this.precpred(this._ctx, 8))) {
+                        throw new antlr4.error.FailedPredicateException(this, "this.precpred(this._ctx, 8)");
                     }
-                    this.state = 84;
+                    this.state = 93;
                     localctx.op = this._input.LT(1);
                     _la = this._input.LA(1);
                     if(!((((_la) & ~0x1f) == 0 && ((1 << _la) & ((1 << ThymeParser.T__10) | (1 << ThymeParser.T__11) | (1 << ThymeParser.T__12) | (1 << ThymeParser.T__13))) !== 0))) {
@@ -1312,18 +1311,18 @@ ThymeParser.prototype.expression = function(_p) {
                     	this._errHandler.reportMatch(this);
                         this.consume();
                     }
-                    this.state = 85;
-                    this.expression(10);
+                    this.state = 94;
+                    this.expression(9);
                     break;
 
                 case 2:
                     localctx = new AddSubExpressionContext(this, new ExpressionContext(this, _parentctx, _parentState));
                     this.pushNewRecursionContext(localctx, _startState, ThymeParser.RULE_expression);
-                    this.state = 86;
-                    if (!( this.precpred(this._ctx, 8))) {
-                        throw new antlr4.error.FailedPredicateException(this, "this.precpred(this._ctx, 8)");
+                    this.state = 95;
+                    if (!( this.precpred(this._ctx, 7))) {
+                        throw new antlr4.error.FailedPredicateException(this, "this.precpred(this._ctx, 7)");
                     }
-                    this.state = 87;
+                    this.state = 96;
                     localctx.op = this._input.LT(1);
                     _la = this._input.LA(1);
                     if(!(_la===ThymeParser.T__8 || _la===ThymeParser.T__14)) {
@@ -1333,18 +1332,18 @@ ThymeParser.prototype.expression = function(_p) {
                     	this._errHandler.reportMatch(this);
                         this.consume();
                     }
-                    this.state = 88;
-                    this.expression(9);
+                    this.state = 97;
+                    this.expression(8);
                     break;
 
                 case 3:
                     localctx = new RelationalExpressionContext(this, new ExpressionContext(this, _parentctx, _parentState));
                     this.pushNewRecursionContext(localctx, _startState, ThymeParser.RULE_expression);
-                    this.state = 89;
-                    if (!( this.precpred(this._ctx, 7))) {
-                        throw new antlr4.error.FailedPredicateException(this, "this.precpred(this._ctx, 7)");
+                    this.state = 98;
+                    if (!( this.precpred(this._ctx, 6))) {
+                        throw new antlr4.error.FailedPredicateException(this, "this.precpred(this._ctx, 6)");
                     }
-                    this.state = 90;
+                    this.state = 99;
                     localctx.op = this._input.LT(1);
                     _la = this._input.LA(1);
                     if(!((((_la) & ~0x1f) == 0 && ((1 << _la) & ((1 << ThymeParser.T__15) | (1 << ThymeParser.T__16) | (1 << ThymeParser.T__17) | (1 << ThymeParser.T__18))) !== 0))) {
@@ -1354,18 +1353,18 @@ ThymeParser.prototype.expression = function(_p) {
                     	this._errHandler.reportMatch(this);
                         this.consume();
                     }
-                    this.state = 91;
-                    this.expression(8);
+                    this.state = 100;
+                    this.expression(7);
                     break;
 
                 case 4:
                     localctx = new EqualityExpressionContext(this, new ExpressionContext(this, _parentctx, _parentState));
                     this.pushNewRecursionContext(localctx, _startState, ThymeParser.RULE_expression);
-                    this.state = 92;
-                    if (!( this.precpred(this._ctx, 6))) {
-                        throw new antlr4.error.FailedPredicateException(this, "this.precpred(this._ctx, 6)");
+                    this.state = 101;
+                    if (!( this.precpred(this._ctx, 5))) {
+                        throw new antlr4.error.FailedPredicateException(this, "this.precpred(this._ctx, 5)");
                     }
-                    this.state = 93;
+                    this.state = 102;
                     localctx.op = this._input.LT(1);
                     _la = this._input.LA(1);
                     if(!(_la===ThymeParser.T__19 || _la===ThymeParser.T__20)) {
@@ -1375,69 +1374,56 @@ ThymeParser.prototype.expression = function(_p) {
                     	this._errHandler.reportMatch(this);
                         this.consume();
                     }
-                    this.state = 94;
-                    this.expression(7);
+                    this.state = 103;
+                    this.expression(6);
                     break;
 
                 case 5:
                     localctx = new AndExpressionContext(this, new ExpressionContext(this, _parentctx, _parentState));
                     this.pushNewRecursionContext(localctx, _startState, ThymeParser.RULE_expression);
-                    this.state = 95;
-                    if (!( this.precpred(this._ctx, 5))) {
-                        throw new antlr4.error.FailedPredicateException(this, "this.precpred(this._ctx, 5)");
+                    this.state = 104;
+                    if (!( this.precpred(this._ctx, 4))) {
+                        throw new antlr4.error.FailedPredicateException(this, "this.precpred(this._ctx, 4)");
                     }
-                    this.state = 96;
+                    this.state = 105;
                     this.match(ThymeParser.T__21);
-                    this.state = 97;
-                    this.expression(6);
+                    this.state = 106;
+                    this.expression(5);
                     break;
 
                 case 6:
                     localctx = new OrExpressionContext(this, new ExpressionContext(this, _parentctx, _parentState));
                     this.pushNewRecursionContext(localctx, _startState, ThymeParser.RULE_expression);
-                    this.state = 98;
-                    if (!( this.precpred(this._ctx, 4))) {
-                        throw new antlr4.error.FailedPredicateException(this, "this.precpred(this._ctx, 4)");
+                    this.state = 107;
+                    if (!( this.precpred(this._ctx, 3))) {
+                        throw new antlr4.error.FailedPredicateException(this, "this.precpred(this._ctx, 3)");
                     }
-                    this.state = 99;
+                    this.state = 108;
                     this.match(ThymeParser.T__22);
-                    this.state = 100;
-                    this.expression(5);
+                    this.state = 109;
+                    this.expression(4);
                     break;
 
                 case 7:
                     localctx = new TernaryExpressionContext(this, new ExpressionContext(this, _parentctx, _parentState));
                     this.pushNewRecursionContext(localctx, _startState, ThymeParser.RULE_expression);
-                    this.state = 101;
-                    if (!( this.precpred(this._ctx, 3))) {
-                        throw new antlr4.error.FailedPredicateException(this, "this.precpred(this._ctx, 3)");
-                    }
-                    this.state = 102;
-                    this.match(ThymeParser.T__3);
-                    this.state = 103;
-                    this.expression(0);
-                    this.state = 104;
-                    this.match(ThymeParser.T__6);
-                    this.state = 105;
-                    this.expression(4);
-                    break;
-
-                case 8:
-                    localctx = new MemberAccessorExpressionContext(this, new ExpressionContext(this, _parentctx, _parentState));
-                    this.pushNewRecursionContext(localctx, _startState, ThymeParser.RULE_expression);
-                    this.state = 107;
+                    this.state = 110;
                     if (!( this.precpred(this._ctx, 2))) {
                         throw new antlr4.error.FailedPredicateException(this, "this.precpred(this._ctx, 2)");
                     }
-                    this.state = 108;
-                    this.match(ThymeParser.T__23);
-                    this.state = 109;
+                    this.state = 111;
+                    this.match(ThymeParser.T__3);
+                    this.state = 112;
+                    this.expression(0);
+                    this.state = 113;
+                    this.match(ThymeParser.T__6);
+                    this.state = 114;
                     this.expression(3);
                     break;
 
                 } 
             }
-            this.state = 114;
+            this.state = 120;
             this._errHandler.sync(this);
             _alt = this._interp.adaptivePredict(this._input,7,this._ctx);
         }
@@ -1479,7 +1465,6 @@ TermContext.prototype.copyFrom = function(ctx) {
     antlr4.ParserRuleContext.prototype.copyFrom.call(this, ctx);
 };
 
-
 function MemberAcessorTermContext(parser, ctx) {
 	TermContext.call(this, parser);
     TermContext.prototype.copyFrom.call(this, ctx);
@@ -1491,8 +1476,8 @@ MemberAcessorTermContext.prototype.constructor = MemberAcessorTermContext;
 
 ThymeParser.MemberAcessorTermContext = MemberAcessorTermContext;
 
-MemberAcessorTermContext.prototype.memberAccessor = function() {
-    return this.getTypedRuleContext(MemberAccessorContext,0);
+MemberAcessorTermContext.prototype.IDENTIFIER = function() {
+    return this.getToken(ThymeParser.IDENTIFIER, 0);
 };
 MemberAcessorTermContext.prototype.enterRule = function(listener) {
     if(listener instanceof ThymeListener ) {
@@ -1550,41 +1535,6 @@ BooleanLiteralFalseContext.prototype.accept = function(visitor) {
 };
 
 
-function ListLiteralContext(parser, ctx) {
-	TermContext.call(this, parser);
-    TermContext.prototype.copyFrom.call(this, ctx);
-    return this;
-}
-
-ListLiteralContext.prototype = Object.create(TermContext.prototype);
-ListLiteralContext.prototype.constructor = ListLiteralContext;
-
-ThymeParser.ListLiteralContext = ListLiteralContext;
-
-ListLiteralContext.prototype.expressionList = function() {
-    return this.getTypedRuleContext(ExpressionListContext,0);
-};
-ListLiteralContext.prototype.enterRule = function(listener) {
-    if(listener instanceof ThymeListener ) {
-        listener.enterListLiteral(this);
-	}
-};
-
-ListLiteralContext.prototype.exitRule = function(listener) {
-    if(listener instanceof ThymeListener ) {
-        listener.exitListLiteral(this);
-	}
-};
-
-ListLiteralContext.prototype.accept = function(visitor) {
-    if ( visitor instanceof ThymeVisitor ) {
-        return visitor.visitListLiteral(this);
-    } else {
-        return visitor.visitChildren(this);
-    }
-};
-
-
 function StringLiteralContext(parser, ctx) {
 	TermContext.call(this, parser);
     TermContext.prototype.copyFrom.call(this, ctx);
@@ -1614,6 +1564,76 @@ StringLiteralContext.prototype.exitRule = function(listener) {
 StringLiteralContext.prototype.accept = function(visitor) {
     if ( visitor instanceof ThymeVisitor ) {
         return visitor.visitStringLiteral(this);
+    } else {
+        return visitor.visitChildren(this);
+    }
+};
+
+
+function ListLiteralTermContext(parser, ctx) {
+	TermContext.call(this, parser);
+    TermContext.prototype.copyFrom.call(this, ctx);
+    return this;
+}
+
+ListLiteralTermContext.prototype = Object.create(TermContext.prototype);
+ListLiteralTermContext.prototype.constructor = ListLiteralTermContext;
+
+ThymeParser.ListLiteralTermContext = ListLiteralTermContext;
+
+ListLiteralTermContext.prototype.listLiteral = function() {
+    return this.getTypedRuleContext(ListLiteralContext,0);
+};
+ListLiteralTermContext.prototype.enterRule = function(listener) {
+    if(listener instanceof ThymeListener ) {
+        listener.enterListLiteralTerm(this);
+	}
+};
+
+ListLiteralTermContext.prototype.exitRule = function(listener) {
+    if(listener instanceof ThymeListener ) {
+        listener.exitListLiteralTerm(this);
+	}
+};
+
+ListLiteralTermContext.prototype.accept = function(visitor) {
+    if ( visitor instanceof ThymeVisitor ) {
+        return visitor.visitListLiteralTerm(this);
+    } else {
+        return visitor.visitChildren(this);
+    }
+};
+
+
+function ParenthesysExpressionTermContext(parser, ctx) {
+	TermContext.call(this, parser);
+    TermContext.prototype.copyFrom.call(this, ctx);
+    return this;
+}
+
+ParenthesysExpressionTermContext.prototype = Object.create(TermContext.prototype);
+ParenthesysExpressionTermContext.prototype.constructor = ParenthesysExpressionTermContext;
+
+ThymeParser.ParenthesysExpressionTermContext = ParenthesysExpressionTermContext;
+
+ParenthesysExpressionTermContext.prototype.parenthesysExpression = function() {
+    return this.getTypedRuleContext(ParenthesysExpressionContext,0);
+};
+ParenthesysExpressionTermContext.prototype.enterRule = function(listener) {
+    if(listener instanceof ThymeListener ) {
+        listener.enterParenthesysExpressionTerm(this);
+	}
+};
+
+ParenthesysExpressionTermContext.prototype.exitRule = function(listener) {
+    if(listener instanceof ThymeListener ) {
+        listener.exitParenthesysExpressionTerm(this);
+	}
+};
+
+ParenthesysExpressionTermContext.prototype.accept = function(visitor) {
+    if ( visitor instanceof ThymeVisitor ) {
+        return visitor.visitParenthesysExpressionTerm(this);
     } else {
         return visitor.visitChildren(this);
     }
@@ -1690,6 +1710,48 @@ BooleanLiteralTrueContext.prototype.accept = function(visitor) {
 };
 
 
+function MemberAccessorTermContext(parser, ctx) {
+	TermContext.call(this, parser);
+    TermContext.prototype.copyFrom.call(this, ctx);
+    return this;
+}
+
+MemberAccessorTermContext.prototype = Object.create(TermContext.prototype);
+MemberAccessorTermContext.prototype.constructor = MemberAccessorTermContext;
+
+ThymeParser.MemberAccessorTermContext = MemberAccessorTermContext;
+
+MemberAccessorTermContext.prototype.term = function(i) {
+    if(i===undefined) {
+        i = null;
+    }
+    if(i===null) {
+        return this.getTypedRuleContexts(TermContext);
+    } else {
+        return this.getTypedRuleContext(TermContext,i);
+    }
+};
+MemberAccessorTermContext.prototype.enterRule = function(listener) {
+    if(listener instanceof ThymeListener ) {
+        listener.enterMemberAccessorTerm(this);
+	}
+};
+
+MemberAccessorTermContext.prototype.exitRule = function(listener) {
+    if(listener instanceof ThymeListener ) {
+        listener.exitMemberAccessorTerm(this);
+	}
+};
+
+MemberAccessorTermContext.prototype.accept = function(visitor) {
+    if ( visitor instanceof ThymeVisitor ) {
+        return visitor.visitMemberAccessorTerm(this);
+    } else {
+        return visitor.visitChildren(this);
+    }
+};
+
+
 function FunctionCallTermContext(parser, ctx) {
 	TermContext.call(this, parser);
     TermContext.prototype.copyFrom.call(this, ctx);
@@ -1701,8 +1763,12 @@ FunctionCallTermContext.prototype.constructor = FunctionCallTermContext;
 
 ThymeParser.FunctionCallTermContext = FunctionCallTermContext;
 
-FunctionCallTermContext.prototype.functionCall = function() {
-    return this.getTypedRuleContext(FunctionCallContext,0);
+FunctionCallTermContext.prototype.term = function() {
+    return this.getTypedRuleContext(TermContext,0);
+};
+
+FunctionCallTermContext.prototype.expressionList = function() {
+    return this.getTypedRuleContext(ExpressionListContext,0);
 };
 FunctionCallTermContext.prototype.enterRule = function(listener) {
     if(listener instanceof ThymeListener ) {
@@ -1719,41 +1785,6 @@ FunctionCallTermContext.prototype.exitRule = function(listener) {
 FunctionCallTermContext.prototype.accept = function(visitor) {
     if ( visitor instanceof ThymeVisitor ) {
         return visitor.visitFunctionCallTerm(this);
-    } else {
-        return visitor.visitChildren(this);
-    }
-};
-
-
-function ParenthesysExpressionContext(parser, ctx) {
-	TermContext.call(this, parser);
-    TermContext.prototype.copyFrom.call(this, ctx);
-    return this;
-}
-
-ParenthesysExpressionContext.prototype = Object.create(TermContext.prototype);
-ParenthesysExpressionContext.prototype.constructor = ParenthesysExpressionContext;
-
-ThymeParser.ParenthesysExpressionContext = ParenthesysExpressionContext;
-
-ParenthesysExpressionContext.prototype.expression = function() {
-    return this.getTypedRuleContext(ExpressionContext,0);
-};
-ParenthesysExpressionContext.prototype.enterRule = function(listener) {
-    if(listener instanceof ThymeListener ) {
-        listener.enterParenthesysExpression(this);
-	}
-};
-
-ParenthesysExpressionContext.prototype.exitRule = function(listener) {
-    if(listener instanceof ThymeListener ) {
-        listener.exitParenthesysExpression(this);
-	}
-};
-
-ParenthesysExpressionContext.prototype.accept = function(visitor) {
-    if ( visitor instanceof ThymeVisitor ) {
-        return visitor.visitParenthesysExpression(this);
     } else {
         return visitor.visitChildren(this);
     }
@@ -1831,95 +1862,382 @@ NumberLiteralContext.prototype.accept = function(visitor) {
 
 
 
-ThymeParser.TermContext = TermContext;
-
-ThymeParser.prototype.term = function() {
-
-    var localctx = new TermContext(this, this._ctx, this.state);
-    this.enterRule(localctx, 14, ThymeParser.RULE_term);
+ThymeParser.prototype.term = function(_p) {
+	if(_p===undefined) {
+	    _p = 0;
+	}
+    var _parentctx = this._ctx;
+    var _parentState = this.state;
+    var localctx = new TermContext(this, this._ctx, _parentState);
+    var _prevctx = localctx;
+    var _startState = 14;
+    this.enterRecursionRule(localctx, 14, ThymeParser.RULE_term, _p);
     try {
+        this.enterOuterAlt(localctx, 1);
         this.state = 131;
         this._errHandler.sync(this);
         var la_ = this._interp.adaptivePredict(this._input,8,this._ctx);
         switch(la_) {
         case 1:
-            localctx = new ParenthesysExpressionContext(this, localctx);
-            this.enterOuterAlt(localctx, 1);
-            this.state = 115;
-            this.match(ThymeParser.T__1);
-            this.state = 116;
-            this.expression(0);
-            this.state = 117;
-            this.match(ThymeParser.T__2);
+            localctx = new ParenthesysExpressionTermContext(this, localctx);
+            this._ctx = localctx;
+            _prevctx = localctx;
+
+            this.state = 122;
+            this.parenthesysExpression();
             break;
 
         case 2:
             localctx = new MemberAcessorTermContext(this, localctx);
-            this.enterOuterAlt(localctx, 2);
-            this.state = 119;
-            this.memberAccessor();
+            this._ctx = localctx;
+            _prevctx = localctx;
+            this.state = 123;
+            this.match(ThymeParser.IDENTIFIER);
             break;
 
         case 3:
             localctx = new NumberLiteralContext(this, localctx);
-            this.enterOuterAlt(localctx, 3);
-            this.state = 120;
+            this._ctx = localctx;
+            _prevctx = localctx;
+            this.state = 124;
             this.match(ThymeParser.NUMBER_LITERAL);
             break;
 
         case 4:
             localctx = new StringLiteralContext(this, localctx);
-            this.enterOuterAlt(localctx, 4);
-            this.state = 121;
+            this._ctx = localctx;
+            _prevctx = localctx;
+            this.state = 125;
             this.match(ThymeParser.STRING_LITERAL);
             break;
 
         case 5:
             localctx = new BooleanLiteralTrueContext(this, localctx);
-            this.enterOuterAlt(localctx, 5);
-            this.state = 122;
+            this._ctx = localctx;
+            _prevctx = localctx;
+            this.state = 126;
             this.match(ThymeParser.BOOL_TRUE);
             break;
 
         case 6:
             localctx = new BooleanLiteralFalseContext(this, localctx);
-            this.enterOuterAlt(localctx, 6);
-            this.state = 123;
+            this._ctx = localctx;
+            _prevctx = localctx;
+            this.state = 127;
             this.match(ThymeParser.BOOL_FALSE);
             break;
 
         case 7:
             localctx = new NullLiteralContext(this, localctx);
-            this.enterOuterAlt(localctx, 7);
-            this.state = 124;
+            this._ctx = localctx;
+            _prevctx = localctx;
+            this.state = 128;
             this.match(ThymeParser.BOOL_FALSE);
             break;
 
         case 8:
             localctx = new FunctionLiteralTermContext(this, localctx);
-            this.enterOuterAlt(localctx, 8);
-            this.state = 125;
+            this._ctx = localctx;
+            _prevctx = localctx;
+            this.state = 129;
             this.functionLiteral();
             break;
 
         case 9:
-            localctx = new ListLiteralContext(this, localctx);
-            this.enterOuterAlt(localctx, 9);
-            this.state = 126;
-            this.match(ThymeParser.T__24);
-            this.state = 127;
-            this.expressionList();
-            this.state = 128;
-            this.match(ThymeParser.T__25);
-            break;
-
-        case 10:
-            localctx = new FunctionCallTermContext(this, localctx);
-            this.enterOuterAlt(localctx, 10);
+            localctx = new ListLiteralTermContext(this, localctx);
+            this._ctx = localctx;
+            _prevctx = localctx;
             this.state = 130;
-            this.functionCall();
+            this.listLiteral();
             break;
 
+        }
+        this._ctx.stop = this._input.LT(-1);
+        this.state = 143;
+        this._errHandler.sync(this);
+        var _alt = this._interp.adaptivePredict(this._input,10,this._ctx)
+        while(_alt!=2 && _alt!=antlr4.atn.ATN.INVALID_ALT_NUMBER) {
+            if(_alt===1) {
+                if(this._parseListeners!==null) {
+                    this.triggerExitRuleEvent();
+                }
+                _prevctx = localctx;
+                this.state = 141;
+                this._errHandler.sync(this);
+                var la_ = this._interp.adaptivePredict(this._input,9,this._ctx);
+                switch(la_) {
+                case 1:
+                    localctx = new MemberAccessorTermContext(this, new TermContext(this, _parentctx, _parentState));
+                    this.pushNewRecursionContext(localctx, _startState, ThymeParser.RULE_term);
+                    this.state = 133;
+                    if (!( this.precpred(this._ctx, 10))) {
+                        throw new antlr4.error.FailedPredicateException(this, "this.precpred(this._ctx, 10)");
+                    }
+                    this.state = 134;
+                    this.match(ThymeParser.T__23);
+                    this.state = 135;
+                    this.term(11);
+                    break;
+
+                case 2:
+                    localctx = new FunctionCallTermContext(this, new TermContext(this, _parentctx, _parentState));
+                    this.pushNewRecursionContext(localctx, _startState, ThymeParser.RULE_term);
+                    this.state = 136;
+                    if (!( this.precpred(this._ctx, 1))) {
+                        throw new antlr4.error.FailedPredicateException(this, "this.precpred(this._ctx, 1)");
+                    }
+                    this.state = 137;
+                    this.match(ThymeParser.T__1);
+                    this.state = 138;
+                    this.expressionList();
+                    this.state = 139;
+                    this.match(ThymeParser.T__2);
+                    break;
+
+                } 
+            }
+            this.state = 145;
+            this._errHandler.sync(this);
+            _alt = this._interp.adaptivePredict(this._input,10,this._ctx);
+        }
+
+    } catch( error) {
+        if(error instanceof antlr4.error.RecognitionException) {
+	        localctx.exception = error;
+	        this._errHandler.reportError(this, error);
+	        this._errHandler.recover(this, error);
+	    } else {
+	    	throw error;
+	    }
+    } finally {
+        this.unrollRecursionContexts(_parentctx)
+    }
+    return localctx;
+};
+
+
+function ListLiteralContext(parser, parent, invokingState) {
+	if(parent===undefined) {
+	    parent = null;
+	}
+	if(invokingState===undefined || invokingState===null) {
+		invokingState = -1;
+	}
+	antlr4.ParserRuleContext.call(this, parent, invokingState);
+    this.parser = parser;
+    this.ruleIndex = ThymeParser.RULE_listLiteral;
+    return this;
+}
+
+ListLiteralContext.prototype = Object.create(antlr4.ParserRuleContext.prototype);
+ListLiteralContext.prototype.constructor = ListLiteralContext;
+
+ListLiteralContext.prototype.expressionList = function() {
+    return this.getTypedRuleContext(ExpressionListContext,0);
+};
+
+ListLiteralContext.prototype.enterRule = function(listener) {
+    if(listener instanceof ThymeListener ) {
+        listener.enterListLiteral(this);
+	}
+};
+
+ListLiteralContext.prototype.exitRule = function(listener) {
+    if(listener instanceof ThymeListener ) {
+        listener.exitListLiteral(this);
+	}
+};
+
+ListLiteralContext.prototype.accept = function(visitor) {
+    if ( visitor instanceof ThymeVisitor ) {
+        return visitor.visitListLiteral(this);
+    } else {
+        return visitor.visitChildren(this);
+    }
+};
+
+
+
+
+ThymeParser.ListLiteralContext = ListLiteralContext;
+
+ThymeParser.prototype.listLiteral = function() {
+
+    var localctx = new ListLiteralContext(this, this._ctx, this.state);
+    this.enterRule(localctx, 16, ThymeParser.RULE_listLiteral);
+    try {
+        this.enterOuterAlt(localctx, 1);
+        this.state = 146;
+        this.match(ThymeParser.T__24);
+        this.state = 147;
+        this.expressionList();
+        this.state = 148;
+        this.match(ThymeParser.T__25);
+    } catch (re) {
+    	if(re instanceof antlr4.error.RecognitionException) {
+	        localctx.exception = re;
+	        this._errHandler.reportError(this, re);
+	        this._errHandler.recover(this, re);
+	    } else {
+	    	throw re;
+	    }
+    } finally {
+        this.exitRule();
+    }
+    return localctx;
+};
+
+
+function ParenthesysExpressionContext(parser, parent, invokingState) {
+	if(parent===undefined) {
+	    parent = null;
+	}
+	if(invokingState===undefined || invokingState===null) {
+		invokingState = -1;
+	}
+	antlr4.ParserRuleContext.call(this, parent, invokingState);
+    this.parser = parser;
+    this.ruleIndex = ThymeParser.RULE_parenthesysExpression;
+    return this;
+}
+
+ParenthesysExpressionContext.prototype = Object.create(antlr4.ParserRuleContext.prototype);
+ParenthesysExpressionContext.prototype.constructor = ParenthesysExpressionContext;
+
+ParenthesysExpressionContext.prototype.expression = function() {
+    return this.getTypedRuleContext(ExpressionContext,0);
+};
+
+ParenthesysExpressionContext.prototype.enterRule = function(listener) {
+    if(listener instanceof ThymeListener ) {
+        listener.enterParenthesysExpression(this);
+	}
+};
+
+ParenthesysExpressionContext.prototype.exitRule = function(listener) {
+    if(listener instanceof ThymeListener ) {
+        listener.exitParenthesysExpression(this);
+	}
+};
+
+ParenthesysExpressionContext.prototype.accept = function(visitor) {
+    if ( visitor instanceof ThymeVisitor ) {
+        return visitor.visitParenthesysExpression(this);
+    } else {
+        return visitor.visitChildren(this);
+    }
+};
+
+
+
+
+ThymeParser.ParenthesysExpressionContext = ParenthesysExpressionContext;
+
+ThymeParser.prototype.parenthesysExpression = function() {
+
+    var localctx = new ParenthesysExpressionContext(this, this._ctx, this.state);
+    this.enterRule(localctx, 18, ThymeParser.RULE_parenthesysExpression);
+    try {
+        this.enterOuterAlt(localctx, 1);
+        this.state = 150;
+        this.match(ThymeParser.T__1);
+        this.state = 151;
+        this.expression(0);
+        this.state = 152;
+        this.match(ThymeParser.T__2);
+    } catch (re) {
+    	if(re instanceof antlr4.error.RecognitionException) {
+	        localctx.exception = re;
+	        this._errHandler.reportError(this, re);
+	        this._errHandler.recover(this, re);
+	    } else {
+	    	throw re;
+	    }
+    } finally {
+        this.exitRule();
+    }
+    return localctx;
+};
+
+
+function SingleExpressionContext(parser, parent, invokingState) {
+	if(parent===undefined) {
+	    parent = null;
+	}
+	if(invokingState===undefined || invokingState===null) {
+		invokingState = -1;
+	}
+	antlr4.ParserRuleContext.call(this, parent, invokingState);
+    this.parser = parser;
+    this.ruleIndex = ThymeParser.RULE_singleExpression;
+    return this;
+}
+
+SingleExpressionContext.prototype = Object.create(antlr4.ParserRuleContext.prototype);
+SingleExpressionContext.prototype.constructor = SingleExpressionContext;
+
+SingleExpressionContext.prototype.memberAccessor = function() {
+    return this.getTypedRuleContext(MemberAccessorContext,0);
+};
+
+SingleExpressionContext.prototype.parenthesysExpression = function() {
+    return this.getTypedRuleContext(ParenthesysExpressionContext,0);
+};
+
+SingleExpressionContext.prototype.listLiteral = function() {
+    return this.getTypedRuleContext(ListLiteralContext,0);
+};
+
+SingleExpressionContext.prototype.enterRule = function(listener) {
+    if(listener instanceof ThymeListener ) {
+        listener.enterSingleExpression(this);
+	}
+};
+
+SingleExpressionContext.prototype.exitRule = function(listener) {
+    if(listener instanceof ThymeListener ) {
+        listener.exitSingleExpression(this);
+	}
+};
+
+SingleExpressionContext.prototype.accept = function(visitor) {
+    if ( visitor instanceof ThymeVisitor ) {
+        return visitor.visitSingleExpression(this);
+    } else {
+        return visitor.visitChildren(this);
+    }
+};
+
+
+
+
+ThymeParser.SingleExpressionContext = SingleExpressionContext;
+
+ThymeParser.prototype.singleExpression = function() {
+
+    var localctx = new SingleExpressionContext(this, this._ctx, this.state);
+    this.enterRule(localctx, 20, ThymeParser.RULE_singleExpression);
+    try {
+        this.state = 157;
+        this._errHandler.sync(this);
+        switch(this._input.LA(1)) {
+        case ThymeParser.IDENTIFIER:
+            this.enterOuterAlt(localctx, 1);
+            this.state = 154;
+            this.memberAccessor();
+            break;
+        case ThymeParser.T__1:
+            this.enterOuterAlt(localctx, 2);
+            this.state = 155;
+            this.parenthesysExpression();
+            break;
+        case ThymeParser.T__24:
+            this.enterOuterAlt(localctx, 3);
+            this.state = 156;
+            this.listLiteral();
+            break;
+        default:
+            throw new antlr4.error.NoViableAltException(this);
         }
     } catch (re) {
     	if(re instanceof antlr4.error.RecognitionException) {
@@ -1952,17 +2270,20 @@ function MemberAccessorContext(parser, parent, invokingState) {
 MemberAccessorContext.prototype = Object.create(antlr4.ParserRuleContext.prototype);
 MemberAccessorContext.prototype.constructor = MemberAccessorContext;
 
-MemberAccessorContext.prototype.IDENTIFIER = function(i) {
-	if(i===undefined) {
-		i = null;
-	}
-    if(i===null) {
-        return this.getTokens(ThymeParser.IDENTIFIER);
-    } else {
-        return this.getToken(ThymeParser.IDENTIFIER, i);
-    }
+MemberAccessorContext.prototype.IDENTIFIER = function() {
+    return this.getToken(ThymeParser.IDENTIFIER, 0);
 };
 
+MemberAccessorContext.prototype.memberAccessor = function(i) {
+    if(i===undefined) {
+        i = null;
+    }
+    if(i===null) {
+        return this.getTypedRuleContexts(MemberAccessorContext);
+    } else {
+        return this.getTypedRuleContext(MemberAccessorContext,i);
+    }
+};
 
 MemberAccessorContext.prototype.enterRule = function(listener) {
     if(listener instanceof ThymeListener ) {
@@ -1992,39 +2313,39 @@ ThymeParser.MemberAccessorContext = MemberAccessorContext;
 ThymeParser.prototype.memberAccessor = function() {
 
     var localctx = new MemberAccessorContext(this, this._ctx, this.state);
-    this.enterRule(localctx, 16, ThymeParser.RULE_memberAccessor);
+    this.enterRule(localctx, 22, ThymeParser.RULE_memberAccessor);
     try {
-        this.state = 141;
+        this.state = 167;
         this._errHandler.sync(this);
-        var la_ = this._interp.adaptivePredict(this._input,10,this._ctx);
+        var la_ = this._interp.adaptivePredict(this._input,13,this._ctx);
         switch(la_) {
         case 1:
             this.enterOuterAlt(localctx, 1);
-            this.state = 133;
+            this.state = 159;
             this.match(ThymeParser.IDENTIFIER);
             break;
 
         case 2:
             this.enterOuterAlt(localctx, 2);
-            this.state = 134;
+            this.state = 160;
             this.match(ThymeParser.IDENTIFIER);
-            this.state = 137; 
+            this.state = 163; 
             this._errHandler.sync(this);
             var _alt = 1;
             do {
             	switch (_alt) {
             	case 1:
-            		this.state = 135;
+            		this.state = 161;
             		this.match(ThymeParser.T__23);
-            		this.state = 136;
-            		this.match(ThymeParser.IDENTIFIER);
+            		this.state = 162;
+            		this.memberAccessor();
             		break;
             	default:
             		throw new antlr4.error.NoViableAltException(this);
             	}
-            	this.state = 139; 
+            	this.state = 165; 
             	this._errHandler.sync(this);
-            	_alt = this._interp.adaptivePredict(this._input,9, this._ctx);
+            	_alt = this._interp.adaptivePredict(this._input,12, this._ctx);
             } while ( _alt!=2 && _alt!=antlr4.atn.ATN.INVALID_ALT_NUMBER );
             break;
 
@@ -2044,7 +2365,7 @@ ThymeParser.prototype.memberAccessor = function() {
 };
 
 
-function FunctionCallContext(parser, parent, invokingState) {
+function FunctionCallStatementContext(parser, parent, invokingState) {
 	if(parent===undefined) {
 	    parent = null;
 	}
@@ -2053,36 +2374,36 @@ function FunctionCallContext(parser, parent, invokingState) {
 	}
 	antlr4.ParserRuleContext.call(this, parent, invokingState);
     this.parser = parser;
-    this.ruleIndex = ThymeParser.RULE_functionCall;
+    this.ruleIndex = ThymeParser.RULE_functionCallStatement;
     return this;
 }
 
-FunctionCallContext.prototype = Object.create(antlr4.ParserRuleContext.prototype);
-FunctionCallContext.prototype.constructor = FunctionCallContext;
+FunctionCallStatementContext.prototype = Object.create(antlr4.ParserRuleContext.prototype);
+FunctionCallStatementContext.prototype.constructor = FunctionCallStatementContext;
 
-FunctionCallContext.prototype.IDENTIFIER = function() {
-    return this.getToken(ThymeParser.IDENTIFIER, 0);
+FunctionCallStatementContext.prototype.term = function() {
+    return this.getTypedRuleContext(TermContext,0);
 };
 
-FunctionCallContext.prototype.expressionList = function() {
+FunctionCallStatementContext.prototype.expressionList = function() {
     return this.getTypedRuleContext(ExpressionListContext,0);
 };
 
-FunctionCallContext.prototype.enterRule = function(listener) {
+FunctionCallStatementContext.prototype.enterRule = function(listener) {
     if(listener instanceof ThymeListener ) {
-        listener.enterFunctionCall(this);
+        listener.enterFunctionCallStatement(this);
 	}
 };
 
-FunctionCallContext.prototype.exitRule = function(listener) {
+FunctionCallStatementContext.prototype.exitRule = function(listener) {
     if(listener instanceof ThymeListener ) {
-        listener.exitFunctionCall(this);
+        listener.exitFunctionCallStatement(this);
 	}
 };
 
-FunctionCallContext.prototype.accept = function(visitor) {
+FunctionCallStatementContext.prototype.accept = function(visitor) {
     if ( visitor instanceof ThymeVisitor ) {
-        return visitor.visitFunctionCall(this);
+        return visitor.visitFunctionCallStatement(this);
     } else {
         return visitor.visitChildren(this);
     }
@@ -2091,21 +2412,21 @@ FunctionCallContext.prototype.accept = function(visitor) {
 
 
 
-ThymeParser.FunctionCallContext = FunctionCallContext;
+ThymeParser.FunctionCallStatementContext = FunctionCallStatementContext;
 
-ThymeParser.prototype.functionCall = function() {
+ThymeParser.prototype.functionCallStatement = function() {
 
-    var localctx = new FunctionCallContext(this, this._ctx, this.state);
-    this.enterRule(localctx, 18, ThymeParser.RULE_functionCall);
+    var localctx = new FunctionCallStatementContext(this, this._ctx, this.state);
+    this.enterRule(localctx, 24, ThymeParser.RULE_functionCallStatement);
     try {
         this.enterOuterAlt(localctx, 1);
-        this.state = 143;
-        this.match(ThymeParser.IDENTIFIER);
-        this.state = 144;
+        this.state = 169;
+        this.term(0);
+        this.state = 170;
         this.match(ThymeParser.T__1);
-        this.state = 145;
+        this.state = 171;
         this.expressionList();
-        this.state = 146;
+        this.state = 172;
         this.match(ThymeParser.T__2);
     } catch (re) {
     	if(re instanceof antlr4.error.RecognitionException) {
@@ -2138,16 +2459,16 @@ function FunctionLiteralContext(parser, parent, invokingState) {
 FunctionLiteralContext.prototype = Object.create(antlr4.ParserRuleContext.prototype);
 FunctionLiteralContext.prototype.constructor = FunctionLiteralContext;
 
+FunctionLiteralContext.prototype.statementList = function() {
+    return this.getTypedRuleContext(StatementListContext,0);
+};
+
 FunctionLiteralContext.prototype.expressionList = function() {
     return this.getTypedRuleContext(ExpressionListContext,0);
 };
 
 FunctionLiteralContext.prototype.ARROW = function() {
     return this.getToken(ThymeParser.ARROW, 0);
-};
-
-FunctionLiteralContext.prototype.statementList = function() {
-    return this.getTypedRuleContext(StatementListContext,0);
 };
 
 FunctionLiteralContext.prototype.enterRule = function(listener) {
@@ -2178,22 +2499,29 @@ ThymeParser.FunctionLiteralContext = FunctionLiteralContext;
 ThymeParser.prototype.functionLiteral = function() {
 
     var localctx = new FunctionLiteralContext(this, this._ctx, this.state);
-    this.enterRule(localctx, 20, ThymeParser.RULE_functionLiteral);
+    this.enterRule(localctx, 26, ThymeParser.RULE_functionLiteral);
+    var _la = 0; // Token type
     try {
         this.enterOuterAlt(localctx, 1);
-        this.state = 148;
-        this.match(ThymeParser.T__1);
-        this.state = 149;
-        this.expressionList();
-        this.state = 150;
-        this.match(ThymeParser.T__2);
-        this.state = 151;
-        this.match(ThymeParser.ARROW);
-        this.state = 152;
+        this.state = 179;
+        this._errHandler.sync(this);
+        _la = this._input.LA(1);
+        if(_la===ThymeParser.T__1) {
+            this.state = 174;
+            this.match(ThymeParser.T__1);
+            this.state = 175;
+            this.expressionList();
+            this.state = 176;
+            this.match(ThymeParser.T__2);
+            this.state = 177;
+            this.match(ThymeParser.ARROW);
+        }
+
+        this.state = 181;
         this.match(ThymeParser.T__4);
-        this.state = 153;
+        this.state = 182;
         this.statementList();
-        this.state = 154;
+        this.state = 183;
         this.match(ThymeParser.T__5);
     } catch (re) {
     	if(re instanceof antlr4.error.RecognitionException) {
@@ -2214,6 +2542,8 @@ ThymeParser.prototype.sempred = function(localctx, ruleIndex, predIndex) {
 	switch(ruleIndex) {
 	case 6:
 			return this.expression_sempred(localctx, predIndex);
+	case 7:
+			return this.term_sempred(localctx, predIndex);
     default:
         throw "No predicate with index:" + ruleIndex;
    }
@@ -2222,21 +2552,30 @@ ThymeParser.prototype.sempred = function(localctx, ruleIndex, predIndex) {
 ThymeParser.prototype.expression_sempred = function(localctx, predIndex) {
 	switch(predIndex) {
 		case 0:
-			return this.precpred(this._ctx, 9);
-		case 1:
 			return this.precpred(this._ctx, 8);
-		case 2:
+		case 1:
 			return this.precpred(this._ctx, 7);
-		case 3:
+		case 2:
 			return this.precpred(this._ctx, 6);
-		case 4:
+		case 3:
 			return this.precpred(this._ctx, 5);
-		case 5:
+		case 4:
 			return this.precpred(this._ctx, 4);
-		case 6:
+		case 5:
 			return this.precpred(this._ctx, 3);
-		case 7:
+		case 6:
 			return this.precpred(this._ctx, 2);
+		default:
+			throw "No predicate with index:" + predIndex;
+	}
+};
+
+ThymeParser.prototype.term_sempred = function(localctx, predIndex) {
+	switch(predIndex) {
+		case 7:
+			return this.precpred(this._ctx, 10);
+		case 8:
+			return this.precpred(this._ctx, 1);
 		default:
 			throw "No predicate with index:" + predIndex;
 	}

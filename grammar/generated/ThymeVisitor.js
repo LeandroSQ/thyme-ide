@@ -78,12 +78,6 @@ ThymeVisitor.prototype.visitAndExpression = function(ctx) {
 };
 
 
-// Visit a parse tree produced by ThymeParser#MemberAccessorExpression.
-ThymeVisitor.prototype.visitMemberAccessorExpression = function(ctx) {
-  return this.visitChildren(ctx);
-};
-
-
 // Visit a parse tree produced by ThymeParser#NotExpression.
 ThymeVisitor.prototype.visitNotExpression = function(ctx) {
   return this.visitChildren(ctx);
@@ -114,32 +108,8 @@ ThymeVisitor.prototype.visitMulDivModPowExpression = function(ctx) {
 };
 
 
-// Visit a parse tree produced by ThymeParser#ParenthesysExpression.
-ThymeVisitor.prototype.visitParenthesysExpression = function(ctx) {
-  return this.visitChildren(ctx);
-};
-
-
 // Visit a parse tree produced by ThymeParser#MemberAcessorTerm.
 ThymeVisitor.prototype.visitMemberAcessorTerm = function(ctx) {
-  return this.visitChildren(ctx);
-};
-
-
-// Visit a parse tree produced by ThymeParser#NumberLiteral.
-ThymeVisitor.prototype.visitNumberLiteral = function(ctx) {
-  return this.visitChildren(ctx);
-};
-
-
-// Visit a parse tree produced by ThymeParser#StringLiteral.
-ThymeVisitor.prototype.visitStringLiteral = function(ctx) {
-  return this.visitChildren(ctx);
-};
-
-
-// Visit a parse tree produced by ThymeParser#BooleanLiteralTrue.
-ThymeVisitor.prototype.visitBooleanLiteralTrue = function(ctx) {
   return this.visitChildren(ctx);
 };
 
@@ -150,8 +120,20 @@ ThymeVisitor.prototype.visitBooleanLiteralFalse = function(ctx) {
 };
 
 
-// Visit a parse tree produced by ThymeParser#NullLiteral.
-ThymeVisitor.prototype.visitNullLiteral = function(ctx) {
+// Visit a parse tree produced by ThymeParser#StringLiteral.
+ThymeVisitor.prototype.visitStringLiteral = function(ctx) {
+  return this.visitChildren(ctx);
+};
+
+
+// Visit a parse tree produced by ThymeParser#ListLiteralTerm.
+ThymeVisitor.prototype.visitListLiteralTerm = function(ctx) {
+  return this.visitChildren(ctx);
+};
+
+
+// Visit a parse tree produced by ThymeParser#ParenthesysExpressionTerm.
+ThymeVisitor.prototype.visitParenthesysExpressionTerm = function(ctx) {
   return this.visitChildren(ctx);
 };
 
@@ -162,8 +144,14 @@ ThymeVisitor.prototype.visitFunctionLiteralTerm = function(ctx) {
 };
 
 
-// Visit a parse tree produced by ThymeParser#ListLiteral.
-ThymeVisitor.prototype.visitListLiteral = function(ctx) {
+// Visit a parse tree produced by ThymeParser#BooleanLiteralTrue.
+ThymeVisitor.prototype.visitBooleanLiteralTrue = function(ctx) {
+  return this.visitChildren(ctx);
+};
+
+
+// Visit a parse tree produced by ThymeParser#MemberAccessorTerm.
+ThymeVisitor.prototype.visitMemberAccessorTerm = function(ctx) {
   return this.visitChildren(ctx);
 };
 
@@ -174,14 +162,44 @@ ThymeVisitor.prototype.visitFunctionCallTerm = function(ctx) {
 };
 
 
+// Visit a parse tree produced by ThymeParser#NullLiteral.
+ThymeVisitor.prototype.visitNullLiteral = function(ctx) {
+  return this.visitChildren(ctx);
+};
+
+
+// Visit a parse tree produced by ThymeParser#NumberLiteral.
+ThymeVisitor.prototype.visitNumberLiteral = function(ctx) {
+  return this.visitChildren(ctx);
+};
+
+
+// Visit a parse tree produced by ThymeParser#listLiteral.
+ThymeVisitor.prototype.visitListLiteral = function(ctx) {
+  return this.visitChildren(ctx);
+};
+
+
+// Visit a parse tree produced by ThymeParser#parenthesysExpression.
+ThymeVisitor.prototype.visitParenthesysExpression = function(ctx) {
+  return this.visitChildren(ctx);
+};
+
+
+// Visit a parse tree produced by ThymeParser#singleExpression.
+ThymeVisitor.prototype.visitSingleExpression = function(ctx) {
+  return this.visitChildren(ctx);
+};
+
+
 // Visit a parse tree produced by ThymeParser#memberAccessor.
 ThymeVisitor.prototype.visitMemberAccessor = function(ctx) {
   return this.visitChildren(ctx);
 };
 
 
-// Visit a parse tree produced by ThymeParser#functionCall.
-ThymeVisitor.prototype.visitFunctionCall = function(ctx) {
+// Visit a parse tree produced by ThymeParser#functionCallStatement.
+ThymeVisitor.prototype.visitFunctionCallStatement = function(ctx) {
   return this.visitChildren(ctx);
 };
 

@@ -110,15 +110,6 @@ ThymeListener.prototype.exitAndExpression = function(ctx) {
 };
 
 
-// Enter a parse tree produced by ThymeParser#MemberAccessorExpression.
-ThymeListener.prototype.enterMemberAccessorExpression = function(ctx) {
-};
-
-// Exit a parse tree produced by ThymeParser#MemberAccessorExpression.
-ThymeListener.prototype.exitMemberAccessorExpression = function(ctx) {
-};
-
-
 // Enter a parse tree produced by ThymeParser#NotExpression.
 ThymeListener.prototype.enterNotExpression = function(ctx) {
 };
@@ -164,48 +155,12 @@ ThymeListener.prototype.exitMulDivModPowExpression = function(ctx) {
 };
 
 
-// Enter a parse tree produced by ThymeParser#ParenthesysExpression.
-ThymeListener.prototype.enterParenthesysExpression = function(ctx) {
-};
-
-// Exit a parse tree produced by ThymeParser#ParenthesysExpression.
-ThymeListener.prototype.exitParenthesysExpression = function(ctx) {
-};
-
-
 // Enter a parse tree produced by ThymeParser#MemberAcessorTerm.
 ThymeListener.prototype.enterMemberAcessorTerm = function(ctx) {
 };
 
 // Exit a parse tree produced by ThymeParser#MemberAcessorTerm.
 ThymeListener.prototype.exitMemberAcessorTerm = function(ctx) {
-};
-
-
-// Enter a parse tree produced by ThymeParser#NumberLiteral.
-ThymeListener.prototype.enterNumberLiteral = function(ctx) {
-};
-
-// Exit a parse tree produced by ThymeParser#NumberLiteral.
-ThymeListener.prototype.exitNumberLiteral = function(ctx) {
-};
-
-
-// Enter a parse tree produced by ThymeParser#StringLiteral.
-ThymeListener.prototype.enterStringLiteral = function(ctx) {
-};
-
-// Exit a parse tree produced by ThymeParser#StringLiteral.
-ThymeListener.prototype.exitStringLiteral = function(ctx) {
-};
-
-
-// Enter a parse tree produced by ThymeParser#BooleanLiteralTrue.
-ThymeListener.prototype.enterBooleanLiteralTrue = function(ctx) {
-};
-
-// Exit a parse tree produced by ThymeParser#BooleanLiteralTrue.
-ThymeListener.prototype.exitBooleanLiteralTrue = function(ctx) {
 };
 
 
@@ -218,12 +173,30 @@ ThymeListener.prototype.exitBooleanLiteralFalse = function(ctx) {
 };
 
 
-// Enter a parse tree produced by ThymeParser#NullLiteral.
-ThymeListener.prototype.enterNullLiteral = function(ctx) {
+// Enter a parse tree produced by ThymeParser#StringLiteral.
+ThymeListener.prototype.enterStringLiteral = function(ctx) {
 };
 
-// Exit a parse tree produced by ThymeParser#NullLiteral.
-ThymeListener.prototype.exitNullLiteral = function(ctx) {
+// Exit a parse tree produced by ThymeParser#StringLiteral.
+ThymeListener.prototype.exitStringLiteral = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ThymeParser#ListLiteralTerm.
+ThymeListener.prototype.enterListLiteralTerm = function(ctx) {
+};
+
+// Exit a parse tree produced by ThymeParser#ListLiteralTerm.
+ThymeListener.prototype.exitListLiteralTerm = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ThymeParser#ParenthesysExpressionTerm.
+ThymeListener.prototype.enterParenthesysExpressionTerm = function(ctx) {
+};
+
+// Exit a parse tree produced by ThymeParser#ParenthesysExpressionTerm.
+ThymeListener.prototype.exitParenthesysExpressionTerm = function(ctx) {
 };
 
 
@@ -236,12 +209,21 @@ ThymeListener.prototype.exitFunctionLiteralTerm = function(ctx) {
 };
 
 
-// Enter a parse tree produced by ThymeParser#ListLiteral.
-ThymeListener.prototype.enterListLiteral = function(ctx) {
+// Enter a parse tree produced by ThymeParser#BooleanLiteralTrue.
+ThymeListener.prototype.enterBooleanLiteralTrue = function(ctx) {
 };
 
-// Exit a parse tree produced by ThymeParser#ListLiteral.
-ThymeListener.prototype.exitListLiteral = function(ctx) {
+// Exit a parse tree produced by ThymeParser#BooleanLiteralTrue.
+ThymeListener.prototype.exitBooleanLiteralTrue = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ThymeParser#MemberAccessorTerm.
+ThymeListener.prototype.enterMemberAccessorTerm = function(ctx) {
+};
+
+// Exit a parse tree produced by ThymeParser#MemberAccessorTerm.
+ThymeListener.prototype.exitMemberAccessorTerm = function(ctx) {
 };
 
 
@@ -254,6 +236,51 @@ ThymeListener.prototype.exitFunctionCallTerm = function(ctx) {
 };
 
 
+// Enter a parse tree produced by ThymeParser#NullLiteral.
+ThymeListener.prototype.enterNullLiteral = function(ctx) {
+};
+
+// Exit a parse tree produced by ThymeParser#NullLiteral.
+ThymeListener.prototype.exitNullLiteral = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ThymeParser#NumberLiteral.
+ThymeListener.prototype.enterNumberLiteral = function(ctx) {
+};
+
+// Exit a parse tree produced by ThymeParser#NumberLiteral.
+ThymeListener.prototype.exitNumberLiteral = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ThymeParser#listLiteral.
+ThymeListener.prototype.enterListLiteral = function(ctx) {
+};
+
+// Exit a parse tree produced by ThymeParser#listLiteral.
+ThymeListener.prototype.exitListLiteral = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ThymeParser#parenthesysExpression.
+ThymeListener.prototype.enterParenthesysExpression = function(ctx) {
+};
+
+// Exit a parse tree produced by ThymeParser#parenthesysExpression.
+ThymeListener.prototype.exitParenthesysExpression = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ThymeParser#singleExpression.
+ThymeListener.prototype.enterSingleExpression = function(ctx) {
+};
+
+// Exit a parse tree produced by ThymeParser#singleExpression.
+ThymeListener.prototype.exitSingleExpression = function(ctx) {
+};
+
+
 // Enter a parse tree produced by ThymeParser#memberAccessor.
 ThymeListener.prototype.enterMemberAccessor = function(ctx) {
 };
@@ -263,12 +290,12 @@ ThymeListener.prototype.exitMemberAccessor = function(ctx) {
 };
 
 
-// Enter a parse tree produced by ThymeParser#functionCall.
-ThymeListener.prototype.enterFunctionCall = function(ctx) {
+// Enter a parse tree produced by ThymeParser#functionCallStatement.
+ThymeListener.prototype.enterFunctionCallStatement = function(ctx) {
 };
 
-// Exit a parse tree produced by ThymeParser#functionCall.
-ThymeListener.prototype.exitFunctionCall = function(ctx) {
+// Exit a parse tree produced by ThymeParser#functionCallStatement.
+ThymeListener.prototype.exitFunctionCallStatement = function(ctx) {
 };
 
 

@@ -1,4 +1,4 @@
-// Generated from d:\Projects\Javascript\Thyme\src\grammar\Thyme.g4 by ANTLR 4.7.1
+// Generated from d:\Projects\Javascript\Thyme\grammar\Thyme.g4 by ANTLR 4.7.1
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.*;
@@ -25,11 +25,12 @@ public class ThymeParser extends Parser {
 	public static final int
 		RULE_script = 0, RULE_statement = 1, RULE_statementList = 2, RULE_ifStatement = 3, 
 		RULE_assignStatement = 4, RULE_expressionList = 5, RULE_expression = 6, 
-		RULE_term = 7, RULE_memberAccessor = 8, RULE_functionCall = 9, RULE_functionLiteral = 10;
+		RULE_term = 7, RULE_listLiteral = 8, RULE_parenthesysExpression = 9, RULE_singleExpression = 10, 
+		RULE_memberAccessor = 11, RULE_functionCallStatement = 12, RULE_functionLiteral = 13;
 	public static final String[] ruleNames = {
 		"script", "statement", "statementList", "ifStatement", "assignStatement", 
-		"expressionList", "expression", "term", "memberAccessor", "functionCall", 
-		"functionLiteral"
+		"expressionList", "expression", "term", "listLiteral", "parenthesysExpression", 
+		"singleExpression", "memberAccessor", "functionCallStatement", "functionLiteral"
 	};
 
 	private static final String[] _LITERAL_NAMES = {
@@ -114,23 +115,23 @@ public class ThymeParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(25); 
+			setState(31); 
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			do {
 				{
 				{
-				setState(22);
+				setState(28);
 				assignStatement();
-				setState(23);
+				setState(29);
 				match(T__0);
 				}
 				}
-				setState(27); 
+				setState(33); 
 				_errHandler.sync(this);
 				_la = _input.LA(1);
-			} while ( _la==IDENTIFIER );
-			setState(29);
+			} while ( (((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__1) | (1L << T__4) | (1L << T__8) | (1L << T__9) | (1L << T__24) | (1L << BOOL_TRUE) | (1L << BOOL_FALSE) | (1L << NUMBER_LITERAL) | (1L << STRING_LITERAL) | (1L << IDENTIFIER))) != 0) );
+			setState(35);
 			match(EOF);
 			}
 		}
@@ -152,8 +153,11 @@ public class ThymeParser extends Parser {
 		public IfStatementContext ifStatement() {
 			return getRuleContext(IfStatementContext.class,0);
 		}
-		public FunctionCallContext functionCall() {
-			return getRuleContext(FunctionCallContext.class,0);
+		public FunctionCallStatementContext functionCallStatement() {
+			return getRuleContext(FunctionCallStatementContext.class,0);
+		}
+		public ExpressionContext expression() {
+			return getRuleContext(ExpressionContext.class,0);
 		}
 		public StatementContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -165,33 +169,42 @@ public class ThymeParser extends Parser {
 		StatementContext _localctx = new StatementContext(_ctx, getState());
 		enterRule(_localctx, 2, RULE_statement);
 		try {
-			setState(40);
+			setState(49);
 			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,1,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(31);
+				setState(37);
 				assignStatement();
-				setState(32);
+				setState(38);
 				match(T__0);
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(34);
+				setState(40);
 				ifStatement();
-				setState(35);
+				setState(41);
 				match(T__0);
 				}
 				break;
 			case 3:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(37);
-				functionCall();
-				setState(38);
+				setState(43);
+				functionCallStatement();
+				setState(44);
+				match(T__0);
+				}
+				break;
+			case 4:
+				enterOuterAlt(_localctx, 4);
+				{
+				setState(46);
+				expression(0);
+				setState(47);
 				match(T__0);
 				}
 				break;
@@ -228,17 +241,17 @@ public class ThymeParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(45);
+			setState(54);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			while (_la==T__1 || _la==IDENTIFIER) {
+			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__1) | (1L << T__4) | (1L << T__8) | (1L << T__9) | (1L << T__24) | (1L << BOOL_TRUE) | (1L << BOOL_FALSE) | (1L << NUMBER_LITERAL) | (1L << STRING_LITERAL) | (1L << IDENTIFIER))) != 0)) {
 				{
 				{
-				setState(42);
+				setState(51);
 				statement();
 				}
 				}
-				setState(47);
+				setState(56);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
@@ -277,27 +290,27 @@ public class ThymeParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(48);
-			match(T__1);
-			setState(49);
-			expression(0);
-			setState(50);
-			match(T__2);
-			setState(51);
-			match(T__3);
-			setState(52);
-			match(T__4);
-			setState(53);
-			statementList();
-			setState(54);
-			match(T__5);
-			setState(55);
-			match(T__6);
-			setState(56);
-			match(T__4);
 			setState(57);
-			statementList();
+			match(T__1);
 			setState(58);
+			expression(0);
+			setState(59);
+			match(T__2);
+			setState(60);
+			match(T__3);
+			setState(61);
+			match(T__4);
+			setState(62);
+			statementList();
+			setState(63);
+			match(T__5);
+			setState(64);
+			match(T__6);
+			setState(65);
+			match(T__4);
+			setState(66);
+			statementList();
+			setState(67);
 			match(T__5);
 			}
 		}
@@ -313,13 +326,13 @@ public class ThymeParser extends Parser {
 	}
 
 	public static class AssignStatementContext extends ParserRuleContext {
-		public MemberAccessorContext memberAccessor() {
-			return getRuleContext(MemberAccessorContext.class,0);
+		public List<ExpressionContext> expression() {
+			return getRuleContexts(ExpressionContext.class);
+		}
+		public ExpressionContext expression(int i) {
+			return getRuleContext(ExpressionContext.class,i);
 		}
 		public TerminalNode ASSIGN() { return getToken(ThymeParser.ASSIGN, 0); }
-		public ExpressionContext expression() {
-			return getRuleContext(ExpressionContext.class,0);
-		}
 		public AssignStatementContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -332,11 +345,11 @@ public class ThymeParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(60);
-			memberAccessor();
-			setState(61);
+			setState(69);
+			expression(0);
+			setState(70);
 			match(ASSIGN);
-			setState(62);
+			setState(71);
 			expression(0);
 			}
 		}
@@ -369,10 +382,11 @@ public class ThymeParser extends Parser {
 		enterRule(_localctx, 10, RULE_expressionList);
 		int _la;
 		try {
-			setState(73);
+			setState(82);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case T__1:
+			case T__4:
 			case T__8:
 			case T__9:
 			case T__24:
@@ -383,21 +397,21 @@ public class ThymeParser extends Parser {
 			case IDENTIFIER:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(64);
+				setState(73);
 				expression(0);
-				setState(69);
+				setState(78);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 				while (_la==T__7) {
 					{
 					{
-					setState(65);
+					setState(74);
 					match(T__7);
-					setState(66);
+					setState(75);
 					expression(0);
 					}
 					}
-					setState(71);
+					setState(80);
 					_errHandler.sync(this);
 					_la = _input.LA(1);
 				}
@@ -479,15 +493,6 @@ public class ThymeParser extends Parser {
 		}
 		public AndExpressionContext(ExpressionContext ctx) { copyFrom(ctx); }
 	}
-	public static class MemberAccessorExpressionContext extends ExpressionContext {
-		public List<ExpressionContext> expression() {
-			return getRuleContexts(ExpressionContext.class);
-		}
-		public ExpressionContext expression(int i) {
-			return getRuleContext(ExpressionContext.class,i);
-		}
-		public MemberAccessorExpressionContext(ExpressionContext ctx) { copyFrom(ctx); }
-	}
 	public static class NotExpressionContext extends ExpressionContext {
 		public ExpressionContext expression() {
 			return getRuleContext(ExpressionContext.class,0);
@@ -546,7 +551,7 @@ public class ThymeParser extends Parser {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(81);
+			setState(90);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case T__8:
@@ -555,10 +560,10 @@ public class ThymeParser extends Parser {
 				_ctx = _localctx;
 				_prevctx = _localctx;
 
-				setState(76);
+				setState(85);
 				match(T__8);
-				setState(77);
-				expression(11);
+				setState(86);
+				expression(10);
 				}
 				break;
 			case T__9:
@@ -566,13 +571,14 @@ public class ThymeParser extends Parser {
 				_localctx = new NotExpressionContext(_localctx);
 				_ctx = _localctx;
 				_prevctx = _localctx;
-				setState(78);
+				setState(87);
 				match(T__9);
-				setState(79);
-				expression(10);
+				setState(88);
+				expression(9);
 				}
 				break;
 			case T__1:
+			case T__4:
 			case T__24:
 			case BOOL_TRUE:
 			case BOOL_FALSE:
@@ -583,15 +589,15 @@ public class ThymeParser extends Parser {
 				_localctx = new AtomExpressionContext(_localctx);
 				_ctx = _localctx;
 				_prevctx = _localctx;
-				setState(80);
-				term();
+				setState(89);
+				term(0);
 				}
 				break;
 			default:
 				throw new NoViableAltException(this);
 			}
 			_ctx.stop = _input.LT(-1);
-			setState(112);
+			setState(118);
 			_errHandler.sync(this);
 			_alt = getInterpreter().adaptivePredict(_input,7,_ctx);
 			while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
@@ -599,16 +605,16 @@ public class ThymeParser extends Parser {
 					if ( _parseListeners!=null ) triggerExitRuleEvent();
 					_prevctx = _localctx;
 					{
-					setState(110);
+					setState(116);
 					_errHandler.sync(this);
 					switch ( getInterpreter().adaptivePredict(_input,6,_ctx) ) {
 					case 1:
 						{
 						_localctx = new MulDivModPowExpressionContext(new ExpressionContext(_parentctx, _parentState));
 						pushNewRecursionContext(_localctx, _startState, RULE_expression);
-						setState(83);
-						if (!(precpred(_ctx, 9))) throw new FailedPredicateException(this, "precpred(_ctx, 9)");
-						setState(84);
+						setState(92);
+						if (!(precpred(_ctx, 8))) throw new FailedPredicateException(this, "precpred(_ctx, 8)");
+						setState(93);
 						((MulDivModPowExpressionContext)_localctx).op = _input.LT(1);
 						_la = _input.LA(1);
 						if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__10) | (1L << T__11) | (1L << T__12) | (1L << T__13))) != 0)) ) {
@@ -619,17 +625,17 @@ public class ThymeParser extends Parser {
 							_errHandler.reportMatch(this);
 							consume();
 						}
-						setState(85);
-						expression(10);
+						setState(94);
+						expression(9);
 						}
 						break;
 					case 2:
 						{
 						_localctx = new AddSubExpressionContext(new ExpressionContext(_parentctx, _parentState));
 						pushNewRecursionContext(_localctx, _startState, RULE_expression);
-						setState(86);
-						if (!(precpred(_ctx, 8))) throw new FailedPredicateException(this, "precpred(_ctx, 8)");
-						setState(87);
+						setState(95);
+						if (!(precpred(_ctx, 7))) throw new FailedPredicateException(this, "precpred(_ctx, 7)");
+						setState(96);
 						((AddSubExpressionContext)_localctx).op = _input.LT(1);
 						_la = _input.LA(1);
 						if ( !(_la==T__8 || _la==T__14) ) {
@@ -640,17 +646,17 @@ public class ThymeParser extends Parser {
 							_errHandler.reportMatch(this);
 							consume();
 						}
-						setState(88);
-						expression(9);
+						setState(97);
+						expression(8);
 						}
 						break;
 					case 3:
 						{
 						_localctx = new RelationalExpressionContext(new ExpressionContext(_parentctx, _parentState));
 						pushNewRecursionContext(_localctx, _startState, RULE_expression);
-						setState(89);
-						if (!(precpred(_ctx, 7))) throw new FailedPredicateException(this, "precpred(_ctx, 7)");
-						setState(90);
+						setState(98);
+						if (!(precpred(_ctx, 6))) throw new FailedPredicateException(this, "precpred(_ctx, 6)");
+						setState(99);
 						((RelationalExpressionContext)_localctx).op = _input.LT(1);
 						_la = _input.LA(1);
 						if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__15) | (1L << T__16) | (1L << T__17) | (1L << T__18))) != 0)) ) {
@@ -661,17 +667,17 @@ public class ThymeParser extends Parser {
 							_errHandler.reportMatch(this);
 							consume();
 						}
-						setState(91);
-						expression(8);
+						setState(100);
+						expression(7);
 						}
 						break;
 					case 4:
 						{
 						_localctx = new EqualityExpressionContext(new ExpressionContext(_parentctx, _parentState));
 						pushNewRecursionContext(_localctx, _startState, RULE_expression);
-						setState(92);
-						if (!(precpred(_ctx, 6))) throw new FailedPredicateException(this, "precpred(_ctx, 6)");
-						setState(93);
+						setState(101);
+						if (!(precpred(_ctx, 5))) throw new FailedPredicateException(this, "precpred(_ctx, 5)");
+						setState(102);
 						((EqualityExpressionContext)_localctx).op = _input.LT(1);
 						_la = _input.LA(1);
 						if ( !(_la==T__19 || _la==T__20) ) {
@@ -682,66 +688,54 @@ public class ThymeParser extends Parser {
 							_errHandler.reportMatch(this);
 							consume();
 						}
-						setState(94);
-						expression(7);
+						setState(103);
+						expression(6);
 						}
 						break;
 					case 5:
 						{
 						_localctx = new AndExpressionContext(new ExpressionContext(_parentctx, _parentState));
 						pushNewRecursionContext(_localctx, _startState, RULE_expression);
-						setState(95);
-						if (!(precpred(_ctx, 5))) throw new FailedPredicateException(this, "precpred(_ctx, 5)");
-						setState(96);
+						setState(104);
+						if (!(precpred(_ctx, 4))) throw new FailedPredicateException(this, "precpred(_ctx, 4)");
+						setState(105);
 						match(T__21);
-						setState(97);
-						expression(6);
+						setState(106);
+						expression(5);
 						}
 						break;
 					case 6:
 						{
 						_localctx = new OrExpressionContext(new ExpressionContext(_parentctx, _parentState));
 						pushNewRecursionContext(_localctx, _startState, RULE_expression);
-						setState(98);
-						if (!(precpred(_ctx, 4))) throw new FailedPredicateException(this, "precpred(_ctx, 4)");
-						setState(99);
+						setState(107);
+						if (!(precpred(_ctx, 3))) throw new FailedPredicateException(this, "precpred(_ctx, 3)");
+						setState(108);
 						match(T__22);
-						setState(100);
-						expression(5);
+						setState(109);
+						expression(4);
 						}
 						break;
 					case 7:
 						{
 						_localctx = new TernaryExpressionContext(new ExpressionContext(_parentctx, _parentState));
 						pushNewRecursionContext(_localctx, _startState, RULE_expression);
-						setState(101);
-						if (!(precpred(_ctx, 3))) throw new FailedPredicateException(this, "precpred(_ctx, 3)");
-						setState(102);
-						match(T__3);
-						setState(103);
-						expression(0);
-						setState(104);
-						match(T__6);
-						setState(105);
-						expression(4);
-						}
-						break;
-					case 8:
-						{
-						_localctx = new MemberAccessorExpressionContext(new ExpressionContext(_parentctx, _parentState));
-						pushNewRecursionContext(_localctx, _startState, RULE_expression);
-						setState(107);
+						setState(110);
 						if (!(precpred(_ctx, 2))) throw new FailedPredicateException(this, "precpred(_ctx, 2)");
-						setState(108);
-						match(T__23);
-						setState(109);
+						setState(111);
+						match(T__3);
+						setState(112);
+						expression(0);
+						setState(113);
+						match(T__6);
+						setState(114);
 						expression(3);
 						}
 						break;
 					}
 					} 
 				}
-				setState(114);
+				setState(120);
 				_errHandler.sync(this);
 				_alt = getInterpreter().adaptivePredict(_input,7,_ctx);
 			}
@@ -770,24 +764,28 @@ public class ThymeParser extends Parser {
 		}
 	}
 	public static class MemberAcessorTermContext extends TermContext {
-		public MemberAccessorContext memberAccessor() {
-			return getRuleContext(MemberAccessorContext.class,0);
-		}
+		public TerminalNode IDENTIFIER() { return getToken(ThymeParser.IDENTIFIER, 0); }
 		public MemberAcessorTermContext(TermContext ctx) { copyFrom(ctx); }
 	}
 	public static class BooleanLiteralFalseContext extends TermContext {
 		public TerminalNode BOOL_FALSE() { return getToken(ThymeParser.BOOL_FALSE, 0); }
 		public BooleanLiteralFalseContext(TermContext ctx) { copyFrom(ctx); }
 	}
-	public static class ListLiteralContext extends TermContext {
-		public ExpressionListContext expressionList() {
-			return getRuleContext(ExpressionListContext.class,0);
-		}
-		public ListLiteralContext(TermContext ctx) { copyFrom(ctx); }
-	}
 	public static class StringLiteralContext extends TermContext {
 		public TerminalNode STRING_LITERAL() { return getToken(ThymeParser.STRING_LITERAL, 0); }
 		public StringLiteralContext(TermContext ctx) { copyFrom(ctx); }
+	}
+	public static class ListLiteralTermContext extends TermContext {
+		public ListLiteralContext listLiteral() {
+			return getRuleContext(ListLiteralContext.class,0);
+		}
+		public ListLiteralTermContext(TermContext ctx) { copyFrom(ctx); }
+	}
+	public static class ParenthesysExpressionTermContext extends TermContext {
+		public ParenthesysExpressionContext parenthesysExpression() {
+			return getRuleContext(ParenthesysExpressionContext.class,0);
+		}
+		public ParenthesysExpressionTermContext(TermContext ctx) { copyFrom(ctx); }
 	}
 	public static class FunctionLiteralTermContext extends TermContext {
 		public FunctionLiteralContext functionLiteral() {
@@ -799,17 +797,23 @@ public class ThymeParser extends Parser {
 		public TerminalNode BOOL_TRUE() { return getToken(ThymeParser.BOOL_TRUE, 0); }
 		public BooleanLiteralTrueContext(TermContext ctx) { copyFrom(ctx); }
 	}
+	public static class MemberAccessorTermContext extends TermContext {
+		public List<TermContext> term() {
+			return getRuleContexts(TermContext.class);
+		}
+		public TermContext term(int i) {
+			return getRuleContext(TermContext.class,i);
+		}
+		public MemberAccessorTermContext(TermContext ctx) { copyFrom(ctx); }
+	}
 	public static class FunctionCallTermContext extends TermContext {
-		public FunctionCallContext functionCall() {
-			return getRuleContext(FunctionCallContext.class,0);
+		public TermContext term() {
+			return getRuleContext(TermContext.class,0);
+		}
+		public ExpressionListContext expressionList() {
+			return getRuleContext(ExpressionListContext.class,0);
 		}
 		public FunctionCallTermContext(TermContext ctx) { copyFrom(ctx); }
-	}
-	public static class ParenthesysExpressionContext extends TermContext {
-		public ExpressionContext expression() {
-			return getRuleContext(ExpressionContext.class,0);
-		}
-		public ParenthesysExpressionContext(TermContext ctx) { copyFrom(ctx); }
 	}
 	public static class NullLiteralContext extends TermContext {
 		public TerminalNode BOOL_FALSE() { return getToken(ThymeParser.BOOL_FALSE, 0); }
@@ -821,100 +825,280 @@ public class ThymeParser extends Parser {
 	}
 
 	public final TermContext term() throws RecognitionException {
-		TermContext _localctx = new TermContext(_ctx, getState());
-		enterRule(_localctx, 14, RULE_term);
+		return term(0);
+	}
+
+	private TermContext term(int _p) throws RecognitionException {
+		ParserRuleContext _parentctx = _ctx;
+		int _parentState = getState();
+		TermContext _localctx = new TermContext(_ctx, _parentState);
+		TermContext _prevctx = _localctx;
+		int _startState = 14;
+		enterRecursionRule(_localctx, 14, RULE_term, _p);
 		try {
+			int _alt;
+			enterOuterAlt(_localctx, 1);
+			{
 			setState(131);
 			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,8,_ctx) ) {
 			case 1:
-				_localctx = new ParenthesysExpressionContext(_localctx);
-				enterOuterAlt(_localctx, 1);
 				{
-				setState(115);
-				match(T__1);
-				setState(116);
-				expression(0);
-				setState(117);
-				match(T__2);
+				_localctx = new ParenthesysExpressionTermContext(_localctx);
+				_ctx = _localctx;
+				_prevctx = _localctx;
+
+				setState(122);
+				parenthesysExpression();
 				}
 				break;
 			case 2:
-				_localctx = new MemberAcessorTermContext(_localctx);
-				enterOuterAlt(_localctx, 2);
 				{
-				setState(119);
-				memberAccessor();
+				_localctx = new MemberAcessorTermContext(_localctx);
+				_ctx = _localctx;
+				_prevctx = _localctx;
+				setState(123);
+				match(IDENTIFIER);
 				}
 				break;
 			case 3:
-				_localctx = new NumberLiteralContext(_localctx);
-				enterOuterAlt(_localctx, 3);
 				{
-				setState(120);
+				_localctx = new NumberLiteralContext(_localctx);
+				_ctx = _localctx;
+				_prevctx = _localctx;
+				setState(124);
 				match(NUMBER_LITERAL);
 				}
 				break;
 			case 4:
-				_localctx = new StringLiteralContext(_localctx);
-				enterOuterAlt(_localctx, 4);
 				{
-				setState(121);
+				_localctx = new StringLiteralContext(_localctx);
+				_ctx = _localctx;
+				_prevctx = _localctx;
+				setState(125);
 				match(STRING_LITERAL);
 				}
 				break;
 			case 5:
-				_localctx = new BooleanLiteralTrueContext(_localctx);
-				enterOuterAlt(_localctx, 5);
 				{
-				setState(122);
+				_localctx = new BooleanLiteralTrueContext(_localctx);
+				_ctx = _localctx;
+				_prevctx = _localctx;
+				setState(126);
 				match(BOOL_TRUE);
 				}
 				break;
 			case 6:
-				_localctx = new BooleanLiteralFalseContext(_localctx);
-				enterOuterAlt(_localctx, 6);
 				{
-				setState(123);
+				_localctx = new BooleanLiteralFalseContext(_localctx);
+				_ctx = _localctx;
+				_prevctx = _localctx;
+				setState(127);
 				match(BOOL_FALSE);
 				}
 				break;
 			case 7:
-				_localctx = new NullLiteralContext(_localctx);
-				enterOuterAlt(_localctx, 7);
 				{
-				setState(124);
+				_localctx = new NullLiteralContext(_localctx);
+				_ctx = _localctx;
+				_prevctx = _localctx;
+				setState(128);
 				match(BOOL_FALSE);
 				}
 				break;
 			case 8:
-				_localctx = new FunctionLiteralTermContext(_localctx);
-				enterOuterAlt(_localctx, 8);
 				{
-				setState(125);
+				_localctx = new FunctionLiteralTermContext(_localctx);
+				_ctx = _localctx;
+				_prevctx = _localctx;
+				setState(129);
 				functionLiteral();
 				}
 				break;
 			case 9:
-				_localctx = new ListLiteralContext(_localctx);
-				enterOuterAlt(_localctx, 9);
 				{
-				setState(126);
-				match(T__24);
-				setState(127);
-				expressionList();
-				setState(128);
-				match(T__25);
-				}
-				break;
-			case 10:
-				_localctx = new FunctionCallTermContext(_localctx);
-				enterOuterAlt(_localctx, 10);
-				{
+				_localctx = new ListLiteralTermContext(_localctx);
+				_ctx = _localctx;
+				_prevctx = _localctx;
 				setState(130);
-				functionCall();
+				listLiteral();
 				}
 				break;
+			}
+			_ctx.stop = _input.LT(-1);
+			setState(143);
+			_errHandler.sync(this);
+			_alt = getInterpreter().adaptivePredict(_input,10,_ctx);
+			while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
+				if ( _alt==1 ) {
+					if ( _parseListeners!=null ) triggerExitRuleEvent();
+					_prevctx = _localctx;
+					{
+					setState(141);
+					_errHandler.sync(this);
+					switch ( getInterpreter().adaptivePredict(_input,9,_ctx) ) {
+					case 1:
+						{
+						_localctx = new MemberAccessorTermContext(new TermContext(_parentctx, _parentState));
+						pushNewRecursionContext(_localctx, _startState, RULE_term);
+						setState(133);
+						if (!(precpred(_ctx, 10))) throw new FailedPredicateException(this, "precpred(_ctx, 10)");
+						setState(134);
+						match(T__23);
+						setState(135);
+						term(11);
+						}
+						break;
+					case 2:
+						{
+						_localctx = new FunctionCallTermContext(new TermContext(_parentctx, _parentState));
+						pushNewRecursionContext(_localctx, _startState, RULE_term);
+						setState(136);
+						if (!(precpred(_ctx, 1))) throw new FailedPredicateException(this, "precpred(_ctx, 1)");
+						setState(137);
+						match(T__1);
+						setState(138);
+						expressionList();
+						setState(139);
+						match(T__2);
+						}
+						break;
+					}
+					} 
+				}
+				setState(145);
+				_errHandler.sync(this);
+				_alt = getInterpreter().adaptivePredict(_input,10,_ctx);
+			}
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			unrollRecursionContexts(_parentctx);
+		}
+		return _localctx;
+	}
+
+	public static class ListLiteralContext extends ParserRuleContext {
+		public ExpressionListContext expressionList() {
+			return getRuleContext(ExpressionListContext.class,0);
+		}
+		public ListLiteralContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_listLiteral; }
+	}
+
+	public final ListLiteralContext listLiteral() throws RecognitionException {
+		ListLiteralContext _localctx = new ListLiteralContext(_ctx, getState());
+		enterRule(_localctx, 16, RULE_listLiteral);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(146);
+			match(T__24);
+			setState(147);
+			expressionList();
+			setState(148);
+			match(T__25);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class ParenthesysExpressionContext extends ParserRuleContext {
+		public ExpressionContext expression() {
+			return getRuleContext(ExpressionContext.class,0);
+		}
+		public ParenthesysExpressionContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_parenthesysExpression; }
+	}
+
+	public final ParenthesysExpressionContext parenthesysExpression() throws RecognitionException {
+		ParenthesysExpressionContext _localctx = new ParenthesysExpressionContext(_ctx, getState());
+		enterRule(_localctx, 18, RULE_parenthesysExpression);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(150);
+			match(T__1);
+			setState(151);
+			expression(0);
+			setState(152);
+			match(T__2);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class SingleExpressionContext extends ParserRuleContext {
+		public MemberAccessorContext memberAccessor() {
+			return getRuleContext(MemberAccessorContext.class,0);
+		}
+		public ParenthesysExpressionContext parenthesysExpression() {
+			return getRuleContext(ParenthesysExpressionContext.class,0);
+		}
+		public ListLiteralContext listLiteral() {
+			return getRuleContext(ListLiteralContext.class,0);
+		}
+		public SingleExpressionContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_singleExpression; }
+	}
+
+	public final SingleExpressionContext singleExpression() throws RecognitionException {
+		SingleExpressionContext _localctx = new SingleExpressionContext(_ctx, getState());
+		enterRule(_localctx, 20, RULE_singleExpression);
+		try {
+			setState(157);
+			_errHandler.sync(this);
+			switch (_input.LA(1)) {
+			case IDENTIFIER:
+				enterOuterAlt(_localctx, 1);
+				{
+				setState(154);
+				memberAccessor();
+				}
+				break;
+			case T__1:
+				enterOuterAlt(_localctx, 2);
+				{
+				setState(155);
+				parenthesysExpression();
+				}
+				break;
+			case T__24:
+				enterOuterAlt(_localctx, 3);
+				{
+				setState(156);
+				listLiteral();
+				}
+				break;
+			default:
+				throw new NoViableAltException(this);
 			}
 		}
 		catch (RecognitionException re) {
@@ -929,9 +1113,12 @@ public class ThymeParser extends Parser {
 	}
 
 	public static class MemberAccessorContext extends ParserRuleContext {
-		public List<TerminalNode> IDENTIFIER() { return getTokens(ThymeParser.IDENTIFIER); }
-		public TerminalNode IDENTIFIER(int i) {
-			return getToken(ThymeParser.IDENTIFIER, i);
+		public TerminalNode IDENTIFIER() { return getToken(ThymeParser.IDENTIFIER, 0); }
+		public List<MemberAccessorContext> memberAccessor() {
+			return getRuleContexts(MemberAccessorContext.class);
+		}
+		public MemberAccessorContext memberAccessor(int i) {
+			return getRuleContext(MemberAccessorContext.class,i);
 		}
 		public MemberAccessorContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -941,25 +1128,25 @@ public class ThymeParser extends Parser {
 
 	public final MemberAccessorContext memberAccessor() throws RecognitionException {
 		MemberAccessorContext _localctx = new MemberAccessorContext(_ctx, getState());
-		enterRule(_localctx, 16, RULE_memberAccessor);
+		enterRule(_localctx, 22, RULE_memberAccessor);
 		try {
 			int _alt;
-			setState(141);
+			setState(167);
 			_errHandler.sync(this);
-			switch ( getInterpreter().adaptivePredict(_input,10,_ctx) ) {
+			switch ( getInterpreter().adaptivePredict(_input,13,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(133);
+				setState(159);
 				match(IDENTIFIER);
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(134);
+				setState(160);
 				match(IDENTIFIER);
-				setState(137); 
+				setState(163); 
 				_errHandler.sync(this);
 				_alt = 1;
 				do {
@@ -967,19 +1154,19 @@ public class ThymeParser extends Parser {
 					case 1:
 						{
 						{
-						setState(135);
+						setState(161);
 						match(T__23);
-						setState(136);
-						match(IDENTIFIER);
+						setState(162);
+						memberAccessor();
 						}
 						}
 						break;
 					default:
 						throw new NoViableAltException(this);
 					}
-					setState(139); 
+					setState(165); 
 					_errHandler.sync(this);
-					_alt = getInterpreter().adaptivePredict(_input,9,_ctx);
+					_alt = getInterpreter().adaptivePredict(_input,12,_ctx);
 				} while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER );
 				}
 				break;
@@ -996,30 +1183,32 @@ public class ThymeParser extends Parser {
 		return _localctx;
 	}
 
-	public static class FunctionCallContext extends ParserRuleContext {
-		public TerminalNode IDENTIFIER() { return getToken(ThymeParser.IDENTIFIER, 0); }
+	public static class FunctionCallStatementContext extends ParserRuleContext {
+		public TermContext term() {
+			return getRuleContext(TermContext.class,0);
+		}
 		public ExpressionListContext expressionList() {
 			return getRuleContext(ExpressionListContext.class,0);
 		}
-		public FunctionCallContext(ParserRuleContext parent, int invokingState) {
+		public FunctionCallStatementContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
-		@Override public int getRuleIndex() { return RULE_functionCall; }
+		@Override public int getRuleIndex() { return RULE_functionCallStatement; }
 	}
 
-	public final FunctionCallContext functionCall() throws RecognitionException {
-		FunctionCallContext _localctx = new FunctionCallContext(_ctx, getState());
-		enterRule(_localctx, 18, RULE_functionCall);
+	public final FunctionCallStatementContext functionCallStatement() throws RecognitionException {
+		FunctionCallStatementContext _localctx = new FunctionCallStatementContext(_ctx, getState());
+		enterRule(_localctx, 24, RULE_functionCallStatement);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(143);
-			match(IDENTIFIER);
-			setState(144);
+			setState(169);
+			term(0);
+			setState(170);
 			match(T__1);
-			setState(145);
+			setState(171);
 			expressionList();
-			setState(146);
+			setState(172);
 			match(T__2);
 			}
 		}
@@ -1035,13 +1224,13 @@ public class ThymeParser extends Parser {
 	}
 
 	public static class FunctionLiteralContext extends ParserRuleContext {
+		public StatementListContext statementList() {
+			return getRuleContext(StatementListContext.class,0);
+		}
 		public ExpressionListContext expressionList() {
 			return getRuleContext(ExpressionListContext.class,0);
 		}
 		public TerminalNode ARROW() { return getToken(ThymeParser.ARROW, 0); }
-		public StatementListContext statementList() {
-			return getRuleContext(StatementListContext.class,0);
-		}
 		public FunctionLiteralContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -1050,23 +1239,32 @@ public class ThymeParser extends Parser {
 
 	public final FunctionLiteralContext functionLiteral() throws RecognitionException {
 		FunctionLiteralContext _localctx = new FunctionLiteralContext(_ctx, getState());
-		enterRule(_localctx, 20, RULE_functionLiteral);
+		enterRule(_localctx, 26, RULE_functionLiteral);
+		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(148);
-			match(T__1);
-			setState(149);
-			expressionList();
-			setState(150);
-			match(T__2);
-			setState(151);
-			match(ARROW);
-			setState(152);
+			setState(179);
+			_errHandler.sync(this);
+			_la = _input.LA(1);
+			if (_la==T__1) {
+				{
+				setState(174);
+				match(T__1);
+				setState(175);
+				expressionList();
+				setState(176);
+				match(T__2);
+				setState(177);
+				match(ARROW);
+				}
+			}
+
+			setState(181);
 			match(T__4);
-			setState(153);
+			setState(182);
 			statementList();
-			setState(154);
+			setState(183);
 			match(T__5);
 			}
 		}
@@ -1085,77 +1283,98 @@ public class ThymeParser extends Parser {
 		switch (ruleIndex) {
 		case 6:
 			return expression_sempred((ExpressionContext)_localctx, predIndex);
+		case 7:
+			return term_sempred((TermContext)_localctx, predIndex);
 		}
 		return true;
 	}
 	private boolean expression_sempred(ExpressionContext _localctx, int predIndex) {
 		switch (predIndex) {
 		case 0:
-			return precpred(_ctx, 9);
-		case 1:
 			return precpred(_ctx, 8);
-		case 2:
+		case 1:
 			return precpred(_ctx, 7);
-		case 3:
+		case 2:
 			return precpred(_ctx, 6);
-		case 4:
+		case 3:
 			return precpred(_ctx, 5);
-		case 5:
+		case 4:
 			return precpred(_ctx, 4);
-		case 6:
+		case 5:
 			return precpred(_ctx, 3);
-		case 7:
+		case 6:
 			return precpred(_ctx, 2);
+		}
+		return true;
+	}
+	private boolean term_sempred(TermContext _localctx, int predIndex) {
+		switch (predIndex) {
+		case 7:
+			return precpred(_ctx, 10);
+		case 8:
+			return precpred(_ctx, 1);
 		}
 		return true;
 	}
 
 	public static final String _serializedATN =
-		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3&\u009f\4\2\t\2\4"+
+		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3&\u00bc\4\2\t\2\4"+
 		"\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\4\n\t\n\4\13\t"+
-		"\13\4\f\t\f\3\2\3\2\3\2\6\2\34\n\2\r\2\16\2\35\3\2\3\2\3\3\3\3\3\3\3\3"+
-		"\3\3\3\3\3\3\3\3\3\3\5\3+\n\3\3\4\7\4.\n\4\f\4\16\4\61\13\4\3\5\3\5\3"+
-		"\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\6\3\6\3\6\3\6\3\7\3\7\3\7\7\7"+
-		"F\n\7\f\7\16\7I\13\7\3\7\5\7L\n\7\3\b\3\b\3\b\3\b\3\b\3\b\5\bT\n\b\3\b"+
-		"\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3"+
-		"\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\7\bq\n\b\f\b\16\bt\13\b\3\t\3\t\3\t"+
-		"\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\5\t\u0086\n\t\3\n"+
-		"\3\n\3\n\3\n\6\n\u008c\n\n\r\n\16\n\u008d\5\n\u0090\n\n\3\13\3\13\3\13"+
-		"\3\13\3\13\3\f\3\f\3\f\3\f\3\f\3\f\3\f\3\f\3\f\2\3\16\r\2\4\6\b\n\f\16"+
-		"\20\22\24\26\2\6\3\2\r\20\4\2\13\13\21\21\3\2\22\25\3\2\26\27\2\u00ae"+
-		"\2\33\3\2\2\2\4*\3\2\2\2\6/\3\2\2\2\b\62\3\2\2\2\n>\3\2\2\2\fK\3\2\2\2"+
-		"\16S\3\2\2\2\20\u0085\3\2\2\2\22\u008f\3\2\2\2\24\u0091\3\2\2\2\26\u0096"+
-		"\3\2\2\2\30\31\5\n\6\2\31\32\7\3\2\2\32\34\3\2\2\2\33\30\3\2\2\2\34\35"+
-		"\3\2\2\2\35\33\3\2\2\2\35\36\3\2\2\2\36\37\3\2\2\2\37 \7\2\2\3 \3\3\2"+
-		"\2\2!\"\5\n\6\2\"#\7\3\2\2#+\3\2\2\2$%\5\b\5\2%&\7\3\2\2&+\3\2\2\2\'("+
-		"\5\24\13\2()\7\3\2\2)+\3\2\2\2*!\3\2\2\2*$\3\2\2\2*\'\3\2\2\2+\5\3\2\2"+
-		"\2,.\5\4\3\2-,\3\2\2\2.\61\3\2\2\2/-\3\2\2\2/\60\3\2\2\2\60\7\3\2\2\2"+
-		"\61/\3\2\2\2\62\63\7\4\2\2\63\64\5\16\b\2\64\65\7\5\2\2\65\66\7\6\2\2"+
-		"\66\67\7\7\2\2\678\5\6\4\289\7\b\2\29:\7\t\2\2:;\7\7\2\2;<\5\6\4\2<=\7"+
-		"\b\2\2=\t\3\2\2\2>?\5\22\n\2?@\7#\2\2@A\5\16\b\2A\13\3\2\2\2BG\5\16\b"+
-		"\2CD\7\n\2\2DF\5\16\b\2EC\3\2\2\2FI\3\2\2\2GE\3\2\2\2GH\3\2\2\2HL\3\2"+
-		"\2\2IG\3\2\2\2JL\3\2\2\2KB\3\2\2\2KJ\3\2\2\2L\r\3\2\2\2MN\b\b\1\2NO\7"+
-		"\13\2\2OT\5\16\b\rPQ\7\f\2\2QT\5\16\b\fRT\5\20\t\2SM\3\2\2\2SP\3\2\2\2"+
-		"SR\3\2\2\2Tr\3\2\2\2UV\f\13\2\2VW\t\2\2\2Wq\5\16\b\fXY\f\n\2\2YZ\t\3\2"+
-		"\2Zq\5\16\b\13[\\\f\t\2\2\\]\t\4\2\2]q\5\16\b\n^_\f\b\2\2_`\t\5\2\2`q"+
-		"\5\16\b\tab\f\7\2\2bc\7\30\2\2cq\5\16\b\bde\f\6\2\2ef\7\31\2\2fq\5\16"+
-		"\b\7gh\f\5\2\2hi\7\6\2\2ij\5\16\b\2jk\7\t\2\2kl\5\16\b\6lq\3\2\2\2mn\f"+
-		"\4\2\2no\7\32\2\2oq\5\16\b\5pU\3\2\2\2pX\3\2\2\2p[\3\2\2\2p^\3\2\2\2p"+
-		"a\3\2\2\2pd\3\2\2\2pg\3\2\2\2pm\3\2\2\2qt\3\2\2\2rp\3\2\2\2rs\3\2\2\2"+
-		"s\17\3\2\2\2tr\3\2\2\2uv\7\4\2\2vw\5\16\b\2wx\7\5\2\2x\u0086\3\2\2\2y"+
-		"\u0086\5\22\n\2z\u0086\7\37\2\2{\u0086\7 \2\2|\u0086\7\35\2\2}\u0086\7"+
-		"\36\2\2~\u0086\7\36\2\2\177\u0086\5\26\f\2\u0080\u0081\7\33\2\2\u0081"+
-		"\u0082\5\f\7\2\u0082\u0083\7\34\2\2\u0083\u0086\3\2\2\2\u0084\u0086\5"+
-		"\24\13\2\u0085u\3\2\2\2\u0085y\3\2\2\2\u0085z\3\2\2\2\u0085{\3\2\2\2\u0085"+
-		"|\3\2\2\2\u0085}\3\2\2\2\u0085~\3\2\2\2\u0085\177\3\2\2\2\u0085\u0080"+
-		"\3\2\2\2\u0085\u0084\3\2\2\2\u0086\21\3\2\2\2\u0087\u0090\7!\2\2\u0088"+
-		"\u008b\7!\2\2\u0089\u008a\7\32\2\2\u008a\u008c\7!\2\2\u008b\u0089\3\2"+
-		"\2\2\u008c\u008d\3\2\2\2\u008d\u008b\3\2\2\2\u008d\u008e\3\2\2\2\u008e"+
-		"\u0090\3\2\2\2\u008f\u0087\3\2\2\2\u008f\u0088\3\2\2\2\u0090\23\3\2\2"+
-		"\2\u0091\u0092\7!\2\2\u0092\u0093\7\4\2\2\u0093\u0094\5\f\7\2\u0094\u0095"+
-		"\7\5\2\2\u0095\25\3\2\2\2\u0096\u0097\7\4\2\2\u0097\u0098\5\f\7\2\u0098"+
-		"\u0099\7\5\2\2\u0099\u009a\7\"\2\2\u009a\u009b\7\7\2\2\u009b\u009c\5\6"+
-		"\4\2\u009c\u009d\7\b\2\2\u009d\27\3\2\2\2\r\35*/GKSpr\u0085\u008d\u008f";
+		"\13\4\f\t\f\4\r\t\r\4\16\t\16\4\17\t\17\3\2\3\2\3\2\6\2\"\n\2\r\2\16\2"+
+		"#\3\2\3\2\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\5\3\64\n\3\3"+
+		"\4\7\4\67\n\4\f\4\16\4:\13\4\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3"+
+		"\5\3\5\3\6\3\6\3\6\3\6\3\7\3\7\3\7\7\7O\n\7\f\7\16\7R\13\7\3\7\5\7U\n"+
+		"\7\3\b\3\b\3\b\3\b\3\b\3\b\5\b]\n\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3"+
+		"\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\7\bw\n"+
+		"\b\f\b\16\bz\13\b\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\5\t\u0086\n"+
+		"\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\7\t\u0090\n\t\f\t\16\t\u0093\13\t\3"+
+		"\n\3\n\3\n\3\n\3\13\3\13\3\13\3\13\3\f\3\f\3\f\5\f\u00a0\n\f\3\r\3\r\3"+
+		"\r\3\r\6\r\u00a6\n\r\r\r\16\r\u00a7\5\r\u00aa\n\r\3\16\3\16\3\16\3\16"+
+		"\3\16\3\17\3\17\3\17\3\17\3\17\5\17\u00b6\n\17\3\17\3\17\3\17\3\17\3\17"+
+		"\2\4\16\20\20\2\4\6\b\n\f\16\20\22\24\26\30\32\34\2\6\3\2\r\20\4\2\13"+
+		"\13\21\21\3\2\22\25\3\2\26\27\2\u00cc\2!\3\2\2\2\4\63\3\2\2\2\68\3\2\2"+
+		"\2\b;\3\2\2\2\nG\3\2\2\2\fT\3\2\2\2\16\\\3\2\2\2\20\u0085\3\2\2\2\22\u0094"+
+		"\3\2\2\2\24\u0098\3\2\2\2\26\u009f\3\2\2\2\30\u00a9\3\2\2\2\32\u00ab\3"+
+		"\2\2\2\34\u00b5\3\2\2\2\36\37\5\n\6\2\37 \7\3\2\2 \"\3\2\2\2!\36\3\2\2"+
+		"\2\"#\3\2\2\2#!\3\2\2\2#$\3\2\2\2$%\3\2\2\2%&\7\2\2\3&\3\3\2\2\2\'(\5"+
+		"\n\6\2()\7\3\2\2)\64\3\2\2\2*+\5\b\5\2+,\7\3\2\2,\64\3\2\2\2-.\5\32\16"+
+		"\2./\7\3\2\2/\64\3\2\2\2\60\61\5\16\b\2\61\62\7\3\2\2\62\64\3\2\2\2\63"+
+		"\'\3\2\2\2\63*\3\2\2\2\63-\3\2\2\2\63\60\3\2\2\2\64\5\3\2\2\2\65\67\5"+
+		"\4\3\2\66\65\3\2\2\2\67:\3\2\2\28\66\3\2\2\289\3\2\2\29\7\3\2\2\2:8\3"+
+		"\2\2\2;<\7\4\2\2<=\5\16\b\2=>\7\5\2\2>?\7\6\2\2?@\7\7\2\2@A\5\6\4\2AB"+
+		"\7\b\2\2BC\7\t\2\2CD\7\7\2\2DE\5\6\4\2EF\7\b\2\2F\t\3\2\2\2GH\5\16\b\2"+
+		"HI\7#\2\2IJ\5\16\b\2J\13\3\2\2\2KP\5\16\b\2LM\7\n\2\2MO\5\16\b\2NL\3\2"+
+		"\2\2OR\3\2\2\2PN\3\2\2\2PQ\3\2\2\2QU\3\2\2\2RP\3\2\2\2SU\3\2\2\2TK\3\2"+
+		"\2\2TS\3\2\2\2U\r\3\2\2\2VW\b\b\1\2WX\7\13\2\2X]\5\16\b\fYZ\7\f\2\2Z]"+
+		"\5\16\b\13[]\5\20\t\2\\V\3\2\2\2\\Y\3\2\2\2\\[\3\2\2\2]x\3\2\2\2^_\f\n"+
+		"\2\2_`\t\2\2\2`w\5\16\b\13ab\f\t\2\2bc\t\3\2\2cw\5\16\b\nde\f\b\2\2ef"+
+		"\t\4\2\2fw\5\16\b\tgh\f\7\2\2hi\t\5\2\2iw\5\16\b\bjk\f\6\2\2kl\7\30\2"+
+		"\2lw\5\16\b\7mn\f\5\2\2no\7\31\2\2ow\5\16\b\6pq\f\4\2\2qr\7\6\2\2rs\5"+
+		"\16\b\2st\7\t\2\2tu\5\16\b\5uw\3\2\2\2v^\3\2\2\2va\3\2\2\2vd\3\2\2\2v"+
+		"g\3\2\2\2vj\3\2\2\2vm\3\2\2\2vp\3\2\2\2wz\3\2\2\2xv\3\2\2\2xy\3\2\2\2"+
+		"y\17\3\2\2\2zx\3\2\2\2{|\b\t\1\2|\u0086\5\24\13\2}\u0086\7!\2\2~\u0086"+
+		"\7\37\2\2\177\u0086\7 \2\2\u0080\u0086\7\35\2\2\u0081\u0086\7\36\2\2\u0082"+
+		"\u0086\7\36\2\2\u0083\u0086\5\34\17\2\u0084\u0086\5\22\n\2\u0085{\3\2"+
+		"\2\2\u0085}\3\2\2\2\u0085~\3\2\2\2\u0085\177\3\2\2\2\u0085\u0080\3\2\2"+
+		"\2\u0085\u0081\3\2\2\2\u0085\u0082\3\2\2\2\u0085\u0083\3\2\2\2\u0085\u0084"+
+		"\3\2\2\2\u0086\u0091\3\2\2\2\u0087\u0088\f\f\2\2\u0088\u0089\7\32\2\2"+
+		"\u0089\u0090\5\20\t\r\u008a\u008b\f\3\2\2\u008b\u008c\7\4\2\2\u008c\u008d"+
+		"\5\f\7\2\u008d\u008e\7\5\2\2\u008e\u0090\3\2\2\2\u008f\u0087\3\2\2\2\u008f"+
+		"\u008a\3\2\2\2\u0090\u0093\3\2\2\2\u0091\u008f\3\2\2\2\u0091\u0092\3\2"+
+		"\2\2\u0092\21\3\2\2\2\u0093\u0091\3\2\2\2\u0094\u0095\7\33\2\2\u0095\u0096"+
+		"\5\f\7\2\u0096\u0097\7\34\2\2\u0097\23\3\2\2\2\u0098\u0099\7\4\2\2\u0099"+
+		"\u009a\5\16\b\2\u009a\u009b\7\5\2\2\u009b\25\3\2\2\2\u009c\u00a0\5\30"+
+		"\r\2\u009d\u00a0\5\24\13\2\u009e\u00a0\5\22\n\2\u009f\u009c\3\2\2\2\u009f"+
+		"\u009d\3\2\2\2\u009f\u009e\3\2\2\2\u00a0\27\3\2\2\2\u00a1\u00aa\7!\2\2"+
+		"\u00a2\u00a5\7!\2\2\u00a3\u00a4\7\32\2\2\u00a4\u00a6\5\30\r\2\u00a5\u00a3"+
+		"\3\2\2\2\u00a6\u00a7\3\2\2\2\u00a7\u00a5\3\2\2\2\u00a7\u00a8\3\2\2\2\u00a8"+
+		"\u00aa\3\2\2\2\u00a9\u00a1\3\2\2\2\u00a9\u00a2\3\2\2\2\u00aa\31\3\2\2"+
+		"\2\u00ab\u00ac\5\20\t\2\u00ac\u00ad\7\4\2\2\u00ad\u00ae\5\f\7\2\u00ae"+
+		"\u00af\7\5\2\2\u00af\33\3\2\2\2\u00b0\u00b1\7\4\2\2\u00b1\u00b2\5\f\7"+
+		"\2\u00b2\u00b3\7\5\2\2\u00b3\u00b4\7\"\2\2\u00b4\u00b6\3\2\2\2\u00b5\u00b0"+
+		"\3\2\2\2\u00b5\u00b6\3\2\2\2\u00b6\u00b7\3\2\2\2\u00b7\u00b8\7\7\2\2\u00b8"+
+		"\u00b9\5\6\4\2\u00b9\u00ba\7\b\2\2\u00ba\35\3\2\2\2\21#\638PT\\vx\u0085"+
+		"\u008f\u0091\u009f\u00a7\u00a9\u00b5";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {

@@ -14,7 +14,7 @@ function ThymeEngine () {
 	
 	this.annotationList = [];
 	this.engineContext = {};
-	this.debugMode = false;
+	this.debugMode = true;
 
 	this.analyze = (text) => {
 		// Resets the variables
@@ -30,7 +30,7 @@ function ThymeEngine () {
 		var parser = new ThymeParser (tokens);
 		parser.buildParseTrees = true;
 		// Defines the custom error handling
-		this.createErrorListener (parser);
+		this.createErrorListener (lexer, parser);
 		// Parses the source code
 		var ast = parser.script ();
 		// Check if it is a valid script
@@ -98,21 +98,23 @@ function ThymeEngine () {
 		//listener.prototype.enterEveryRule = (context) => { console.log ("Enter key"); };
 
 		listener.prototype.enterAssignStatement = (context) => { 
-			// Extract info
-			var identifier = context.memberAccessor ().getText ();
+			// Check if we got a simple identifier
+			if (context.children[0].constructor.name.startsWith ("MemberAccessor")) {
+				var identifier = context.children[0].getText ();
 
-			// If isn't defined on context
-			if (this.engineContext.variables.indexOf (identifier) === -1) {
-				var validVariable = false;
+				// If isn't defined on context
+				if (this.engineContext.variables.indexOf (identifier) === -1) {
+					var validVariable = false;
 
-				// Check for multiple accessors
-				if (identifier.indexOf ('.') !== identifier.lastIndexOf ('.')) {
-					// Allow Scene.my. variables
-					if (identifier.startsWith ("Scene.my")) validVariable = true;
-					// Later on, more validations
-				} else validVariable = true;
+					// Check for multiple accessors
+					if (identifier.indexOf ('.') !== identifier.lastIndexOf ('.')) {
+						// Allow Scene.my. variables
+						if (identifier.startsWith ("Scene.my")) validVariable = true;
+						// Later on, more validations
+					}
 
-				if (validVariable) this.engineContext.variables.push (identifier);
+					if (validVariable) this.engineContext.variables.push (identifier);
+				}
 			}
 		};
 		
@@ -120,7 +122,7 @@ function ThymeEngine () {
 		antlr4.tree.ParseTreeWalker.DEFAULT.walk (new listener (), tree);
 	};
 
-	this.createErrorListener = (parser) => {		
+	this.createErrorListener = (lexer, parser) => {		
 		// Define the object
 		var listener = function () {
 			antlr4.error.ErrorListener.call(this);
@@ -130,7 +132,7 @@ function ThymeEngine () {
 		listener.prototype = Object.create(antlr4.error.ErrorListener.prototype);
 		listener.prototype.constructor = listener;
 		
-		listener.prototype.syntaxError = (recognizer, offendingSymbol, line, column, message) => {
+		listener.prototype.syntaxError = (recognizer, offendingSymbol, line, column, message, e) => {
 			if (this.debugMode) {
 				console.error ("Some error ocurred!");
 				console.error (message);
@@ -141,10 +143,21 @@ function ThymeEngine () {
 				var previousToken = recognizer._input.tokens[offendingSymbol.tokenIndex - 1];
 				line = previousToken.line;
 				column = previousToken.column;
-
+				
 				// Gets a more helpful message
-				var missingSymbol = /missing (.*?)\s.+/.exec ("missing ';' at 'kD'")[1];
-				message = "Missing " + missingSymbol + " on this line.";
+				var missingSymbol = /missing (.*?)\s.+/.exec (message)[1];
+				message = "missing " + missingSymbol + " on this line.";
+			} else if (message.startsWith ("no viable alternative")) {// If we aren't able to parse any alternative
+				// Checks if we got a End Of File
+				if (offendingSymbol.type == ThymeParser.EOF) {
+					message = "unexpected end of script";
+				} else {
+					// List all expected possible tokens
+					message = "invalid sequence of tokens near " + recognizer.getTokenErrorDisplay (offendingSymbol) + "\nwas expecting "+ this.getExpectedTokens (recognizer);
+				}	
+			} else if (message.startsWith ("mismatched input")) {
+				// List all expected possible tokens
+				message = "unexpected token " + recognizer.getTokenErrorDisplay (offendingSymbol) + "\nwas expecting " + this.getExpectedTokens (recognizer); 
 			}
 
 			this.annotationList.push ({
@@ -155,6 +168,8 @@ function ThymeEngine () {
 			});
 		};
 
+		lexer.removeErrorListeners ();
+		lexer.addErrorListener (new listener ());
 		parser.removeErrorListeners ();
 		parser.addErrorListener (new listener ());
 	};
@@ -167,6 +182,51 @@ function ThymeEngine () {
 			text: message,
 			type: annotationType
 		});
+	};
+
+	// This methods returns a pretty named version of all expected tokens from the Recognizer
+	this.getExpectedTokens = (recognizer) => {
+		// Declare variables
+		var intervals = recognizer.getExpectedTokens ().intervals;
+		var names = [];
+
+		// Iterate trough every interval
+		for (var i = 0; i < intervals.length; i++) {
+			var interval = intervals[i];
+			for (var j = interval.start; j < interval.stop; j++) {
+				var prettyName = "";
+
+				if (recognizer.literalNames.indexOf (j)) {
+					// Just got the 'literal' names, aka tokens
+					prettyName = recognizer.literalNames[j];
+				} else {
+					// On the symbolic names, we need to make them pretty
+					switch (recognizer.symbolicNames[j]) {
+						case "NUMBER_LITERAL": 	prettyName = "Number literal"; break;
+						case "STRING_LITERAL": 	prettyName = "String literal"; break;
+						case "IDENTIFIER":	 	prettyName = "Identifier"; break;
+						case "ASSIGN": 			prettyName = "'=' or ':='"; break;
+						case "ARROW": 			prettyName = "=>"; break;
+						case "BOOL_FALSE": 
+						case "BOOL_TRUE": 		prettyName = "Boolean literal"; break;
+					}
+				}
+
+				// If isn't already on the list, add it
+				if (prettyName && prettyName.length > 0 && names.indexOf (prettyName) === -1) {
+					names.push (prettyName);
+				}
+			}
+		}
+
+		// Formats in 'none', 'list' and 'single' collection
+		if (names.length <= 0) {
+			return "none";
+		} else if (names.length === 1) {
+			return names[0];
+		} else {
+			return "[" + names.join (", ") + "]";
+		}
 	};
 
 }

@@ -1,3 +1,6 @@
+// Please ignore this mess
+// On future versions i 'll do some refactoring on this file
+
 var autoCompletion = [];
 
 // ACE editor setup
@@ -5,13 +8,13 @@ var editor = ace.edit ("input_box");
 editor.setTheme ("ace/theme/monokai");
 editor.session.setMode ("ace/mode/thyme");
 editor.setOptions ({ 
-	enableBasicAutocompletion: true,
+	enableBasicAutocompletion: false,
 	enableSnippets: true,
 	enableLiveAutocompletion: true,
 	tabSize: 4,
 	useSoftTabs: true
 });
-/*var languageTools = ace.require ("ace/ext/language_tools");
+var languageTools = ace.require ("ace/ext/language_tools");
 languageTools.addCompleter ({
 	getCompletions: (editor, session, position, prefix, callback) => {
 		if (prefix.length === 0) { callback (null, []); return; }
@@ -19,17 +22,17 @@ languageTools.addCompleter ({
 			return { 
 				name: word, 
 				value: word, 
-				score: 0, 
-				meta: "variable" 
-			}
+				score: 1, 
+				meta: "global"
+			};
 		}));
 		console.log (prefix);
 	}
-});*/
+});
 
 // Load file
 var request = new XMLHttpRequest ();
-request.open ("GET", "/grammar/input.txt", true);
+request.open ("GET", "/grammar/debug.txt", true);
 request.onload = () => {
 	if (request.readyState == 4 && request.status == 200) {
 		editor.getSession ().setValue (request.responseText);

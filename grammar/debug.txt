@@ -61,9 +61,9 @@ _goToPosition = (indicators, droneFrame, coordinates, threshold)=>{
 	droneFrame.text = distance + "";
 	(distance <= threshold) ? {
 		_droneStateTimer = 0;
-		true;
+		true
 	} : {
-		false;
+		false
 	};
 };
 _checkSafeHouse = (droneFrame, indicators)=>{
@@ -159,7 +159,7 @@ _checkSafeHouse = (droneFrame, indicators)=>{
 		};
 	} : {};
 	
-	result;
+	result
 };
 /*CPU (POST-STEP)*/
 postStep = (e)=>{

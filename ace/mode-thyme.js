@@ -146,13 +146,22 @@ ace.define("ace/mode/thyme_highlight_rules", ["require", "exports", "module", "a
 		"force"
 	];
 
+	const objectFunctions = [
+		"postStep",
+		"update",
+		"onCollide",
+		"onSpawn",
+		"onLaserHit",
+		"readable"
+	];
+
 	var ThymeHighlightRules = function(options) {
 		var keywordMapper = this.createKeywordMapper({
-			"variable.language": objectProperties.join ("|"),
-			"keyword": "my|for|e|owner",
+			"variable.language": objectProperties.join ("|") + "|" + objectFunctions.join ("|"),
+			"keyword": "for|owner",
 			"storage.type": "Math|Scene|Sim|App|Console|String|Keys",
 			"constant.language": "null|undefined",
-			"support.function": "readable|postStep|update|onCollide",
+			"support.function": "",
 			"constant.language.boolean": "true|false"
 		}, "identifier");
 		var kwBeforeRe = "for";
@@ -194,37 +203,9 @@ ace.define("ace/mode/thyme_highlight_rules", ["require", "exports", "module", "a
 					next: "function_arguments"
 				}, {
 					token: [
-						"entity.name.function", "text", "keyword.operator", "text", "storage.type",
-						"text", "paren.lparen"
+						"entity.name.function", "text", "punctuation.operator", "text", "paren.lparen"
 					],
-					regex: "(" + identifierRe + ")(\\s*)(=)(\\s*)(function)(\\s*)(\\()",
-					next: "function_arguments"
-				}, {
-					token: [
-						"storage.type", "punctuation.operator", "entity.name.function", "text",
-						"keyword.operator", "text",
-						"storage.type", "text", "entity.name.function", "text", "paren.lparen"
-					],
-					regex: "(" + identifierRe + ")(\\.)(" + identifierRe + ")(\\s*)(=)(\\s*)(function)(\\s+)(\\w+)(\\s*)(\\()",
-					next: "function_arguments"
-				}, {
-					token: [
-						"storage.type", "text", "entity.name.function", "text", "paren.lparen"
-					],
-					regex: "(function)(\\s+)(" + identifierRe + ")(\\s*)(\\()",
-					next: "function_arguments"
-				}, {
-					token: [
-						"entity.name.function", "text", "punctuation.operator",
-						"text", "storage.type", "text", "paren.lparen"
-					],
-					regex: "(" + identifierRe + ")(\\s*)(:)(\\s*)(function)(\\s*)(\\()",
-					next: "function_arguments"
-				}, {
-					token: [
-						"text", "text", "storage.type", "text", "paren.lparen"
-					],
-					regex: "(:)(\\s*)(function)(\\s*)(\\()",
+					regex: "(" + identifierRe + ")(\\s*)(:?=)(\\s*)(\\()(?=.*?\\)\\s*=>\\s*{)",
 					next: "function_arguments"
 				}, {
 					token: "keyword",
