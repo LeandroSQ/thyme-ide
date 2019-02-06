@@ -14,39 +14,43 @@ function ThymeEngine () {
 	
 	this.annotationList = [];
 	this.engineContext = {};
-	this.debugMode = true;
+	this.debugMode = false;
 
 	this.analyze = (text) => {
-		// Resets the variables
-		this.annotationList = [];
-		this.engineContext = {
-			variables: []
-		};
-		// Generate tokens from input
-		var chars = new antlr4.InputStream (text);
-		var lexer = new ThymeLexer (chars);
-		var tokens = new antlr4.CommonTokenStream (lexer);			
-		// Defines the parser
-		var parser = new ThymeParser (tokens);
-		parser.buildParseTrees = true;
-		// Defines the custom error handling
-		this.createErrorListener (lexer, parser);
-		// Parses the source code
-		var ast = parser.script ();
-		// Check if it is a valid script
-		this.analyzeTokens (tokens);
-		this.validateSourceCode (ast);
-		
-		// Prints the debug tree
-		if (this.debugMode) {
-			var treeString = ThymeEngine.getNodeText (parser.ruleNames, ast);
-			console.log ("--Abstract Syntax Tree (Converted)--");
-			console.log (treeString);
-			console.log ("--Abstract Syntax Tree (ANTLR)--");
-			console.log (ast.toStringTree ());
-		}
+		try {
+			// Resets the variables
+			this.annotationList = [];
+			this.engineContext = {
+				variables: []
+			};
+			// Generate tokens from input
+			var chars = new antlr4.InputStream (text);
+			var lexer = new ThymeLexer (chars);
+			var tokens = new antlr4.CommonTokenStream (lexer);			
+			// Defines the parser
+			var parser = new ThymeParser (tokens);
+			parser.buildParseTrees = true;
+			// Defines the custom error handling
+			this.createErrorListener (lexer, parser);
+			// Parses the source code
+			var ast = parser.script ();
+			// Check if it is a valid script
+			this.analyzeTokens (tokens);
+			this.validateSourceCode (ast);
+			
+			// Prints the debug tree
+			if (this.debugMode) {
+				var treeString = ThymeEngine.getNodeText (parser.ruleNames, ast);
+				console.log ("--Abstract Syntax Tree (Converted)--");
+				console.log (treeString);
+				console.log ("--Abstract Syntax Tree (ANTLR)--");
+				console.log (ast.toStringTree ());
+			}
 
-		this.analyzeAbstractSyntaxTree (ast);
+			this.analyzeAbstractSyntaxTree (ast);
+		} catch (exception) {
+			console.error (exception);
+		}
 	};
 	
 	this.validateSourceCode = (tree) => {
@@ -117,7 +121,35 @@ function ThymeEngine () {
 				}
 			}
 		};
-		
+		listener.prototype.enterIfStatement = (context) => {
+			// Check if the expression has Parenthesys
+			var term = this.checkRule (context.expression (), "term");
+			if (!term || !(term instanceof ThymeParser.ParenthesysExpressionTermContext)) {
+				this.createAnnotationFromToken (context.start, "You should use parenthesys on the if statement expression.", AnnotationType.WARNING);
+			}			
+		};		
+
+		// Semi-colon treatment
+		listener.prototype.exitStatement = (context) => { 
+			// Check if every statement has a ';' on the end 
+			if (!context.semiColon () || !context.semiColon ().getText ()) {
+				// If it doesn't, get the previous token (Where the ';' should be placed)
+				var previousToken = context.parser._input.tokens[context.semiColon ().start.tokenIndex - 1];
+				this.createAnnotationFromToken (previousToken, "Missing ';' on the end of the line", AnnotationType.WARNING);
+			}
+		};
+		listener.prototype.exitScript = (context) => {
+			var statementList = context.assignStatement ();
+			for (var i in statementList) {
+				var statement = statementList[i];
+				var nextToken = context.parser._input.tokens[statement.stop.tokenIndex + 1];
+				// It is not a semicolon
+				if (nextToken.channel !== 2) {
+					this.createAnnotationFromToken (statement.stop, "Missing ';' on the end of the assign statement", AnnotationType.ERROR);
+				}
+			}
+		};
+		 
 		// Runs the listener trough the parsed tree
 		antlr4.tree.ParseTreeWalker.DEFAULT.walk (new listener (), tree);
 	};
@@ -229,6 +261,15 @@ function ThymeEngine () {
 		}
 	};
 
+	this.checkRule = (parent, ruleName) => {
+		try {
+			if (parent && ruleName && parent[ruleName]) {
+				return parent[ruleName] ();
+			} 
+		} catch (e) {}
+
+		return null;
+	};
 }
 
 ThymeEngine.getNodeText = (ruleNames, node, level="") => { 

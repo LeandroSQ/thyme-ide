@@ -1,19 +1,20 @@
 // Grammar name
 grammar Thyme;
 // Script
-script : (assignStatement ';')+ EOF;
+script : (assignStatement semiColon)+ EOF;
 // Statements
 statement 
-	: assignStatement ';'
-	| ifStatement ';'
-	| functionCallStatement ';'
-	| expression ';';
+	: ifStatement semiColon
+	| assignStatement semiColon
+	| functionCallStatement semiColon
+	| expression semiColon;
 	
 statementList 
 	: statement*;
 
 // The ternary operator rule
-ifStatement : '(' expression ')' '?' '{' statementList '}' ':' '{' statementList '}';
+ifStatement : expression '?' '{' statementList '}' ':' '{' statementList '}';
+
 // The variable assignment and declaration statement
 assignStatement : expression ASSIGN expression;
 // Simple expression list, separated with comma
@@ -63,6 +64,9 @@ memberAccessor
 // Functions
 functionCallStatement : term '(' expressionList ')';
 functionLiteral: ('(' expressionList ')' ARROW)? '{' statementList '}';
+// SemiColon treatment
+semiColon : SEMI_COLON?;
+SEMI_COLON : ';' -> channel(2);
 // Infinity
 INFINITY_LITERAL : '+inf' | '-inf';
 // Null

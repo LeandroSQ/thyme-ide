@@ -317,5 +317,14 @@ ThymeListener.prototype.exitFunctionLiteral = function(ctx) {
 };
 
 
+// Enter a parse tree produced by ThymeParser#semiColon.
+ThymeListener.prototype.enterSemiColon = function(ctx) {
+};
+
+// Exit a parse tree produced by ThymeParser#semiColon.
+ThymeListener.prototype.exitSemiColon = function(ctx) {
+};
+
+
 
 exports.ThymeListener = ThymeListener;

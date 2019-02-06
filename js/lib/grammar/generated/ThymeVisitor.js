@@ -216,5 +216,11 @@ ThymeVisitor.prototype.visitFunctionLiteral = function(ctx) {
 };
 
 
+// Visit a parse tree produced by ThymeParser#semiColon.
+ThymeVisitor.prototype.visitSemiColon = function(ctx) {
+  return this.visitChildren(ctx);
+};
+
+
 
 exports.ThymeVisitor = ThymeVisitor;

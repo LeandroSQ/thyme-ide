@@ -1,6 +1,6 @@
 // Please ignore this mess
 // On future versions i 'll do some refactoring on this file
-
+const DEBUG_MODE = false;
 var autoCompletion = [];
 
 // Simple function to change the favicon of the page
@@ -40,7 +40,7 @@ languageTools.addCompleter ({
 // Load file if in debug mode
 if (window.location.host === "localhost:7070") {
 	var request = new XMLHttpRequest ();
-	request.open ("GET", "js/lib/grammar/debug.txt", true);
+	request.open ("GET", "js/lib/grammar/input.txt", true);
 	request.onload = () => {
 		if (request.readyState == 4 && request.status == 200) {
 			editor.getSession ().setValue (request.responseText);
@@ -55,16 +55,20 @@ var lastUpdateTime = 0;
 var timeoutHandle = -1;
 const UPDATE_TIME_THRESHOLD = 750;
 
+// Creates the web worker
+var thymeWorker = new Worker ("js/ThymeEngineWebWorker.js");
+thymeWorker.postMessage (DEBUG_MODE);
+
 function analyzeSourceCode () {
+	if (DEBUG_MODE) console.log ("[Script] Analyzing source code!");
 	// Get the text from Editor
 	var textInput = editor.getSession ().getValue ();
 
-	// Creates the web worker
-	var thymeWorker = new Worker ("js/ThymeEngineWebWorker.js");
 	// Sends the input text to the web worker
 	thymeWorker.postMessage (textInput);
 	// Defines the callback
 	thymeWorker.onmessage = (e) => {
+		if (DEBUG_MODE) console.log ("[Script] received output");
 		// Set the favicon
 		changeFavicon (e.data.hasErrors);
 		// Clears tha annotations
@@ -76,25 +80,25 @@ function analyzeSourceCode () {
 
 		//autoCompletion = thymeEngine.engineContext.variables;
 		// Disposes the worker
-		thymeWorker.terminate ();
+		//thymeWorker.terminate ();
 
 		// Notify as done
 		timeoutHandle = -1;
+		lastUpdateTime = Date.now (); 
 	};
 }
 
 editor.on ("change", (e) => {
 	// Check if are waiting for a timeout to run
 	if (timeoutHandle !== -1) { 
-		lastUpdateTime = Date.now (); 
 		return;
 	}
 
 	// If the time has passed
 	if (Date.now () - lastUpdateTime >= UPDATE_TIME_THRESHOLD) {
 		// Analyzes source code and notify as done
+		timeoutHandle = 1;
 		analyzeSourceCode ();
-		timeoutHandle = -1;
 	} else {
 		// Otherwise, schedulle it
 		timeoutHandle = setTimeout (analyzeSourceCode, UPDATE_TIME_THRESHOLD);
