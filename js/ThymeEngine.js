@@ -30,21 +30,23 @@ function ThymeEngine () {
 			// Defines the parser
 			var parser = new ThymeParser (tokens);
 			parser.buildParseTrees = true;
+
 			// Defines the custom error handling
 			this.createErrorListener (lexer, parser);
 			// Parses the source code
 			var ast = parser.script ();
+			console.log (ast);
 			// Check if it is a valid script
 			this.analyzeTokens (tokens);
 			this.validateSourceCode (ast);
 			
 			// Prints the debug tree
 			if (this.debugMode) {
-				var treeString = ThymeEngine.getNodeText (parser.ruleNames, ast);
+				/*var treeString = ThymeEngine.getNodeText (parser.ruleNames, ast);
 				console.log ("--Abstract Syntax Tree (Converted)--");
 				console.log (treeString);
 				console.log ("--Abstract Syntax Tree (ANTLR)--");
-				console.log (ast.toStringTree ());
+				console.log (ast.toStringTree ());*/
 			}
 
 			this.analyzeAbstractSyntaxTree (ast);
@@ -132,9 +134,8 @@ function ThymeEngine () {
 		// Semi-colon treatment
 		listener.prototype.exitStatement = (context) => { 
 			// Check if every statement has a ';' on the end 
-			if (!context.semiColon () || !context.semiColon ().getText ()) {
-				// If it doesn't, get the previous token (Where the ';' should be placed)
-				var previousToken = context.parser._input.tokens[context.semiColon ().start.tokenIndex - 1];
+			var previousToken = context.parser._input.tokens[context.semiColon ().start.tokenIndex - 1];
+			if (previousToken.channel !== 2) {
 				this.createAnnotationFromToken (previousToken, "Missing ';' on the end of the line", AnnotationType.WARNING);
 			}
 		};

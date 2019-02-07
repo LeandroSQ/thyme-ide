@@ -1,6 +1,6 @@
 // Please ignore this mess
 // On future versions i 'll do some refactoring on this file
-const DEBUG_MODE = false;
+const DEBUG_MODE = true;
 var autoCompletion = [];
 
 // Simple function to change the favicon of the page
@@ -65,13 +65,13 @@ function analyzeSourceCode () {
 	var textInput = editor.getSession ().getValue ();
 
 	// Sends the input text to the web worker
-	thymeWorker.postMessage (textInput);
+	thymeWorker.postMessage (textInput);	
 	// Defines the callback
 	thymeWorker.onmessage = (e) => {
 		if (DEBUG_MODE) console.log ("[Script] received output");
 		// Set the favicon
 		changeFavicon (e.data.hasErrors);
-		// Clears tha annotations
+		// Clears the annotations
 		editor.getSession ().clearAnnotations ();
 		// If we got errors, show them
 		if (e.data.hasErrors) {
@@ -79,8 +79,7 @@ function analyzeSourceCode () {
 		}
 
 		//autoCompletion = thymeEngine.engineContext.variables;
-		// Disposes the worker
-		//thymeWorker.terminate ();
+		
 
 		// Notify as done
 		timeoutHandle = -1;
@@ -88,7 +87,25 @@ function analyzeSourceCode () {
 	};
 }
 
+function handleEmptyInput () {
+	// Clears the next validation, if schedulled
+	if (timeoutHandle !== -1) { clearTimeout (timeoutHandle); }
+	// Clears annotations
+	editor.getSession ().clearAnnotations ();
+	// Set the favicon
+	changeFavicon (false);
+	// Notify as done
+	timeoutHandle = -1;
+	lastUpdateTime = Date.now (); 
+}
+
 editor.on ("change", (e) => {
+	// Check if the script is empty
+	if (editor.getSession ().getValue ().length <= 0) {
+		handleEmptyInput ();
+		return;
+	}
+
 	// Check if are waiting for a timeout to run
 	if (timeoutHandle !== -1) { 
 		return;
@@ -96,8 +113,9 @@ editor.on ("change", (e) => {
 
 	// If the time has passed
 	if (Date.now () - lastUpdateTime >= UPDATE_TIME_THRESHOLD) {
-		// Analyzes source code and notify as done
+		// Flag as a running validation
 		timeoutHandle = 1;
+		// Analyzes source code
 		analyzeSourceCode ();
 	} else {
 		// Otherwise, schedulle it

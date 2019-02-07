@@ -8,7 +8,7 @@
             "name": "Debug ANTLR4 grammar",
             "type": "antlr-debug",
             "request": "launch",
-            "input": "js/lib/grammar/debug.txt",
+            "input": "js/lib/grammar/input.txt",
             "grammar": "js/lib/grammar/Thyme.g4",
             //"actionFile": "grammars/exampleActions.js",
             "startRule": "script",

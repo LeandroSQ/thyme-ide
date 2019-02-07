@@ -1,7 +1,14 @@
 postStep = (e)=>{
-	(e.this.angle < 0) ? {
-	    
-	} : {
-	    
-	}
-};
+	angle = Scene.my.droneThrusterAngle / (180 / Math.PI)
+}
+/*Drone main frame (POST-STEP)*/
+postStep = (e)=>{
+	temp := 0
+	for (String.length (_altitudeOffset), (n) => {
+		(_altitudeOffset(n) > temp) ? {
+			temp = _altitudeOffset(n)
+		} : { }
+	})
+	
+	Scene.my.droneAltitudeOffset = temp
+}
