@@ -5,6 +5,8 @@ You can [try this online](https://leandrosq.github.io/thyme-ide/).
 ## What is Thyme?
 Thyme is a scripting language made for [Algodoo](algodoo.com)'s engine.
 ![img](https://raw.githubusercontent.com/LeandroSQ/thyme-ide/master/img/01.png?raw=true)
+It also has a lint
+![img](https://raw.githubusercontent.com/LeandroSQ/thyme-ide/master/img/Annotation%20example%2001.jpg)
 
 This project includes
 - An [ANTLR](https://www.antlr.org/) grammar
