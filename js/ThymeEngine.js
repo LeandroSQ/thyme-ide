@@ -138,6 +138,7 @@ function ThymeEngine () {
 			if (previousToken.channel !== 2) {
 				this.createAnnotationFromToken (previousToken, "Missing ';' on the end of the line", AnnotationType.WARNING);
 			}
+			
 		};
 		listener.prototype.exitScript = (context) => {
 			var statementList = context.assignStatement ();
