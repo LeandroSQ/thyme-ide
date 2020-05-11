@@ -79,7 +79,7 @@ NUMBER_LITERAL : [0-9]+ ('.' [0-9]+)?;
 // String literal
 STRING_LITERAL : '"' (~["\r\n] | '""')* '"';
 // Identifier
-IDENTIFIER : '_'? [a-zA-Z]+ [a-zA-Z_0-9]*;
+IDENTIFIER : [a-zA-Z_]+ [a-zA-Z_0-9]*;
 // Arrow
 ARROW : '=>';
 // Assign or declare operator
